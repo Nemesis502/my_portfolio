@@ -1,0 +1,61 @@
+@import "./../../../styles.scss";
+
+.landing-container {
+    height: 900px;
+    max-width: 1440px;
+    background-image: linear-gradient(to top right, $medium_black 45%, $dark_green 100%);
+}
+
+.landing-content {
+    display: flex;
+    flex-direction: column;
+    gap: 218px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    >h2,
+    h1 {
+        color: #D9D9D9;
+    }
+
+    >h2 {
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 100%;
+        letter-spacing: 0px;
+        font-family: 'Fira Code';
+    }
+
+    >h1 {
+        font-size: 128px;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -2px;
+        font-family: 'Karla';
+    }
+}
+
+.title-buttons {
+    display: flex;
+    gap: 48px;
+    width: 363px;
+    height: 48px;
+
+    >button {
+        color: #FFFFFF;
+        font-family: 'Karla';
+        background-color: transparent;
+        border: 1px solid #FFFFFF;
+        border-radius: 100px;
+        padding: 0 24px 0 24px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: 0;
+        width: 172px;
+    }
+}
