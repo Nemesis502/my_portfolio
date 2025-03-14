@@ -1,3 +1,5 @@
+@import "./../../../../styles.scss";
+
 .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -14,15 +16,7 @@
     flex-direction: row;
     align-items: center;
 
-    >a {
-        color: #FFFFFF;
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 20px;
-        line-height: 100%;
-        letter-spacing: -3px;
-        cursor: pointer;
-    }
+
 }
 
 .button-container {
@@ -33,6 +27,10 @@
     display: flex;
     justify-content: center;
 
+    &:hover {
+        filter: brightness(1.20);
+    }
+
     >button {
         background-color: transparent;
         border: none;
@@ -40,10 +38,47 @@
         width: 44px;
         cursor: pointer;
     }
+
+
 }
 
 .highlight-button {
     border-radius: 100px;
-    background-color: #3DCFB6 !important;
+    background-color: $light_green !important;
     color: #FFFFFF !important;
+}
+
+.nav-links-container {
+    display: flex;
+    gap: 24px;
+
+}
+
+.internal-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    >a {
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: -3px;
+        cursor: pointer;
+    }
+
+    &:hover>span {
+        display: block;
+        height: 6.5px;
+        width: 6.5px;
+        background-color: $light_green;
+        border-radius: 59%;
+    }
+}
+
+.hidden{
+    display: none;
 }

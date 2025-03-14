@@ -1,8 +1,9 @@
 @import "./../../../styles.scss";
 
 .landing-container {
-    height: 900px;
+    height: 100vh;
     max-width: 1440px;
+    width: 1080px;
     background-image: linear-gradient(to top right, $medium_black 45%, $dark_green 100%);
 }
 
@@ -20,6 +21,7 @@
     >h2,
     h1 {
         color: #D9D9D9;
+        text-align: center;
     }
 
     >h2 {
@@ -42,7 +44,6 @@
 .title-buttons {
     display: flex;
     gap: 48px;
-    width: 363px;
     height: 48px;
 
     >button {
@@ -56,6 +57,74 @@
         font-weight: 400;
         line-height: 120%;
         letter-spacing: 0;
-        width: 172px;
     }
+}
+
+.lateral-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 96px 0 96px;
+}
+
+.left-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    height: 312px;
+    gap: 24px;
+
+
+
+}
+
+.arrow-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid $light_green;
+    width: 30px;
+    height: 48px;
+    border-radius: 32px;
+    padding-top: 0px;
+
+    >span {
+        text-align: center;
+        color: #FFFFFF;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.left-seperator {
+    background-color: $light_green;
+    width: 1px;
+    height: 240px;
+}
+
+.right-lateral {
+    display: flex;
+    flex-direction: column;
+    height: 480px;
+    width: 32px;
+    gap: 24px;
+
+    >a {
+        color: #FFFFFF;
+        text-decoration: none;
+        rotate: -90deg;
+
+        &:hover {
+            color: $light_green;
+        }
+    }
+}
+
+.right-seperator {
+    height: 186px;
+    border: 1px solid #FFFFFF;
+    width: 0px;
+    margin: 0 16px 0 16px;
 }
