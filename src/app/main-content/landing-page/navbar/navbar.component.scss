@@ -59,6 +59,7 @@
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    position: relative;
 
     >a {
         color: #FFFFFF;
@@ -76,9 +77,11 @@
         width: 6.5px;
         background-color: $light_green;
         border-radius: 59%;
+        position: absolute;
+        top: 22px;
     }
 }
 
-.hidden{
+.hidden {
     display: none;
 }

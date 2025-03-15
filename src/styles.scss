@@ -13,6 +13,24 @@ $light_green: #3DCFB6;
   font-family: 'Karla';
 }
 
+.span-with-Karla-100pc {
+  color: #FFFFFF;
+  font-family: 'Karla';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.span-with-Karla-80pc {
+  font-family: 'Karla';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #FFFFFFCC;
+}
+
 html,
 body {
   height: 100%;
@@ -21,7 +39,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: black;
+  background-color: rgba(28, 28, 28, 1);
 }
 
 /* fira-code-300 - latin */

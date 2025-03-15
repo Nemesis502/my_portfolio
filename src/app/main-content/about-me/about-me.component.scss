@@ -1,0 +1,76 @@
+@import "./../../../styles.scss";
+
+.about-me-container {
+    width: 1233px;
+    height: 708px;
+    display: flex;
+    gap: 96px;
+    margin-top: 144px;
+}
+
+.about-me-img {
+    >img {
+        width: 568px;
+        height: 568px;
+    }
+}
+
+.about-me-content {
+    width: 568px;
+    height: 588px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+    >h2 {
+        color: $light_green;
+        font-family: 'Karla';
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 0;
+    }
+}
+
+.about-me-div {
+    background-color: #3DCFB61A;
+    border: 1px solid $light_green;
+    border-radius: 30px;
+
+    >h1 {
+        color: $light_green;
+        font-family: 'Fira Code';
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 100%;
+        letter-spacing: -3px;
+        padding: 32px 64px 0 32px;
+        margin: 0;
+    }
+}
+
+.me-content {
+    padding: 40px 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.personality-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.personality-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 24px;
+
+    >img {
+        width: 22px;
+        height: 26px;
+    }
+}
