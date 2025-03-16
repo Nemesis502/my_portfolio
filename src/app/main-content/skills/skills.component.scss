@@ -1,0 +1,36 @@
+@import "./../../../styles.scss";
+
+.skills-container {
+    width: 1440px;
+    max-width: 1440px;
+    height: 695px;
+    background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+}
+
+.skill-set-container {
+    width: 520px;
+    height: 551px;
+    display: flex;
+    gap: 20px;
+    padding: 0 0px 0px 96px;
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-descriptions-container {
+    width: 520px;
+    height: 503px;
+    border: 1px solid $light_green;
+    border-radius: 30px;
+    background-color: #3DCFB61A;
+
+    >h1 {
+        font-family: 'Fira Code';
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 100%;
+        letter-spacing: -3px;
+        color: $light_green;
+        padding: 32px 32px 0 32px;
+    }
+}

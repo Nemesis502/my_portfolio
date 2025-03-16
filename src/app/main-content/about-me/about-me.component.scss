@@ -6,13 +6,15 @@
     display: flex;
     gap: 96px;
     margin-top: 144px;
+    padding: 0 96px 0 96px;
 }
 
 .about-me-img {
-    >img {
-        width: 568px;
-        height: 568px;
-    }
+    background-image: url('./../../../assets/img/me-portfolio.jpg');
+    width: 568px;
+    height: 568px;
+    background-position: center;
+    background-size: cover;
 }
 
 .about-me-content {
