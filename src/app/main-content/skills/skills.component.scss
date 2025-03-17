@@ -5,6 +5,10 @@
     max-width: 1440px;
     height: 695px;
     background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
+    margin-top: 144px;
+    display: flex;
+    flex-direction: row;
+    gap: 96px;
 }
 
 .skill-set-container {
@@ -32,5 +36,78 @@
         letter-spacing: -3px;
         color: $light_green;
         padding: 32px 32px 0 32px;
+    }
+}
+
+.skills-descriptions-content {
+    padding: 40px 32px 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px
+}
+
+.skills-descriptions {
+    >span {
+        color: #FFFFFF;
+    }
+}
+
+.another-skill-container {
+    width: 331px;
+    height: 83px;
+
+    >h2 {
+        color: #FFFFFF;
+        line-height: 120%;
+
+        >span {
+            color: $light_green;
+        }
+    }
+
+
+}
+
+.contact-button {
+    padding: 0 0 32px 32px;
+
+    >button {
+
+        font-family: "Karla";
+        background-color: transparent;
+        border: 1px solid #FFFFFF;
+        border-radius: 100px;
+        padding: 13px 24px 13px 24px;
+    }
+
+}
+
+.show-skill-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 72px;
+    width: 632px;
+    height: 428px;
+    padding: 48px 96px 0 0;
+}
+
+.single-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    height: 116px;
+    width: 104px;
+
+    >img {
+        width: 64px;
+        height: 64px;
+    }
+
+    >span {
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-align: center;
     }
 }

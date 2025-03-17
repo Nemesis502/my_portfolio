@@ -3,25 +3,36 @@
     <h2 class="span-with-Karla-100pc-700weight">Technologies</h2>
     <div class="skills-descriptions-container">
       <h1>Skill Set</h1>
-      <div>
-        <div>
-          <span>
+      <div class="skills-descriptions-content">
+        <div class="skills-descriptions">
+          <span class="span-with-Karla-80pc">
             A short introduction of your skills. Highlight your experience of
             using different front-end technologies and emphasise your openness
             to learning and adapting to new technologies. Show how important it
             is for you to keep up with the rapid changes in web development.
           </span>
         </div>
-        <div>
-          <h2>You need another skill?</h2>
-          <span
-            >Feel free to contact me. I look forward to expanding on my previous
+        <div class="another-skill-container">
+          <h2 class="span-with-Karla-100pc-700weight">
+            You need <span>another skill?</span>
+          </h2>
+          <span class="span-with-Karla-100pc-400weight">
+            Feel free to contact me. I look forward to expanding on my previous
             knowledge.</span
           >
         </div>
       </div>
-      <button>Let's Talk</button>
+      <div class="contact-button">
+        <button class="span-with-Karla-80pc">Let's Talk</button>
+      </div>
     </div>
   </div>
-  <div></div>
+  <div class="show-skill-container">
+    @for (skill of skillSet; track skill.name) {
+    <div class="single-skill">
+      <img src="./../../../assets/img/{{ skill.name }}.png" alt="" />
+      <span class="span-with-Karla-80pc">{{ skill.name }}</span>
+    </div>
+    }
+  </div>
 </section>
