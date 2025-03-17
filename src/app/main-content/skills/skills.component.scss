@@ -70,14 +70,16 @@
 
 .contact-button {
     padding: 0 0 32px 32px;
-
     >button {
-
         font-family: "Karla";
         background-color: transparent;
         border: 1px solid #FFFFFF;
         border-radius: 100px;
         padding: 13px 24px 13px 24px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
 }
