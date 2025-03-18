@@ -1,0 +1,66 @@
+@import "./../../../styles.scss";
+
+.featured-projects-section {
+    width: 1440px;
+    max-width: 1440px;
+    height: 581px;
+
+}
+
+.featured-projects-container {
+    padding: 0 0 0 96px;
+}
+
+.headline-container {
+    width: 622px;
+    height: 122px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.projects-descriptions {
+    padding: 41px 0 41px 0;
+    height: 44px;
+    width: 456px;
+}
+
+.featured-projects-content {
+    width: 880px;
+    height: 327px;
+    border-width: 1px 0px 1px 0px;
+    border-style: solid;
+    border-color: $light_green;
+}
+
+.single-project {
+    height: 109px;
+    width: 880px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $light_green;
+
+    >h3 {
+        padding: 0 0 0 32px;
+        margin: 0;
+        line-height: 120%;
+        font-size: 24px;
+        color: #FFFFFF;
+    }
+
+    >span {
+        padding: 0 32px 0 0;
+    }
+}
+
+.special-span {
+    color: $light_green;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0;
+    padding: 0 4px 0 4px;
+}
