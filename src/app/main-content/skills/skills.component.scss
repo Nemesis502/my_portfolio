@@ -70,6 +70,7 @@
 
 .contact-button {
     padding: 0 0 32px 32px;
+
     >button {
         font-family: "Karla";
         background-color: transparent;
@@ -111,5 +112,26 @@
         color: #FFFFFF;
         letter-spacing: 0;
         text-align: center;
+    }
+}
+
+.example-tooltip-uppercase {
+    text-transform: uppercase;
+}
+
+.mat-tooltip-panel-above {
+    .mat-tooltip.ds-tooltip {
+        overflow: visible;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 100%;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+            border-width: 12px;
+            left: calc(50% - 12px);
+        }
     }
 }
