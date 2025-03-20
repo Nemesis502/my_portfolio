@@ -30,18 +30,28 @@
   <div class="show-skill-container">
     @for (skill of skillSet; track skill.name) {
     <div class="single-skill">
-      <img
-        [matTooltip]="skill.skillImg === 'GrowthMindset' ? 'I have a special interest in learning' : ''"
-        [matTooltipPosition]="position.value!"
-        [matTooltipDisabled]="skill.skillImg !== 'GrowthMindset'"
-        matTooltipClass="example-tooltip-uppercase"
-        src="./../../../assets/img/{{ skill.name }}.png"
-        alt=""
-      />
+      <div *ngIf="skill.name === 'GrowthMindset'" class="visibility tooltip-div">
+        <div class="tooltip-content">
+          <div class="tooltip-span">
+            <span class="span-with-Karla-100pc-400weight-lightGreen"
+              >I have a special interest in learning
+            </span>
+          </div>
+          <div class="wanted-skills-container">
+            <div class="wanted-skills-content">
+              <img src="./../../../assets/img/React.png" alt="" />
+              <span class="span-with-Karla-100pc-700weight">React</span>
+            </div>
+            <div class="wanted-skills-content">
+              <img src="./../../../assets/img/Vuejs_with_color.png" alt="" />
+              <span class="span-with-Karla-100pc-700weight">Vue Js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="./../../../assets/img/{{ skill.name }}.png" alt="" />
       <span class="span-with-Karla-80pc">{{ skill.name }}</span>
     </div>
     }
-    <!-- <span class="span-with-Karla-80pc">GrowthMindset</span>
-    <img src="./../../../assets/img/GrowthMindset.png" alt=""> -->
   </div>
 </section>
