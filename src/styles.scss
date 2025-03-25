@@ -22,6 +22,15 @@ $light_green: #3DCFB6;
   letter-spacing: 0;
 }
 
+.span-with-Karla-80pc {
+  font-family: 'Karla';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: #FFFFFFCC;
+}
+
 .span-with-Karla-100pc-400weight-lightGreen {
   color: $light_green;
   font-family: 'Karla';
@@ -40,15 +49,6 @@ $light_green: #3DCFB6;
   letter-spacing: 0;
 }
 
-.span-with-Karla-80pc {
-  font-family: 'Karla';
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 120%;
-  letter-spacing: 0;
-  color: #FFFFFFCC;
-}
-
 .firaCode-with-700Weight-64Px {
   font-family: 'Fira Code';
   font-weight: 700;
@@ -56,7 +56,6 @@ $light_green: #3DCFB6;
   line-height: 100%;
   letter-spacing: -3px;
   color: $light_green;
-
 }
 
 html,

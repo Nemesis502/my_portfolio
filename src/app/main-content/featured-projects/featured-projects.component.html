@@ -11,35 +11,180 @@
       </span>
     </div>
     <div class="featured-projects-content">
-      <div class="single-project">
-        <h3 class="span-with-Karla-100pc-700weight">Join</h3>
-        <span class="span-with-Karla-100pc-400weight"
-          >HMTL
-          <span class="special-span">|</span> CSS
-          <span class="special-span">|</span>
-          JavaScript
-          <span class="special-span">|</span>
-          Firebase</span
-        >
+      <div class="featured-projects-divs">
+        <div class="single-project" (click)="showProjects('01')">
+          <h3 class="span-with-Karla-100pc-700weight">Join</h3>
+          <span class="span-with-Karla-100pc-400weight"
+            >HMTL <span class="special-span">|</span> CSS
+            <span class="special-span">|</span>
+            JavaScript
+            <span class="special-span">|</span>
+            Firebase</span
+          >
+          <div class="preview-divs top">
+            <img
+              class="preview-img"
+              src="./../../../assets/img/Join.png"
+              alt=""
+            />
+            <img
+              class="background-capa"
+              src="./../../../assets/img/Capa_1.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="single-project" (click)="showProjects('02')">
+          <h3 class="span-with-Karla-100pc-700weight">EL Pollo Loco</h3>
+          <span class="span-with-Karla-100pc-400weight"
+            >HMTL <span class="special-span">|</span> CSS
+            <span class="special-span">|</span>
+            JavaScript</span
+          >
+          <div class="preview-divs">
+            <img
+              class="preview-img"
+              src="./../../../assets/img/EL_Pollo_Loco.png"
+              alt=""
+            />
+            <img
+              class="background-capa"
+              src="./../../../assets/img/Capa_1.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <div class="single-project" (click)="showProjects('03')">
+          <h3 class="span-with-Karla-100pc-700weight">DA Bubble</h3>
+          <span class="span-with-Karla-100pc-400weight"
+            >Angular
+            <span class="special-span">|</span>
+            Firebase
+            <span class="special-span">|</span>
+            TypeScript</span
+          >
+          <div class="preview-divs bottom">
+            <img
+              class="preview-img"
+              src="./../../../assets/img/DABubble.png"
+              alt=""
+            />
+            <img
+              class="background-capa"
+              src="./../../../assets/img/Capa_1.png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
-      <div class="single-project">
-        <h3 class="span-with-Karla-100pc-700weight">EL Pollo Loco</h3>
-        <span class="span-with-Karla-100pc-400weight"
-          >HMTL
-          <span class="special-span">|</span> CSS
-          <span class="special-span">|</span>
-          JavaScript</span
-        >
+    </div>
+  </div>
+  <div
+    *ngIf="dialogVisible && selectedProject"
+    class="featured-projects-dialog-container"
+  >
+    <div class="featured-projects-dialog">
+      <div class="flex-column left-details-container">
+        <div class="title">
+          <h1 class="span-with-Karla-100pc-700weight">
+            {{ selectedProject.id }}
+          </h1>
+          <h2 class="firaCode-with-700Weight-64Px">
+            {{ selectedProject.name }}
+          </h2>
+        </div>
+        <div class="flex-column description-container">
+          <article class="flex-column intro">
+            <h3 class="firaCode-with-700Weight-64Px">
+              What is this project about?
+            </h3>
+            <span class="span-with-Karla-80pc">
+              {{ selectedProject.description }}
+            </span>
+          </article>
+          <div class="technologies-container">
+            <div
+              class="technologies-description"
+              *ngFor="let tech of selectedProject.technologies | keyvalue"
+            >
+              <img
+                src="./../../../assets/img/{{ tech.value }}_green.png"
+                alt=""
+              />
+              <span class="span-with-Karla-100pc-400weight">
+                {{ tech.value }}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="link-buttons-container">
+          <div class="link-buttons">
+            <a href="http://" target="_blank">
+              <span class="span-with-Karla-100pc-400weight">GitHub</span>
+            </a>
+            <img
+              class="low-default"
+              src="./../../../assets/img/arrow_outward_low.png"
+              alt=""
+            />
+            <img
+              class="high-hover"
+              src="./../../../assets/img/arrow_outward_high.png"
+              alt=""
+            />
+          </div>
+          <div class="link-buttons">
+            <a
+              href="https://bastian-klawes.developerakademie.net/meine_seite_2/project_Join_Nemesis/index.html"
+              target="_blank"
+            >
+              <span class="span-with-Karla-100pc-400weight">Live Test</span>
+            </a>
+            <img
+              class="low-default"
+              src="./../../../assets/img/arrow_outward_low.png"
+              alt=""
+            />
+            <img
+              class="high-hover"
+              src="./../../../assets/img/arrow_outward_high.png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
-      <div class="single-project">
-        <h3 class="span-with-Karla-100pc-700weight">DA Bubble</h3>
-        <span class="span-with-Karla-100pc-400weight"
-          >Angular
-          <span class="special-span">|</span>
-          Firebase
-          <span class="special-span">|</span>
-          TypeScript</span
-        >
+      <div class="preview-project">
+        <div (click)="closeProjects()" class="dialog-close-container">
+          <img
+            class="low-default"
+            src="./../../../assets/img/X_Default.png"
+            alt=""
+          />
+          <img
+            class="high-hover"
+            src="./../../../assets/img/X_Hover.png"
+            alt=""
+          />
+        </div>
+        <img
+          src="./../../../assets/img/{{ selectedProject.namePng }}.png"
+          alt=""
+        />
+        <div class="next-project-container">
+          <span class="span-with-Karla-100pc-400weight">Next project</span>
+          <img
+            class="low-default"
+            src="./../../../assets/img/arrows_left_default.png"
+            alt=""
+          />
+          <img
+            class="high-hover"
+            src="./../../../assets/img/arrows_left_right.png"
+            alt=""
+          />
+        </div>
       </div>
     </div>
   </div>

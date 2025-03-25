@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 96px 0 96px;
+    padding: 25px 96px 25px 96px;
     max-width: 1440px;
     height: 98px;
     background-image: linear-gradient(#00000099, #00000000);
@@ -84,4 +84,29 @@
 
 .hidden {
     display: none;
+}
+
+.logo-container {
+    height: 67px;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    >img {
+        height: 72px;
+        width: 107px;
+    }
+
+    >span {
+        color: #FFFFFF;
+        font-family: "Karla";
+        font-size: 48px;
+        line-height: 70%;
+        letter-spacing: -5px;
+        text-align: center;
+    }
+
+
 }
