@@ -1,0 +1,84 @@
+@import "./../../../styles.scss";
+
+.references-section {
+    height: 452px;
+    width: 1440px;
+    position: relative;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+
+    >h3 {
+        font-size: 32px;
+        letter-spacing: 0;
+    }
+}
+
+.quotes-container {
+    height: 452px;
+    width: 1440px;
+    position: absolute;
+    top: 82px;
+    left: 349px;
+    z-index: -200;
+
+    >img {
+        height: 64px;
+        width: 89px;
+    }
+}
+
+.references-container {
+    height: 362px;
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigator-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    >p {
+        margin: 0;
+        display: block;
+        height: 6.5px;
+        width: 6.5px;
+        background-color: $light_green;
+        border-radius: 59%;
+    }
+
+    .not-selected {
+        background-color: #FFFFFF;
+    }
+}
+
+.left-arrow-container,
+.right-arrow-container {
+    &:hover {
+        cursor: pointer;
+
+        .default-arrows {
+            display: none;
+        }
+
+        .hover-arrows {
+            display: block;
+        }
+
+    }
+}
+
+.default-arrows {
+    display: block;
+}
+
+.hover-arrows {
+    display: none;
+}

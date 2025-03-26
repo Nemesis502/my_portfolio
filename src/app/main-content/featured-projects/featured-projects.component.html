@@ -12,7 +12,7 @@
     </div>
     <div class="featured-projects-content">
       <div class="featured-projects-divs">
-        <div class="single-project" (click)="showProjects('01')">
+        <div class="single-project" (click)="showProjects(1)">
           <h3 class="span-with-Karla-100pc-700weight">Join</h3>
           <span class="span-with-Karla-100pc-400weight"
             >HMTL <span class="special-span">|</span> CSS
@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="single-project" (click)="showProjects('02')">
+        <div class="single-project" (click)="showProjects(2)">
           <h3 class="span-with-Karla-100pc-700weight">EL Pollo Loco</h3>
           <span class="span-with-Karla-100pc-400weight"
             >HMTL <span class="special-span">|</span> CSS
@@ -56,7 +56,7 @@
           </div>
         </div>
 
-        <div class="single-project" (click)="showProjects('03')">
+        <div class="single-project" (click)="showProjects(3)">
           <h3 class="span-with-Karla-100pc-700weight">DA Bubble</h3>
           <span class="span-with-Karla-100pc-400weight"
             >Angular
@@ -89,7 +89,7 @@
       <div class="flex-column left-details-container">
         <div class="title">
           <h1 class="span-with-Karla-100pc-700weight">
-            {{ selectedProject.id }}
+            0{{ selectedProject.id }}
           </h1>
           <h2 class="firaCode-with-700Weight-64Px">
             {{ selectedProject.name }}
@@ -172,7 +172,7 @@
           src="./../../../assets/img/{{ selectedProject.namePng }}.png"
           alt=""
         />
-        <div class="next-project-container">
+        <div (click)="nextProject(selectedProject.id)" class="next-project-container">
           <span class="span-with-Karla-100pc-400weight">Next project</span>
           <img
             class="low-default"

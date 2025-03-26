@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
 
 interface Project {
-  id: string;
+  id: number;
   name: string;
   description: string;
   namePng: string,
@@ -21,12 +21,14 @@ interface Project {
   styleUrl: './featured-projects.component.scss'
 })
 export class FeaturedProjectsComponent {
-
+  selectedProject: Project | null = null;
   dialogVisible = false;
+
+  constructor(private renderer: Renderer2) { }
 
   projects: Project[] = [
     {
-      id: "01",
+      id: 1,
       name: "Join",
       namePng: "Join",
       description: `Task manager inspired by the Kanban System. 
@@ -40,7 +42,7 @@ export class FeaturedProjectsComponent {
       }
     },
     {
-      id: "02",
+      id: 2,
       name: "EL Pollo Loco",
       namePng: "EL_Pollo_Loco",
       description: `Jump, run and throw game based on object-oriented approach. 
@@ -52,7 +54,7 @@ export class FeaturedProjectsComponent {
       }
     },
     {
-      id: "03",
+      id: 3,
       name: "DABubble",
       namePng: "DABubble",
       description: `This App is a Slack Clone App. 
@@ -66,20 +68,24 @@ export class FeaturedProjectsComponent {
     }
   ];
 
-
-
-
-  // Variable für das aktuell ausgewählte Projekt
-  selectedProject: Project | null = null;
-
-  showProjects(projectId: string) {
-    // Filtere das Array und wähle das Projekt anhand der ID aus
-    this.selectedProject = this.projects.find(project => project.id === projectId) || null;
+  showProjects(selectId: number) {
+    this.selectedProject = this.projects.find(project => project.id === selectId) || null;
     this.dialogVisible = true;
-    console.log('Selected project:', this.selectedProject);
+    this.renderer.setStyle(document.body, 'overflow', 'hidden');
   }
 
   closeProjects() {
     this.dialogVisible = false;
+    this.renderer.removeStyle(document.body, 'overflow');
   }
+
+  nextProject(selectId: number) {
+    selectId++;
+    if (selectId > 3) {
+      selectId = 0
+    } else {
+      this.selectedProject = this.projects.find(project => project.id === selectId) || null;
+    }
+  }
+
 }
