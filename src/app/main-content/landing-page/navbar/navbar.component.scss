@@ -94,19 +94,35 @@
     align-items: center;
     gap: 8px;
 
-    >img {
-        height: 72px;
-        width: 107px;
+    &:hover {
+        cursor: pointer;
+
+        .default {
+            display: none;
+        }
+
+        .hover {
+            display: block;
+        }
+
     }
 
-    >span {
-        color: #FFFFFF;
-        font-family: "Karla";
-        font-size: 48px;
-        line-height: 70%;
-        letter-spacing: -5px;
-        text-align: center;
-    }
+}
 
+.logo-img {
+    height: 72px;
+    width: 107px;
+}
 
+.logo-name {
+    height: 72px;
+    width: 120px;
+}
+
+.default {
+    display: block;
+}
+
+.hover {
+    display: none;
 }
