@@ -7,49 +7,18 @@
   <div class="fade-shadow-container"></div>
   <div class="references-container">
     <div class="references-content">
-      <div class="references-comment">
-        <img class="quotes-img" src="./../../../assets/img/quotes.png" alt="" />
-        <div class="references references-not-focus">
-          <span class="span-with-Karla-100pc-400weight dark-white">
-            Our project benefited enormously from Bastian efficient way of
-            working.
-          </span>
-          <div class="references-name">
-            <div class="blank blank-not-focused"></div>
-            <span class="span-with-Karla-100pc-400weight dark-white">
-              W.Fröhlich - Team Partner
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="references-comment">
+      <div
+        *ngFor="let references of referencesComments"
+        class="references-comment"
+      >
         <div class="references">
           <span class="span-with-Karla-100pc-400weight">
-            Bastian has proven to be a reliable group partner. His technical
-            skills and proactive approach were crucial to the success of our
-            project.
+            {{ references.comments }}
           </span>
           <div class="references-name">
             <div class="blank"></div>
             <span class="span-with-Karla-100pc-400weight">
-              R.Matthes - Team Partner
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="references-comment">
-        <div class="references references-not-focus">
-          <span class="span-with-Karla-100pc-400weight dark-white">
-            I had the good fortune of working with Lukas in a group project at
-            the Developer Akademie that involved a lot of effort. He always
-            stayed calm, cool, and focused, and made sure our team was set up
-            for success. He's super knowledgeable, easy to work with, and I'd
-            happily work with him again given the chance.
-          </span>
-          <div class="references-name">
-            <div class="blank blank-not-focused"></div>
-            <span class="span-with-Karla-100pc-400weight dark-white">
-              D.Fuhrmann - Team Partner
+              {{ references.name }} - {{ references.rang }}
             </span>
           </div>
         </div>
@@ -68,14 +37,17 @@
           alt=""
         />
       </div>
-      <p *ngFor="let dot of [0,1,2]; let i = index" [ngClass]="{'not-selected': i !== activeReferenceIndex}"></p>
+      <p
+        *ngFor="let dot of [0, 1, 2]; let i = index"
+        [ngClass]="{ 'not-selected': i !== activeReferenceIndex }"
+      ></p>
       <div (click)="nextReferences('right')" class="right-arrow-container">
         <img
           class="default-arrows"
           src="./../../../assets/img/Right_arrow.png"
           alt=""
         />
-        <img 
+        <img
           class="hover-arrows"
           src="./../../../assets/img/Right_hover.png"
           alt=""

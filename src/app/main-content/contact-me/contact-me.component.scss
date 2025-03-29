@@ -1,0 +1,94 @@
+@import "./../../../styles.scss";
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-me-section {
+    width: 1248px;
+    height: 541px;
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.lets-work-container {
+    gap: 40px;
+    width: 568px;
+    height: 337px;
+}
+
+.intro-container {
+    gap: 20px;
+
+    >h3 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 100%;
+    }
+}
+
+.problem-container {
+    width: 568px;
+    height: 121px;
+    gap: 16px;
+    border-radius: 30px;
+    backdrop-filter: blur(4px);
+
+    >h2 {
+        font-size: 24px;
+        line-height: 120%;
+        letter-spacing: 0;
+    }
+}
+
+.font-16-px,
+.talk-content {
+    font-size: 16px;
+}
+
+.talk-content {
+    font-weight: 700;
+}
+
+.contact-formular-container {
+    width: 616px;
+    height: 550px;
+    gap: 40px;
+    border-top: 1px solid #3DCFB6
+}
+
+.name-form {
+    width: 584px;
+    gap: 10px;
+    padding: 32px 0 32px 32px;
+    border-bottom: 1px solid #3DCFB680;
+
+}
+
+.name-and-input {
+    width: 352px;
+    height: 67px;
+    gap: 16px;
+
+    >span {
+        width: 245px;
+
+    }
+
+    >input {
+        width: 171px;
+
+    }
+}
+
+.policy-and-suibmit-container{
+    width: 616px;
+    gap: 16px;
+}
+
+.policy-and-suibmit-content{
+    display: flex;
+    flex-direction: row;
+}
