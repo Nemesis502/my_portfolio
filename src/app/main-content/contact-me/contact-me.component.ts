@@ -20,15 +20,17 @@ export class ContactMeComponent {
 
 
   checkButtonPolicy() {
-    this.buttonChecked = true
+    if (this.buttonChecked == false) {
+      this.buttonChecked = true
+    } else {
+      this.buttonChecked = false
+    }
+   console.log(this.buttonChecked);
   }
 
   checkFormular(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {
       console.log(this.contactData);
-    } else {
-      console.log("NÖ");
-      
     }
   }
 }

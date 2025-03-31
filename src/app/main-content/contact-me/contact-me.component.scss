@@ -96,7 +96,7 @@
         border: none;
         color: white;
 
-        ::after{
+        ::after {
             background-color: rgba(28, 28, 28, 1);
             border: none;
             color: white;
@@ -183,13 +183,24 @@ input:focus {
 }
 
 .checkbox-default {
-    &:hover {
+    >input {
+        display: none;
+    }
 
+    &:hover {
         .default {
             display: none;
         }
 
         .hidden {
+            display: block;
+        }
+
+        .hidden-checked {
+            display: none;
+        }
+        
+        .hidden-checked-hover {
             display: block;
         }
     }
@@ -210,5 +221,9 @@ input:focus {
 }
 
 .hidden-checked {
+    display: block;
+}
+
+.hidden-checked-hover {
     display: none;
 }

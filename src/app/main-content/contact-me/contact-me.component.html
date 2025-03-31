@@ -54,11 +54,11 @@
       <div class="policy-and-suibmit-content">
         <div class="checkbox-container">
           <div class="checkbox-imgs checkbox-default">
-            <img class="default" src="./../../../assets/img/Checkbox_default.png" alt="">
-            <img (click)="checkButtonPolicy()" class="hidden" src="./../../../assets/img/Checkbox_default_hover.png" alt="">
-            <img class="hidden-checked" src="./../../../assets/img/Checkbox_checked.png" alt="">
-            <img class="hidden-checked" src="./../../../assets/img/Checkbox_checked_hover.png" alt="">
-            <input type="checkbox">
+            <img *ngIf="!buttonChecked" class="default" src="./../../../assets/img/Checkbox_default.png" alt="">
+            <img *ngIf="!buttonChecked" (click)="checkButtonPolicy()" class="hidden" src="./../../../assets/img/Checkbox_default_hover.png" alt="">
+            <img *ngIf="buttonChecked" class="hidden-checked" src="./../../../assets/img/Checkbox_checked.png" alt="">
+            <img *ngIf="buttonChecked" (click)="checkButtonPolicy()" class="hidden-checked-hover" src="./../../../assets/img/Checkbox_checked_hover.png" alt="">
+            <input type="checkbox" name="checkbox" [(ngModel)]="buttonChecked">
           </div>
           <p class="span-with-Karla-100pc-400weight">
             I've read the <a class="firaCode-with-700Weight-64Px" href="">privacy policy</a> and agree to the processing of
