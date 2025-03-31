@@ -6,55 +6,67 @@
     </div>
     <div class="flex-column problem-container">
       <h2 class="firaCode-with-700Weight-64Px">Got a problem to solve?</h2>
-      <span class="span-with-Karla-100pc-400weight font-16-px">
+      <p class="span-with-Karla-100pc-400weight font-16-px">
         Encourage people to contact you and describe what role you are
         interested in. Show that you will add value to their projects through
         your work.
-        <br /><br />
+        <br/><br/>
         Need a Frontend developer?
         <span class="span-with-Karla-100pc-400weight-lightGreen talk-content"
           >Let’s talk!</span
         >
-      </span>
+      </p>
     </div>
   </div>
 
-  <form class="flex-column contact-formular-container" action="">
+  <form class="flex-column contact-formular-container" (submit)="checkFormular(contactForm)" #contactForm="ngForm">
     <div>
       <div class="flex-column name-form">
         <div class="flex-column name-and-input">
-          <span class="firaCode-with-700Weight-64Px">What's your name?</span>
-          <input placeholder="Your name goes here" type="text" />
+          <label for="inputName" class="firaCode-with-700Weight-64Px">What's your name?</label>
+          <input required #inputName="ngModel" name="inputName" [(ngModel)]="contactData.name" placeholder="Your name goes here" type="text" />
+          @if(!inputName.valid && inputName.touched){
+            <span>Please Enter a Message</span>
+          }
         </div>
       </div>
       <div class="flex-column name-form">
         <div class="flex-column name-and-input">
-          <span class="firaCode-with-700Weight-64Px">What's your email?</span>
-          <input placeholder="youremail&#64;email.com" type="text" />
+          <label for="inputEmail" class="firaCode-with-700Weight-64Px">What's your email?</label>
+          <input required #intputEmail="ngModel" name="inputEmail" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          [(ngModel)]="contactData.email" placeholder="youremail&#64;email.com" type="text" />
+          @if(!intputEmail.valid && intputEmail.touched){
+            <span>Please Enter a Message</span>
+          }
         </div>
       </div>
       <div class="flex-column name-form">
         <div class="flex-column name-and-input">
-          <span class="firaCode-with-700Weight-64Px">How can I help you?</span>
-          <input placeholder="Hello Lukas, I am interested in..." type="text" />
+          <label for="inputMessage" class="firaCode-with-700Weight-64Px">How can I help you?</label>
+          <input required #inputMessage="ngModel" name="message" minlength="4" [(ngModel)]="contactData.message" placeholder="Hello Bastian, I am interested in..." type="text" />
+          @if(!inputMessage.valid && inputMessage.touched){
+            <span>Please Enter a Message</span>
+          }
         </div>
       </div>
     </div>
-    <div class="flex-column policy-and-suibmit-container">
+    <div class="policy-and-suibmit-container">
       <div class="policy-and-suibmit-content">
         <div class="checkbox-container">
-          <img class="default" src="./../../../assets/img/Checkbox_default.png" alt="">
-          <img class="hidden" src="./../../../assets/img/Checkbox_default_hover.png" alt="">
-          <img class="hidden-checked" src="./../../../assets/img/Checkbox_checked.png" alt="">
-          <img class="hidden-checked" src="./../../../assets/img/Checkbox_checked_hover.png" alt="">
+          <div class="checkbox-imgs checkbox-default">
+            <img class="default" src="./../../../assets/img/Checkbox_default.png" alt="">
+            <img (click)="checkButtonPolicy()" class="hidden" src="./../../../assets/img/Checkbox_default_hover.png" alt="">
+            <img class="hidden-checked" src="./../../../assets/img/Checkbox_checked.png" alt="">
+            <img class="hidden-checked" src="./../../../assets/img/Checkbox_checked_hover.png" alt="">
+            <input type="checkbox">
+          </div>
+          <p class="span-with-Karla-100pc-400weight">
+            I've read the <a class="firaCode-with-700Weight-64Px" href="">privacy policy</a> and agree to the processing of
+            my data as outlined.
+          </p>
         </div>
-
-        <span class="span-with-Karla-100pc-400weight">
-          I've read the <a class="firaCode-with-700Weight-64Px" href="">privacy policy</a> and agree to the processing of
-          my data as outlined.
-        </span>
+        <button class="span-with-Karla-100pc-400weight">Say Hello ;)</button>
       </div>
-      <button>Say Hello</button>
     </div>
   </form>
 </section>
