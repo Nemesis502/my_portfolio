@@ -66,21 +66,22 @@
     width: 616px;
     height: 550px;
     gap: 40px;
-    border-top: 1px solid #3DCFB6
 }
 
-.name-form {
-    width: 584px;
-    gap: 10px;
-    padding: 32px 0 32px 32px;
-    border-bottom: 1px solid #3DCFB680;
-
+.input-cotainer {
+    border-top: 1px solid #3DCFB6;
 }
 
-.name-and-input {
+.name-form.email-container:hover,
+.name-form.message-container:hover {
+    border-top: 1px solid #3DCFB6;
+}
+
+.input-container {
     width: 352px;
     height: 67px;
     gap: 16px;
+
 
     >label {
         width: 290px;
@@ -104,6 +105,36 @@
     }
 }
 
+
+
+input.ng-invalid.ng-touched::placeholder {
+    color: #EC7B7BCC;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0;
+
+}
+
+.name-form {
+    width: 584px;
+    gap: 10px;
+    padding: 32px 0 32px 32px;
+    border-bottom: 1px solid #3DCFB680;
+
+    &:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #3DCFB6;
+
+        ::placeholder {
+            color: #FFFFFF;
+        }
+    }
+}
+
+
+
 ::placeholder {
     font-family: 'Karla';
     font-weight: 400;
@@ -111,6 +142,7 @@
     line-height: 120%;
     letter-spacing: 0;
     color: #FFFFFFCC;
+
 
 }
 
@@ -151,6 +183,28 @@ input:focus {
 
 .checkbox-container {
     display: flex;
+    gap: 8px;
+    flex-direction: column;
+
+    >p {
+        display: none;
+
+        >span {
+            color: #EC7B7B;
+        }
+    }
+}
+
+.checkbox-imgs {
+    >img {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.checkbox-default {
+    display: flex;
     align-items: center;
     gap: 8px;
 
@@ -172,17 +226,7 @@ input:focus {
             }
         }
     }
-}
 
-.checkbox-imgs {
-    >img {
-        &:hover {
-            cursor: pointer;
-        }
-    }
-}
-
-.checkbox-default {
     >input {
         display: none;
     }
@@ -199,7 +243,7 @@ input:focus {
         .hidden-checked {
             display: none;
         }
-        
+
         .hidden-checked-hover {
             display: block;
         }
