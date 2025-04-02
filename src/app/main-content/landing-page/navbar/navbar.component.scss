@@ -69,6 +69,7 @@
         line-height: 100%;
         letter-spacing: -3px;
         cursor: pointer;
+       
     }
 
     &:hover>span {
@@ -80,10 +81,6 @@
         position: absolute;
         top: 22px;
     }
-}
-
-.hidden {
-    display: none;
 }
 
 .logo-container {

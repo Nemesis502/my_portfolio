@@ -1,0 +1,122 @@
+@import "./../../../../styles.scss";
+
+.footer-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.footer-container {
+    width: 1248px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+
+.logo-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 32px;
+
+
+}
+
+.logo-container {
+    height: 67px;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+        cursor: pointer;
+
+        .default {
+            display: none;
+        }
+
+        .hover {
+            display: block;
+        }
+
+    }
+}
+
+.logo-img {
+    height: 72px;
+    width: 107px;
+}
+
+.logo-name {
+    height: 72px;
+    width: 140px;
+}
+
+.default {
+    display: block;
+}
+
+.hover {
+    display: none;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    >p {
+        margin: 0;
+        font-size: 16px;
+    }
+}
+
+.copyright-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    >span {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+        letter-spacing: 0;
+    }
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.links-content {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    >a {
+        text-decoration: none;
+        font-size: 16px;
+
+        &:hover {
+            color: $light_green;
+        }
+    }
+
+    &:hover>span {
+        display: block;
+        height: 6.5px;
+        width: 6.5px;
+        background-color: $light_green;
+        border-radius: 59%;
+        position: absolute;
+        top: 6px;
+        left: -13px;
+    }
+}

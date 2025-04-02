@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: row;
     gap: 64px;
+    margin-bottom: 144px;
 }
 
 .lets-work-container {
@@ -187,8 +188,6 @@ input:focus {
     flex-direction: column;
 
     >p {
-        display: none;
-
         >span {
             color: #EC7B7B;
         }

@@ -61,15 +61,16 @@ $light_green: #3DCFB6;
 html,
 body {
   height: 100%;
+  scroll-behavior: smooth;
+  cursor: url("././assets/img/arrow_selector_tool.png"), default;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: rgba(28, 28, 28, 1);
+
 }
-
-
 
 /* fira-code-300 - latin */
 @font-face {

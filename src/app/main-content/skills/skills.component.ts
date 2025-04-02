@@ -1,8 +1,8 @@
-import { Component, ViewEncapsulation} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
@@ -21,6 +21,8 @@ import { CommonModule } from '@angular/common';
 
 })
 export class SkillsComponent {
+  constructor(private viewportScroller: ViewportScroller) { }
+
   skillSet = [
     {
       name: "HTML",
@@ -56,4 +58,9 @@ export class SkillsComponent {
       name: "GrowthMindset",
     }
   ]
+
+  scrollToContact(anchor: string): void {
+    this.viewportScroller.scrollToAnchor(anchor);
+  }
+
 }

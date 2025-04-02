@@ -52,13 +52,16 @@
             <img *ngIf="!buttonChecked" (click)="checkButtonPolicy()" class="hidden" src="./../../../assets/img/Checkbox_default_hover.png" alt="">
             <img *ngIf="buttonChecked" class="hidden-checked" src="./../../../assets/img/Checkbox_checked.png" alt="">
             <img *ngIf="buttonChecked" (click)="checkButtonPolicy()" class="hidden-checked-hover" src="./../../../assets/img/Checkbox_checked_hover.png" alt="">
-            <input required type="checkbox" #checkbox="ngModel" name="checkbox" [(ngModel)]="buttonChecked">
+            <input required type="checkbox" #checkboxField="ngModel" name="checkbox" [(ngModel)]="buttonChecked">
             <p class="span-with-Karla-100pc-400weight">
               I've read the <a class="firaCode-with-700Weight-64Px" href="">privacy policy</a> and agree to the processing of
               my data as outlined.
             </p>
           </div>
-          <p><span class="span-with-Karla-80pc">Please accept the privacy policy.</span></p>
+          <p *ngIf="checkboxField.invalid && checkboxField.touched">
+            <span class="span-with-Karla-80pc">Please accept the privacy policy.  
+            </span>
+          </p>
         </div>
         <button class="span-with-Karla-100pc-400weight">Say Hello ;)</button>
       </div>

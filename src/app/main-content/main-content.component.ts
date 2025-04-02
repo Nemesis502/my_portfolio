@@ -5,11 +5,12 @@ import { SkillsComponent } from "./skills/skills.component";
 import { FeaturedProjectsComponent } from "./featured-projects/featured-projects.component";
 import { ReferencesComponent } from "./references/references.component";
 import { ContactMeComponent } from "./contact-me/contact-me.component";
+import { FooterComponent } from "../shared/components/footer/footer.component";
 
 @Component({
   selector: 'app-main-content',
   standalone: true,
-  imports: [LandingPageComponent, AboutMeComponent, SkillsComponent, FeaturedProjectsComponent, ReferencesComponent, ContactMeComponent],
+  imports: [LandingPageComponent, AboutMeComponent, SkillsComponent, FeaturedProjectsComponent, ReferencesComponent, ContactMeComponent, FooterComponent],
   templateUrl: './main-content.component.html',
   styleUrl: './main-content.component.scss'
 })

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from "./navbar/navbar.component";
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-landing-page',
@@ -9,5 +10,11 @@ import { NavbarComponent } from "./navbar/navbar.component";
   styleUrl: './landing-page.component.scss'
 })
 export class LandingPageComponent {
+
+  constructor(private viewportScroller: ViewportScroller) { }
+  
+  scrollTo(anchor: string): void {
+    this.viewportScroller.scrollToAnchor(anchor);
+  }
 
 }

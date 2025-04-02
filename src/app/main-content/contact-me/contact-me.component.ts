@@ -1,4 +1,4 @@
-import { CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
@@ -12,21 +12,13 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactMeComponent {
   buttonChecked = false;
-  mailTest = false;
+  mailTest = true;
   http = inject(HttpClient)
 
   contactData = {
     name: "",
     email: "",
     message: "",
-  }
-
-  checkButtonPolicy() {
-    if (this.buttonChecked == false) {
-      this.buttonChecked = true
-    } else {
-      this.buttonChecked = false
-    }
   }
 
   post = {
@@ -40,24 +32,38 @@ export class ContactMeComponent {
     },
   };
 
-  checkFormular(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
-      ngForm.resetForm();
+  checkButtonPolicy() {
+    if (this.buttonChecked == false) {
+      this.buttonChecked = true
+    } else {
+      this.buttonChecked = false
     }
   }
 
+  checkFormular(ngForm: NgForm) {
+    if (ngForm.invalid) {
+      Object.keys(ngForm.controls).forEach(field => {
+        const control = ngForm.controls[field];
+        control.markAsTouched({ onlySelf: true });
+      });
+    } else {
+      if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+        this.http.post(this.post.endPoint, this.post.body(this.contactData))
+          .subscribe({
+            next: (response) => {
 
+              ngForm.resetForm();
+            },
+            error: (error) => {
+              console.error(error);
+            },
+            complete: () => console.info('send post complete'),
+          });
+      } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+
+        ngForm.resetForm();
+      }
+    }
+
+  }
 }
