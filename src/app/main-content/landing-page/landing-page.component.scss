@@ -10,13 +10,13 @@
 .landing-content {
     display: flex;
     flex-direction: column;
-    gap: 218px;
 }
 
 .title-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 218px 0 176px 0;
 
     >h2,
     h1 {

@@ -229,8 +229,12 @@ input:focus {
     >input {
         display: none;
     }
+}
 
+.default-container {
     &:hover {
+        cursor: pointer;
+
         .default {
             display: none;
         }
@@ -239,6 +243,13 @@ input:focus {
             display: block;
         }
 
+    }
+}
+
+.check-container {
+    &:hover {
+        cursor: pointer;
+
         .hidden-checked {
             display: none;
         }
@@ -246,6 +257,7 @@ input:focus {
         .hidden-checked-hover {
             display: block;
         }
+
     }
 }
 

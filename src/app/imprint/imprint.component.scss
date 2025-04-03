@@ -1,4 +1,4 @@
-
+@import "./../../styles.scss";
 
 .imprint-section {
     padding: 0 96px 0 96px;
@@ -10,4 +10,73 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    text-align: center;
+    gap: 18px;
+    border: 1px solid $light_green;
+    border-radius: 30px;
+    background-color: #3DCFB61A;
+    padding: 40px 0 40px 0;
+}
+
+
+.imprint-content {
+    >h1 {
+        font-size: 60px
+    }
+
+    >p {
+        font-size: 38px;
+    }
+}
+
+.contact-content {
+    >h2 {
+        font-size: 60px;
+    }
+
+    >p {
+        font-size: 38px;
+    }
+}
+
+.source-content {
+    font-size: 38px;
+
+    >a {
+        color: $light_green;
+        text-decoration: none;
+    }
+
+    &:hover {
+
+        color: $light_green;
+
+
+        >a {
+            color: #FFFFFF;
+            border-bottom: 1px solid #3DCFB6
+        }
+
+    }
+}
+
+.return-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 190px;
+    padding: 0 0 32px 32px;
+
+}
+
+.back-button {
+    font-family: "Karla";
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 100px;
+    padding: 13px 24px 13px 24px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
