@@ -1,8 +1,8 @@
 <nav class="navbar-container">
   <div class="nav-content fontFira">
-    <div class="button-container">
-      <button class="highlight-button">EN</button>
-      <button>DE</button>
+    <div (click)="changeLanguage()" class="button-container">
+      <button [ngClass]="{'highlight-button': currentLanguage == 'EN'}">EN</button>
+      <button [ngClass]="{'highlight-button': currentLanguage == 'DE'}">DE</button>
     </div>
     <section class="nav-links-container">
       <div class="internal-links">
@@ -20,17 +20,5 @@
     </section>
   </div>
   <div class="logo-container">
-    <img class="default logo-img" src="./../../../../assets/img/Logo.png" alt="" />
-    <img class="hover logo-img" src="./../../../../assets/img/Logo_dark.png" alt="" />
-    <img
-      class="default logo-name"
-      src="./../../../../assets/img/BastianKlawes_default.png"
-      alt=""
-    />
-    <img
-      class="hover logo-name"
-      src="./../../../../assets/img/BastianKlawes_black.png"
-      alt=""
-    />
   </div>
 </nav>

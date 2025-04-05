@@ -58,6 +58,40 @@
         line-height: 120%;
         letter-spacing: 0;
         cursor: pointer;
+        transition: color 300ms ease-out, border-color 300ms ease-out;
+        overflow: hidden;
+
+        span {
+            display: inline-block;
+        }
+
+        &:hover {
+            color: $light_green;
+            border-color: $light_green;
+            text-align: -10px;
+
+            >span {
+                animation: slideText 2500ms ease-out forwards infinite;
+            }
+        }
+    }
+}
+
+@keyframes slideText {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-130%);
+    }
+
+    51% {
+        transform: translateX(130%);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
 
@@ -129,6 +163,128 @@
     border: 1px solid #FFFFFF;
     width: 0px;
     margin: 0 16px 0 16px;
+}
+
+.links-imgs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.github-container,
+.linkedin-container {
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    >span {
+        transition: opacity 300ms ease-out;
+        display: block;
+        height: 6.5px;
+        width: 6.5px;
+        background-color: $light_green;
+        border-radius: 59%;
+        position: absolute;
+        top: 13px;
+        left: 35px;
+        opacity: 0;
+    }
+
+    &:hover>span {
+        opacity: 1;
+    }
+}
+
+.github-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    height: 32px;
+    width: 32px;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity 300ms ease-out;
+    }
+
+    &::before {
+        background-image: url('./../../../assets/img/Github.png');
+        opacity: 1;
+    }
+
+    &::after {
+        opacity: 0;
+        background-image: url('./../../../assets/img/GitHub_hover.png');
+    }
+
+    &:hover {
+
+        &::before {
+            opacity: 0;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
+}
+
+.linkedin-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    height: 32px;
+    width: 32px;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity 300ms ease-out;
+    }
+
+    &::before {
+        background-image: url('./../../../assets/img/Linkedin.png');
+        opacity: 1;
+    }
+
+    &::after {
+        opacity: 0;
+        background-image: url('./../../../assets/img/Linkedin_hover.png');
+    }
+
+    &:hover {
+
+        &::before {
+            opacity: 0;
+        }
+
+        &::after {
+            opacity: 1;
+        }
+    }
 }
 
 .marquee-container {

@@ -12,7 +12,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 })
 export class ContactMeComponent {
   buttonChecked = false;
-  mailTest = true;
+  mailTest = false;
   http = inject(HttpClient)
 
   contactData = {

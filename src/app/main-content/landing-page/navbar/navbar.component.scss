@@ -26,6 +26,7 @@
     width: 84px;
     display: flex;
     justify-content: center;
+    transition: filter 300ms ease-out;
 
     &:hover {
         filter: brightness(1.20);
@@ -38,7 +39,6 @@
         width: 44px;
         cursor: pointer;
     }
-
 
 }
 
@@ -69,10 +69,11 @@
         line-height: 100%;
         letter-spacing: -3px;
         cursor: pointer;
-       
+
     }
 
-    &:hover>span {
+    >span {
+        transition: opacity 300ms ease-out;
         display: block;
         height: 6.5px;
         width: 6.5px;
@@ -80,46 +81,57 @@
         border-radius: 59%;
         position: absolute;
         top: 22px;
+        opacity: 0;
     }
+
+    &:hover>span {
+        opacity: 1;
+    }
+
 }
 
 .logo-container {
-    height: 67px;
-    width: 250px;
+    position: relative;
+    height: 70px;
+    width: 180px;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
 
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity 300ms ease-out;
+    }
+
+    &::before {
+        background-image: url('./../../../../assets/img/DefaultLogo.png');
+        opacity: 1;
+    }
+
+    &::after {
+        background-image: url('./../../../../assets/img/HoverLogo.png');
+        opacity: 0;
+    }
+
     &:hover {
         cursor: pointer;
 
-        .default {
-            display: none;
+        &::before {
+            opacity: 0;
         }
 
-        .hover {
-            display: block;
+        &::after {
+            opacity: 1;
         }
-
     }
-
-}
-
-.logo-img {
-    height: 72px;
-    width: 107px;
-}
-
-.logo-name {
-    height: 72px;
-    width: 120px;
-}
-
-.default {
-    display: block;
-}
-
-.hover {
-    display: none;
 }
