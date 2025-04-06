@@ -16,6 +16,35 @@
     background-position: center;
     background-size: cover;
     border-radius: 16px;
+    position: relative;
+
+    >img {
+        position: absolute;
+        z-index: -1;
+    }
+
+    &:hover {
+        >img {
+            animation: backgroundimg 200ms ease-in forwards;
+        }
+    }
+}
+
+@keyframes backgroundimg {
+    0% {
+        left: 0;
+        top: 0;
+    }
+
+    100% {
+        left: -40px;
+        top: 28px;
+    }
+}
+
+.backgroundimg-final {
+    left: -40px !important;
+    top: 28px !important;
 }
 
 .about-me-content {
@@ -71,9 +100,20 @@
     align-items: flex-start;
     flex-direction: row;
     gap: 24px;
-
+    
     >img {
         width: 22px;
         height: 26px;
+    }
+
+    >span{
+        transition: color 100ms ease-in;
+    }
+
+    &:hover {
+        >span {
+            color: #FFFFFF;
+        }
+
     }
 }

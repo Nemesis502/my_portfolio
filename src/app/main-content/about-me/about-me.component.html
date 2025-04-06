@@ -1,5 +1,6 @@
 <section class="about-me-container">
-  <div class="about-me-img">
+  <div class="about-me-img"(mouseleave)="staticAnimation()">
+    <img #animImg src="./../../../assets/img/Capa_me.png" [ngClass]="{'backgroundimg-final': animationPersisted}" alt="">
   </div>
   <div class="about-me-content">
     <h2>Who I Am</h2>
