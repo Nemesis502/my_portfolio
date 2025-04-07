@@ -65,15 +65,17 @@
 
 .left-arrow-container,
 .right-arrow-container {
+    position: relative;
+
     &:hover {
         cursor: pointer;
 
         .default-arrows {
-            display: none;
+            animation: fadeOut 90ms ease-in forwards;
         }
 
         .hover-arrows {
-            display: block;
+            animation: fadeIn 90ms ease-in forwards;
         }
 
     }
@@ -160,9 +162,38 @@
 }
 
 .default-arrows {
-    display: block;
+    opacity: 1;
+    position: absolute;
 }
 
 .hover-arrows {
-    display: none;
+    opacity: 0;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

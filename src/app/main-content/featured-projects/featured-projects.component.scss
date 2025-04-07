@@ -60,7 +60,7 @@
     }
 
     &:hover .preview-divs {
-        display: block;
+        animation: opacityshow 150ms ease-in forwards;
     }
 
     >h3 {
@@ -91,13 +91,11 @@
     @keyframes opacityshow {
         100% {
             opacity: 1;
-
         }
     }
-
 }
 
-.single-project:hover h3 > img {
+.single-project:hover h3>img {
     animation: opacityshow 150ms ease-in forwards;
 }
 
@@ -113,7 +111,7 @@
 
 .preview-divs {
     position: absolute;
-    display: none;
+    opacity: 0;
     right: -402px;
 }
 
@@ -124,7 +122,6 @@
 .bottom {
     bottom: -44px;
 }
-
 
 .preview-img {
     width: 295px;
@@ -184,15 +181,12 @@
     >h1 {
         font-size: 128px;
         letter-spacing: -2px;
+        margin: 0;
     }
 
     >h2 {
         line-height: 80%;
         color: #FFFFFF;
-    }
-
-    >h1,
-    h2 {
         margin: 0;
     }
 }
@@ -217,7 +211,6 @@
     justify-content: flex-start;
     gap: 16px;
     width: 480px;
-
 }
 
 .technologies-description {
@@ -253,15 +246,32 @@
     justify-content: flex-end;
     margin-bottom: 39px;
 
+    .close-content {
+        position: relative;
+        height: 48px;
+        width: 48px;
+    }
+
+    .low-default {
+        opacity: 1;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .high-hover {
+        opacity: 0;
+    }
+
     &:hover {
         cursor: pointer;
 
         .low-default {
-            display: none;
+            animation: fadeOut 250ms ease-in forwards;
+
         }
 
         .high-hover {
-            display: block;
+            animation: fadeIn 250ms ease-in forwards;
         }
 
     }
@@ -283,26 +293,48 @@
     width: 130px;
     border: 1px solid #FFFFFF;
     border-radius: 100px;
+    transition: border-color 300ms ease-out;
 
     >a {
         text-decoration: none;
+
+        >span {
+            transition: color 300ms ease-out;
+        }
     }
 
     &:hover {
         cursor: pointer;
         border-color: $light_green;
 
-        >span {
-            color: $light_green;
+        >a {
+            >span {
+                color: $light_green;
+            }
         }
+    }
 
-        .low-default {
-            display: none;
-        }
+    &:hover .arrow-outward-container .low-default {
+        animation: fadeOut 120ms ease-in forwards;
+    }
 
-        .high-hover {
-            display: block;
-        }
+    &:hover .arrow-outward-container .high-hover {
+        animation: fadeIn 120ms ease-in forwards;
+    }
+}
+
+.arrow-outward-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    .low-default {
+        opacity: 1;
+        position: absolute;
+    }
+
+    .high-hover {
+        opacity: 0;
     }
 }
 
@@ -318,28 +350,58 @@
         color: $light_green;
     }
 
+    .low-default {
+        opacity: 1;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    .high-hover {
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
     &:hover {
         cursor: pointer;
 
         >span {
+            transition: color 10ms ease-out;
             color: #FFFFFF;
         }
+    }
 
-        .low-default {
-            display: none;
-        }
+    &:hover .arrow-outward-container .low-default {
+        animation: fadeOut 50ms ease-in forwards;
+    }
 
-        .high-hover {
-            display: block;
-        }
-
+    &:hover .arrow-outward-container .high-hover {
+        animation: fadeIn 50ms ease-in forwards;
     }
 }
 
-.low-default {
-    display: block;
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
-.high-hover {
-    display: none
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

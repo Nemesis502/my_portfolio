@@ -24,6 +24,7 @@ export class FeaturedProjectsComponent {
   selectedProject: Project | null = null;
   dialogVisible = false;
 
+
   constructor(private renderer: Renderer2) { }
 
   projects: Project[] = [
