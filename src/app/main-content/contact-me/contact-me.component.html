@@ -25,14 +25,15 @@
         <div class="flex-column input-container">
           <label for="inputName" class="firaCode-with-700Weight-64Px">What's your name?</label>
           <input required #inputName="ngModel" name="inputName" [(ngModel)]="contactData.name" 
-          [placeholder]="(!inputName.valid && inputName.touched) ? 'Oops! it seems your name is missing' : 'Your name goes here'" type="text" />
+          [placeholder]="(!inputName.valid && inputName.touched) ? 'Oops! it seems your name is missing' : 'Your name goes here'" type="text"
+          class="showsmooth" />
         </div>
       </div>
       <div class="flex-column name-form email-container">
         <div class="flex-column input-container">
           <label for="inputEmail" class="firaCode-with-700Weight-64Px">What's your email?</label>
           <input required #intputEmail="ngModel" name="inputEmail" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          [(ngModel)]="contactData.email" 
+          [(ngModel)]="contactData.email"
           [placeholder]="(!intputEmail.valid && intputEmail.touched) ? 'Hoppla! your email is required' : 'youremail@email.com'" type="text" />
         </div>
       </div>

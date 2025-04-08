@@ -109,13 +109,22 @@
 
 
 input.ng-invalid.ng-touched::placeholder {
-    color: #EC7B7BCC;
+    color: #EC7B7BCC !important;
     font-family: 'Karla';
     font-weight: 400;
     font-size: 18px;
     line-height: 120%;
     letter-spacing: 0;
+}
 
+@keyframes showerror {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .name-form {
@@ -123,6 +132,7 @@ input.ng-invalid.ng-touched::placeholder {
     gap: 10px;
     padding: 32px 0 32px 32px;
     border-bottom: 1px solid #3DCFB680;
+    transition: color 300ms ease-out, border-color 300ms ease-out;
 
     &:hover {
         cursor: pointer;
@@ -143,7 +153,9 @@ input.ng-invalid.ng-touched::placeholder {
     line-height: 120%;
     letter-spacing: 0;
     color: #FFFFFFCC;
-
+    .showsmooth {
+        animation: showerror 300ms linear forwards;
+    }
 
 }
 

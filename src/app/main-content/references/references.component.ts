@@ -6,6 +6,7 @@ interface ReferencesComments {
   name: string;
   rang: string;
   comments: string;
+  id: number;
 }
 
 @Component({
@@ -18,11 +19,11 @@ interface ReferencesComments {
 export class ReferencesComponent {
   totalReferences: number = 3;
   activeReferenceIndex: number = 0;
-  selectedReference: ReferencesComments | null = null;
-  referencesComments: ReferencesComments[] = [];
+  direction: string = "";
+  animate: boolean = false;
+
 
   constructor() {
-    this.loadReferences()
   }
 
   firstReferencesComments: ReferencesComments[] = [
@@ -31,14 +32,16 @@ export class ReferencesComponent {
       rang: "Team Partner",
       comments: `Our project benefited enormously 
          from Bastian efficient way of
-         working.`
+         working.`,
+      id: 0
     },
     {
       name: "R.Matthes",
       rang: "Team Partner",
       comments: ` Bastian has proven to be a reliable group partner. His technical
             skills and proactive approach were crucial to the success of our
-            project.`
+            project.`,
+      id: 1
     },
     {
       name: "D.Fuhrmann",
@@ -47,7 +50,8 @@ export class ReferencesComponent {
             the Developer Akademie that involved a lot of effort. He always
             stayed calm, cool, and focused, and made sure our team was set up
             for success. He's super knowledgeable, easy to work with, and I'd
-            happily work with him again given the chance.`
+            happily work with him again given the chance.`,
+      id: 2
     }
   ];
   secondReferencesComments: ReferencesComments[] = [
@@ -56,7 +60,8 @@ export class ReferencesComponent {
       rang: "Team Partner",
       comments: ` Bastian has proven to be a reliable group partner. His technical
             skills and proactive approach were crucial to the success of our
-            project.`
+            project.`,
+      id: 0
     },
     {
       name: "D.Fuhrmann",
@@ -65,14 +70,16 @@ export class ReferencesComponent {
             the Developer Akademie that involved a lot of effort. He always
             stayed calm, cool, and focused, and made sure our team was set up
             for success. He's super knowledgeable, easy to work with, and I'd
-            happily work with him again given the chance.`
+            happily work with him again given the chance.`,
+      id: 1
     },
     {
       name: "W.Fröhlich",
       rang: "Team Partner",
       comments: `Our project benefited enormously 
          from Bastian efficient way of
-         working.`
+         working.`,
+      id: 2
     },
 
   ];
@@ -84,44 +91,51 @@ export class ReferencesComponent {
             the Developer Akademie that involved a lot of effort. He always
             stayed calm, cool, and focused, and made sure our team was set up
             for success. He's super knowledgeable, easy to work with, and I'd
-            happily work with him again given the chance.`
+            happily work with him again given the chance.`,
+      id: 0
     },
     {
       name: "W.Fröhlich",
       rang: "Team Partner",
       comments: `Our project benefited enormously 
          from Bastian efficient way of
-         working.`
+         working.`,
+      id: 1
     },
     {
       name: "R.Matthes",
       rang: "Team Partner",
       comments: ` Bastian has proven to be a reliable group partner. His technical
             skills and proactive approach were crucial to the success of our
-            project.`
+            project.`,
+      id: 2
     },
   ];
 
-  loadReferences() {
-    if (this.activeReferenceIndex == 0) {
-      this.referencesComments = this.firstReferencesComments;
-    } else if (this.activeReferenceIndex == 1) {
-      this.referencesComments = this.secondReferencesComments;
+  get displayedReferencesComments(): ReferencesComments[] {
+    if (this.activeReferenceIndex === 0) {
+      return this.firstReferencesComments;
+    } else if (this.activeReferenceIndex === 1) {
+      return this.secondReferencesComments;
     } else {
-      this.referencesComments = this.thirdReferencesComments;
+      return this.thirdReferencesComments;
     }
   }
 
   nextReferences(direction: string) {
-    if (direction === 'left') {
-      this.activeReferenceIndex =
-        (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
-    } else if (direction === 'right') {
-      this.activeReferenceIndex =
-        (this.activeReferenceIndex + 1) % this.totalReferences;
-    }
-    this.loadReferences();
-  }
+    this.direction = direction;
+    this.animate = true;
 
+    setTimeout(() => {
+      if (direction === 'left') {
+        this.activeReferenceIndex =
+          (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
+      } else if (direction === 'right') {
+        this.activeReferenceIndex =
+          (this.activeReferenceIndex + 1) % this.totalReferences;
+      }
+      this.animate = false;
+    }, 500);
+  }
 }
 

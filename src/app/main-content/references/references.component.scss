@@ -65,6 +65,7 @@
 
 .left-arrow-container,
 .right-arrow-container {
+    height: 40px;
     position: relative;
 
     &:hover {
@@ -77,8 +78,31 @@
         .hover-arrows {
             animation: fadeIn 90ms ease-in forwards;
         }
-
     }
+}
+
+.penultimate-comment.direction-left {
+    animation: penultimate-left 500ms ease-out forwards;
+}
+
+.penultimate-comment.direction-right {
+    animation: penultimate-right 500ms ease-out forwards;
+}
+
+.highlight-comment.direction-left {
+    animation: highlight-left 500ms ease-out forwards;
+}
+
+.highlight-comment.direction-right {
+    animation: highlight-right 500ms ease-out forwards;
+}
+
+.next-comment.direction-left {
+    animation: next-left 500ms ease-out forwards;
+}
+
+.next-comment.direction-right {
+    animation: next-right 500ms ease-out forwards;
 }
 
 .references-content {
@@ -122,7 +146,6 @@
     justify-content: center;
     gap: 44px;
 
-
     >span {
         width: 552px;
         height: 112px;
@@ -145,8 +168,7 @@
     gap: 16px;
 
     >span {
-        width: 216px;
-
+        width: 250px;
     }
 }
 
@@ -195,5 +217,85 @@
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes penultimate-left {
+    0% {
+        right: 0px;
+    }
+
+    50% {
+        right: -348px;
+    }
+
+    100% {
+        right: -697px;
+    }
+}
+
+@keyframes penultimate-right {
+    0% {
+        right: 0px;
+
+    }
+
+    100% {
+        right: -1395px;
+
+    }
+}
+
+@keyframes highlight-left {
+    0% {
+        right: 0px;
+    }
+
+    50% {
+        right: -348px;
+    }
+
+    100% {
+        right: -697px;
+    }
+}
+
+@keyframes highlight-right {
+    0% {
+        left: 0px;
+    }
+
+    50% {
+        left: -348px;
+    }
+
+    100% {
+        left: -697px;
+    }
+}
+
+@keyframes next-left {
+    0% {
+        left: 0px;
+
+    }
+
+    100% {
+        left: -1395px;
+
+    }
+}
+
+@keyframes next-right {
+    0% {
+        left: 0px;
+    }
+
+    50% {
+        left: -348px;
+    }
+
+    100% {
+        left: -697px;
     }
 }

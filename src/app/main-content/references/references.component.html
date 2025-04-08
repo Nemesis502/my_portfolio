@@ -8,7 +8,14 @@
   <div class="references-container">
     <div class="references-content">
       <div
-        *ngFor="let references of referencesComments"
+        *ngFor="let references of displayedReferencesComments"
+        [ngClass]="{
+          'penultimate-comment': references.id === 0,
+          'highlight-comment': references.id === 1,
+          'next-comment': references.id === 2,
+          'direction-left': animate && direction === 'left',
+          'direction-right': animate && direction === 'right'
+        }"
         class="references-comment"
       >
         <div class="references">
