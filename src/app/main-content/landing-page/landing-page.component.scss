@@ -206,8 +206,10 @@
         opacity: 0;
     }
 
-    &:hover>span {
-        opacity: 1;
+    &:hover {
+        >span {
+            opacity: 1;
+        }
     }
 }
 

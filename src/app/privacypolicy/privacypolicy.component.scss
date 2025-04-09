@@ -118,8 +118,45 @@
     border: 1px solid #FFFFFF;
     border-radius: 100px;
     padding: 13px 24px 13px 24px;
+    transition: color 300ms ease-out, border-color 300ms ease-out;
+    overflow: hidden;
+
+    >span {
+        color: #FFFFFF;
+        display: inline-block;
+    }
 
     &:hover {
         cursor: pointer;
+        border-color: $light_green;
+
+        >span {
+            color: $light_green;
+            animation: slideTextSkill 2500ms linear forwards infinite;
+        }
+    }
+}
+
+@keyframes slideTextSkill {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-160%);
+        visibility: hidden;
+    }
+
+    51% {
+        transform: translateX(160%);
+        visibility: hidden;
+    }
+
+    60% {
+        transform: translateX(130%);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }

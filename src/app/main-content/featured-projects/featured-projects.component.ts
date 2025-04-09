@@ -7,7 +7,9 @@ interface Project {
   name: string;
   description: string;
   namePng: string,
-  technologies: { [key: string]: string };
+  technologies: { [key: string]: string },
+  linkGitHub: string,
+  linkLive: string,
 }
 
 
@@ -40,7 +42,9 @@ export class FeaturedProjectsComponent {
         tech2: "HTML",
         tech3: "CSS",
         tech4: "Firebase"
-      }
+      },
+      linkGitHub: "https://github.com/Nemesis502/join-375",
+      linkLive: "http://join-project.bastianklawes.de/",
     },
     {
       id: 2,
@@ -52,7 +56,9 @@ export class FeaturedProjectsComponent {
         tech1: "HTML",
         tech2: "CSS",
         tech3: "JavaScript"
-      }
+      },
+      linkGitHub: "https://github.com/Nemesis502/My-first-2D-Game-El-Pollo-Loco",
+      linkLive: "https://el-pollo-loco-project.bastianklawes.de/"
     },
     {
       id: 3,
@@ -65,7 +71,9 @@ export class FeaturedProjectsComponent {
         tech1: "Angular",
         tech2: "Firebase",
         tech3: "TypeScript"
-      }
+      },
+      linkGitHub: "//",
+      linkLive: "",
     }
   ];
 

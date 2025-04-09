@@ -10,7 +10,7 @@
         Encourage people to contact you and describe what role you are
         interested in. Show that you will add value to their projects through
         your work.
-        <br/><br/>
+        <br /><br />
         Need a Frontend developer?
         <span class="span-with-Karla-100pc-400weight-lightGreen talk-content"
           >Let’s talk!</span
@@ -19,29 +19,80 @@
     </div>
   </div>
 
-  <form class="flex-column contact-formular-container" (submit)="checkFormular(contactForm)" #contactForm="ngForm">
+  <form
+    class="flex-column contact-formular-container"
+    (submit)="checkFormular(contactForm)"
+    #contactForm="ngForm"
+  >
     <div class="input-cotainer">
-      <div class="flex-column name-form">
+      <div
+        class="flex-column name-form name-container"
+        [ngClass]="{ 'hovered-bottom-name': isInputHoveredEmail }"
+      >
         <div class="flex-column input-container">
-          <label for="inputName" class="firaCode-with-700Weight-64Px">What's your name?</label>
-          <input required #inputName="ngModel" name="inputName" [(ngModel)]="contactData.name" 
-          [placeholder]="(!inputName.valid && inputName.touched) ? 'Oops! it seems your name is missing' : 'Your name goes here'" type="text"
-          class="showsmooth" />
+          <label for="inputName" class="firaCode-with-700Weight-64Px"
+            >What's your name?</label
+          >
+          <input
+            required
+            #inputName="ngModel"
+            name="inputName"
+            [(ngModel)]="contactData.name"
+            [placeholder]="
+              !inputName.valid && inputName.touched
+                ? 'Oops! it seems your name is missing'
+                : 'Your name goes here'"
+            type="text"
+            class="showsmooth"
+          />
         </div>
       </div>
-      <div class="flex-column name-form email-container">
+      <div
+        class="flex-column name-form email-container"
+        [ngClass]="{ 'hoverd-bottom-email': isInputHoveredMessage }"
+        (mouseenter)="isInputHoveredEmail = true"
+        (mouseleave)="isInputHoveredEmail = false">
         <div class="flex-column input-container">
-          <label for="inputEmail" class="firaCode-with-700Weight-64Px">What's your email?</label>
-          <input required #intputEmail="ngModel" name="inputEmail" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          [(ngModel)]="contactData.email"
-          [placeholder]="(!intputEmail.valid && intputEmail.touched) ? 'Hoppla! your email is required' : 'youremail@email.com'" type="text" />
+          <label for="inputEmail" class="firaCode-with-700Weight-64Px"
+            >What's your email?</label
+          >
+          <input
+            required
+            #intputEmail="ngModel"
+            name="inputEmail"
+            pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            [(ngModel)]="contactData.email"
+            [placeholder]="
+              !intputEmail.valid && intputEmail.touched
+                ? 'Hoppla! your email is required'
+                : 'youremail@email.com'
+            "
+            type="text"
+          />
         </div>
       </div>
-      <div class="flex-column name-form message-container">
+      <div
+        class="flex-column name-form message-container"
+        (mouseenter)="isInputHoveredMessage = true"
+        (mouseleave)="isInputHoveredMessage = false"
+      >
         <div class="flex-column input-container">
-          <label for="inputMessage" class="firaCode-with-700Weight-64Px">How can I help you?</label>
-          <input required #inputMessage="ngModel" name="message" minlength="4" [(ngModel)]="contactData.message" 
-          [placeholder]="(!inputMessage.valid && inputMessage.touched) ? 'What do you need to develop?' : 'Hello Bastian, I am interested in...'" type="text" />
+          <label for="inputMessage" class="firaCode-with-700Weight-64Px"
+            >How can I help you?</label
+          >
+          <input
+            required
+            #inputMessage="ngModel"
+            name="message"
+            minlength="4"
+            [(ngModel)]="contactData.message"
+            [placeholder]="
+              !inputMessage.valid && inputMessage.touched
+                ? 'What do you need to develop?'
+                : 'Hello Bastian, I am interested in...'
+            "
+            type="text"
+          />
         </div>
       </div>
     </div>
@@ -50,25 +101,55 @@
         <div class="checkbox-container">
           <div class="checkbox-imgs checkbox-default">
             <div *ngIf="!buttonChecked" class="default-container">
-              <img class="default" src="./../../../assets/img/Checkbox_default.png" alt="">
-              <img (click)="checkButtonPolicy()" class="hidden" src="./../../../assets/img/Checkbox_default_hover.png" alt="">
+              <img
+                class="default"
+                src="./../../../assets/img/Checkbox_default.png"
+                alt=""
+              />
+              <img
+                (click)="checkButtonPolicy()"
+                class="hidden"
+                src="./../../../assets/img/Checkbox_default_hover.png"
+                alt=""
+              />
             </div>
             <div *ngIf="buttonChecked" class="check-container">
-              <img class="hidden-checked" src="./../../../assets/img/Checkbox_checked.png" alt="">
-              <img (click)="checkButtonPolicy()" class="hidden-checked-hover" src="./../../../assets/img/Checkbox_checked_hover.png" alt="">
-            </div >
-            <input required type="checkbox" #checkboxField="ngModel" name="checkbox" [(ngModel)]="buttonChecked">
+              <img
+                class="hidden-checked"
+                src="./../../../assets/img/Checkbox_checked.png"
+                alt=""
+              />
+              <img
+                (click)="checkButtonPolicy()"
+                class="hidden-checked-hover"
+                src="./../../../assets/img/Checkbox_checked_hover.png"
+                alt=""
+              />
+            </div>
+            <input
+              required
+              type="checkbox"
+              #checkboxField="ngModel"
+              name="checkbox"
+              [(ngModel)]="buttonChecked"
+            />
             <p class="span-with-Karla-100pc-400weight">
-              I've read the <a class="firaCode-with-700Weight-64Px" href="privacypolicy">privacy policy</a> and agree to the processing of
-              my data as outlined.
+              I've read the
+              <a class="firaCode-with-700Weight-64Px" href="privacypolicy"
+                >privacy policy</a
+              >
+              and agree to the processing of my data as outlined.
             </p>
           </div>
           <p *ngIf="checkboxField.invalid && checkboxField.touched">
-            <span class="span-with-Karla-80pc">Please accept the privacy policy.  
+            <span class="span-with-Karla-80pc"
+              >Please accept the privacy policy.
             </span>
           </p>
         </div>
-        <button class="span-with-Karla-100pc-400weight">Say Hello ;)</button>
+        <button [ngClass]="{ 'ngForm-valid': checkboxField.valid}" class="span-with-Karla-100pc-400weight">
+          <span>Say Hello ;)</span> 
+        </button>
       </div>
     </div>
   </form>

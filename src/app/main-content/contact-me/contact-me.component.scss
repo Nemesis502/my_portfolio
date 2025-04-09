@@ -73,9 +73,12 @@
     border-top: 1px solid #3DCFB6;
 }
 
-.name-form.email-container:hover,
-.name-form.message-container:hover {
-    border-top: 1px solid #3DCFB6;
+.name-container.hovered-bottom-name {
+    border-bottom: 1px solid #3DCFB6;
+}
+
+.email-container.hoverd-bottom-email {
+    border-bottom: 1px solid #3DCFB6;
 }
 
 .input-container {
@@ -153,6 +156,7 @@ input.ng-invalid.ng-touched::placeholder {
     line-height: 120%;
     letter-spacing: 0;
     color: #FFFFFFCC;
+
     .showsmooth {
         animation: showerror 300ms linear forwards;
     }
@@ -186,10 +190,56 @@ input:focus {
         padding: 0 24px 0 24px;
         background-color: rgba(28, 28, 28, 1);
         color: #FFFFFFCC;
+        overflow: hidden;
 
         &:hover {
             cursor: pointer;
         }
+    }
+}
+
+.ngForm-valid {
+    transition: color 300ms ease-out, border-color 300ms ease-out;
+    border-color: #FFFFFF !important;
+
+    >span {
+        display: inline-block;
+        color: #FFFFFF;
+    }
+
+    &:hover {
+        border-color: $light_green !important;
+
+        >span {
+            color: $light_green;
+            animation: slideTextSkill 2500ms linear forwards infinite;
+        }
+
+    }
+
+}
+
+@keyframes slideTextSkill {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-130%);
+        visibility: hidden;
+    }
+
+    51% {
+        transform: translateX(160%);
+        visibility: hidden;
+    }
+
+    60% {
+        transform: translateX(130%);
+    }
+
+    100% {
+        transform: translateX(0);
     }
 }
 

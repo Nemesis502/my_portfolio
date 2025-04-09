@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
   selector: 'app-contact-me',
@@ -13,6 +14,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class ContactMeComponent {
   buttonChecked = false;
   mailTest = false;
+  isInputHoveredEmail = false;
+  isInputHoveredMessage = false;
   http = inject(HttpClient)
 
   contactData = {
