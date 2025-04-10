@@ -78,9 +78,14 @@ export class FeaturedProjectsComponent {
   ];
 
   showProjects(selectId: number) {
-    this.selectedProject = this.projects.find(project => project.id === selectId) || null;
-    this.dialogVisible = true;
-    this.renderer.setStyle(document.body, 'overflow', 'hidden');
+    if (selectId = 4) {
+      return
+    } else {
+      this.selectedProject = this.projects.find(project => project.id === selectId) || null;
+      this.dialogVisible = true;
+      this.renderer.setStyle(document.body, 'overflow', 'hidden');
+    }
+
   }
 
   closeProjects() {

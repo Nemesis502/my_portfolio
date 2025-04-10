@@ -2,12 +2,13 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { PopUpMessageComponent } from "./pop-up-message/pop-up-message.component";
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, PopUpMessageComponent],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })
@@ -16,7 +17,9 @@ export class ContactMeComponent {
   mailTest = false;
   isInputHoveredEmail = false;
   isInputHoveredMessage = false;
-  http = inject(HttpClient)
+  sendFormular = false;
+  animate = false;
+  http = inject(HttpClient);
 
   contactData = {
     name: "",
@@ -34,6 +37,14 @@ export class ContactMeComponent {
       },
     },
   };
+
+  logCloseDialog(status: boolean) {
+    this.animate = true;
+    setTimeout(() => {
+      this.sendFormular = status
+      this.animate = false;
+    }, 500);
+  }
 
   checkButtonPolicy() {
     if (this.buttonChecked == false) {
@@ -54,16 +65,14 @@ export class ContactMeComponent {
         this.http.post(this.post.endPoint, this.post.body(this.contactData))
           .subscribe({
             next: (response) => {
-
               ngForm.resetForm();
             },
             error: (error) => {
               console.error(error);
             },
-            complete: () => console.info('send post complete'),
+            complete: () => this.sendFormular = true,
           });
       } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
-
         ngForm.resetForm();
       }
     }

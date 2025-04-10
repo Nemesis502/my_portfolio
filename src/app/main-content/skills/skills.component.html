@@ -6,10 +6,10 @@
       <div class="skills-descriptions-content">
         <div class="skills-descriptions">
           <span class="span-with-Karla-80pc">
-            A short introduction of your skills. Highlight your experience of
-            using different front-end technologies and emphasise your openness
-            to learning and adapting to new technologies. Show how important it
-            is for you to keep up with the rapid changes in web development.
+            I have experience in HTML, CSS, JS, Material Design, TS, Angular,
+            Firebase, Git, REST APIs, and Scrum. I’m keen to learn React and Vue
+            to further expand my skills. Keeping pace with rapid changes in web
+            development is essential for me.
           </span>
         </div>
         <div class="another-skill-container">
@@ -23,14 +23,22 @@
         </div>
       </div>
       <div class="contact-button">
-        <button (click)="scrollToContact('contact')" class="span-with-Karla-80pc"><span>Let's Talk</span></button>
+        <button
+          (click)="scrollToContact('contact')"
+          class="span-with-Karla-80pc"
+        >
+          <span>Let's Talk</span>
+        </button>
       </div>
     </div>
   </div>
   <div class="show-skill-container">
     @for (skill of skillSet; track skill.name) {
     <div class="single-skill">
-      <div *ngIf="skill.name === 'GrowthMindset'" class="visibility tooltip-div">
+      <div
+        *ngIf="skill.name === 'GrowthMindset'"
+        class="visibility tooltip-div"
+      >
         <div class="tooltip-content">
           <div class="tooltip-span">
             <span class="span-with-Karla-100pc-400weight-lightGreen"
@@ -39,17 +47,17 @@
           </div>
           <div class="wanted-skills-container">
             <div class="wanted-skills-content">
-              <img src="./../../../assets/img/React.png" alt=""/>
+              <img src="./../../../assets/img/React.png" alt="" />
               <span class="span-with-Karla-100pc-700weight">React</span>
             </div>
             <div class="wanted-skills-content">
-              <img src="./../../../assets/img/Vuejs_with_color.png" alt=""/>
+              <img src="./../../../assets/img/Vuejs_with_color.png" alt="" />
               <span class="span-with-Karla-100pc-700weight">Vue Js</span>
             </div>
           </div>
         </div>
       </div>
-      <img src="./../../../assets/img/{{ skill.name }}.png" alt=""/>
+      <img src="./../../../assets/img/{{ skill.name }}.png" alt="" />
       <span class="span-with-Karla-80pc">{{ skill.name }}</span>
     </div>
     }

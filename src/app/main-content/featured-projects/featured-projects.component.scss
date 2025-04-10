@@ -148,6 +148,7 @@
     z-index: 999;
     inset: 0;
     align-items: center;
+    justify-content: center;
 }
 
 .dialog-open {
@@ -409,4 +410,8 @@
     100% {
         opacity: 1;
     }
+}
+
+.disabled{
+    cursor: not-allowed !important;
 }

@@ -9,9 +9,15 @@
     width: 1248px;
     height: 541px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 64px;
     margin-bottom: 144px;
+
+    >div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 .lets-work-container {
@@ -343,4 +349,48 @@ input:focus {
 
 .hidden-checked-hover {
     display: none;
+}
+
+.pop-up-dialog-container {
+    opacity: 0;
+    animation: fadeIn 500ms ease-in forwards;
+    position: fixed;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.374) !important;
+    z-index: 999;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.fadeout {
+    animation: fadeOut 500ms ease-in forwards ;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
