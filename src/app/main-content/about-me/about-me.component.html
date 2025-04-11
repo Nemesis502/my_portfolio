@@ -3,43 +3,32 @@
     <img #animImg src="./../../../assets/img/Capa_me.png" [ngClass]="{'backgroundimg-final': animationPersisted}" alt="">
   </div>
   <div class="about-me-content">
-    <h2>Who I Am</h2>
+    <h2>{{ 'about.I-me' | translate }}</h2>
     <div class="about-me-div">
-      <h1>About me</h1>
+      <h1>{{ 'about.me' | translate }}</h1>
       <div class="me-content">
         <div>
           <span class="span-with-Karla-100pc-400weight">
-            Hey there, I'm Bastian! Working on the computer has always been one
-            of my great passions. My further training as a front-end developer
-            introduced me to new and interesting facets of IT and made me
-            realise that I would like to make this passion my everyday
-            profession.
+            {{ 'about.intro' | translate }}
           </span>
         </div>
         <div class="personality-container">
           <div class="personality-content">
             <img src="./../../../assets/img/location_on.png" alt="" />
             <span class="span-with-Karla-80pc">
-              I'm from a village near the beautiful City Brunswick. I would like
-              to work near Brunswick and Hanover. But in principle I wouldn't
-              mind working remotely.
+              {{ 'about.locate' | translate }}
             </span>
           </div>
           <div class="personality-content">
             <img src="./../../../assets/img/cognition.png" alt="" />
             <span class="span-with-Karla-80pc">
-              I am always motivated to learn everything about new technologies
-              and to improve my skills. Be it with object-orientated JS, building
-              a small database with Firebase or working with Typescript in
-              Angular and Angular Material.
+              {{ 'about.mindset' | translate }}
             </span>
           </div>
           <div class="personality-content">
             <img src="./../../../assets/img/new_releases.png" alt="" />
             <span class="span-with-Karla-80pc">
-              In my past project work, my analytical thinking, creativity and
-              ambition have helped me a lot. Last but not least, I also promote
-              the progress of new projects through team spirit.
+              {{ 'about.ambitious' | translate }}
             </span>
           </div>
         </div>

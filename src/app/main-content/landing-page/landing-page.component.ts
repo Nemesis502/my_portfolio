@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ViewportScroller } from '@angular/common';
+import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent,TranslatePipe, TranslateDirective],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })

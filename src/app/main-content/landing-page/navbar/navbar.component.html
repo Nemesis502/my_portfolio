@@ -1,20 +1,20 @@
 <nav class="navbar-container">
   <div class="nav-content fontFira">
-    <div (click)="changeLanguage()" class="button-container">
-      <button [ngClass]="{'highlight-button': currentLanguage == 'EN'}">EN</button>
-      <button [ngClass]="{'highlight-button': currentLanguage == 'DE'}">DE</button>
+    <div (click)="changeLanguage(currentLanguage)" class="button-container">
+      <button [ngClass]="{'highlight-button': currentLanguage == 'en'}">EN</button>
+      <button [ngClass]="{'highlight-button': currentLanguage == 'de'}">DE</button>
     </div>
     <section class="nav-links-container">
       <div class="internal-links">
-        <a href="#about-me">About me</a>
+        <a href="#about-me">{{ 'navbar.me' | translate }}</a>
         <span></span>
       </div>
       <div class="internal-links">
-        <a href="#skills">Skills</a>
+        <a href="#skills">{{ 'navbar.skills' | translate }}</a>
         <span></span>
       </div>
       <div class="internal-links">
-        <a href="#projects">Projects</a>
+        <a href="#projects">{{ 'navbar.projects' | translate }}</a>
         <span></span>
       </div>
     </section>

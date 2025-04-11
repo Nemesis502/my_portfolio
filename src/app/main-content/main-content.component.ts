@@ -6,6 +6,7 @@ import { FeaturedProjectsComponent } from "./featured-projects/featured-projects
 import { ReferencesComponent } from "./references/references.component";
 import { ContactMeComponent } from "./contact-me/contact-me.component";
 import { FooterComponent } from "../shared/components/footer/footer.component";
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-content',
@@ -15,5 +16,15 @@ import { FooterComponent } from "../shared/components/footer/footer.component";
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
+  lang = "";
 
+  constructor(public translate: TranslateService) {
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
+
+  changeCurrentLanguage(lang: string): void {
+    this.translate.use(lang);
+  }
 }

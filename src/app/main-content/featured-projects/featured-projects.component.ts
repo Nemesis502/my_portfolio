@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, Renderer2 } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 interface Project {
   id: number;
-  name: string;
-  description: string;
+  nameKey: string;
+  descriptionKey: string;
   namePng: string,
   technologies: { [key: string]: string },
   linkGitHub: string,
@@ -17,7 +18,7 @@ interface Project {
   selector: 'app-featured-projects',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule, TranslatePipe
   ],
   templateUrl: './featured-projects.component.html',
   styleUrl: './featured-projects.component.scss'
@@ -32,11 +33,9 @@ export class FeaturedProjectsComponent {
   projects: Project[] = [
     {
       id: 1,
-      name: "Join",
+      nameKey: "projects.join.name",
+      descriptionKey: "projects.join.description",
       namePng: "Join",
-      description: `Task manager inspired by the Kanban System. 
-      Create and organize tasks using drag and drop functions, 
-      assign users and categories.`,
       technologies: {
         tech1: "JavaScript",
         tech2: "HTML",
@@ -48,10 +47,9 @@ export class FeaturedProjectsComponent {
     },
     {
       id: 2,
-      name: "EL Pollo Loco",
+      nameKey: "projects.elPolloLoco.name",
       namePng: "EL_Pollo_Loco",
-      description: `Jump, run and throw game based on object-oriented approach. 
-      Help Pepe to find coins and tabasco salsa to fight against the crazy hen.`,
+      descriptionKey: "projects.elPolloLoco.description",
       technologies: {
         tech1: "HTML",
         tech2: "CSS",
@@ -62,11 +60,9 @@ export class FeaturedProjectsComponent {
     },
     {
       id: 3,
-      name: "DABubble",
+      nameKey: "projects.dabubble.name",
       namePng: "DABubble",
-      description: `This App is a Slack Clone App. 
-      It revolutionizes team communication and collaboration with its 
-      intuitive interface, real-time messaging, and robust channel organization.`,
+      descriptionKey: "projects.dabubble.description",
       technologies: {
         tech1: "Angular",
         tech2: "Firebase",
@@ -78,7 +74,7 @@ export class FeaturedProjectsComponent {
   ];
 
   showProjects(selectId: number) {
-    if (selectId = 4) {
+    if (selectId == 4) {
       return
     } else {
       this.selectedProject = this.projects.find(project => project.id === selectId) || null;

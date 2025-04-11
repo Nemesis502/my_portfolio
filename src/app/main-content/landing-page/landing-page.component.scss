@@ -326,7 +326,7 @@
     gap: 56px;
     position: absolute;
     left: 0px;
-    animation: leftband 10s infinite linear;
+    animation: leftband 8s infinite linear;
 
     @keyframes leftband {
         0% {
@@ -334,7 +334,7 @@
         }
 
         100% {
-            transform: translateX(-51%);
+            transform: translateX(-100%);
         }
     }
 

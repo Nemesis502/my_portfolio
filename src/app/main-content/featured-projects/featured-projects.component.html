@@ -2,12 +2,13 @@
   <div class="featured-projects-container">
     <div class="headline-container">
       <h2 class="span-with-Karla-100pc-700weight">Portfolio</h2>
-      <h1 class="firaCode-with-700Weight-64Px">Featured Projects</h1>
+      <h1 class="firaCode-with-700Weight-64Px">
+        {{ "featured.projects" | translate }}
+      </h1>
     </div>
     <div class="projects-descriptions">
       <span class="span-with-Karla-100pc-400weight">
-        Explore a selection of my work here - Interact with projects to see my
-        skills in action.
+        {{ "featured.explore" | translate }}
       </span>
     </div>
     <div class="featured-projects-content">
@@ -101,16 +102,16 @@
             0{{ selectedProject.id }}
           </h1>
           <h2 class="firaCode-with-700Weight-64Px">
-            {{ selectedProject.name }}
+            {{ selectedProject.nameKey | translate }}
           </h2>
         </div>
         <div class="flex-column description-container">
           <article class="flex-column intro">
             <h3 class="firaCode-with-700Weight-64Px">
-              What is this project about?
+              {{ "featured.about-project" | translate }}
             </h3>
             <span class="span-with-Karla-80pc">
-              {{ selectedProject.description }}
+              {{ selectedProject.descriptionKey | translate }}
             </span>
           </article>
           <div class="technologies-container">
@@ -198,7 +199,9 @@
           (click)="nextProject(selectedProject.id)"
           class="next-project-container"
         >
-          <span class="span-with-Karla-100pc-400weight">Next project</span>
+          <span class="span-with-Karla-100pc-400weight">
+            {{ "featured.next" | translate }}
+            </span>
           <div class="arrow-outward-container">
             <img
               class="low-default"

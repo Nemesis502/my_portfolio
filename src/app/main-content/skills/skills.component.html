@@ -1,33 +1,28 @@
 <section class="skills-container">
   <div class="skill-set-container">
-    <h2 class="span-with-Karla-100pc-700weight">Technologies</h2>
+    <h2 class="span-with-Karla-100pc-700weight">{{ 'skills.technologies' | translate }}</h2>
     <div class="skills-descriptions-container">
-      <h1>Skill Set</h1>
+      <h1>{{ 'skills.set' | translate }}</h1>
       <div class="skills-descriptions-content">
         <div class="skills-descriptions">
           <span class="span-with-Karla-80pc">
-            I have experience in HTML, CSS, JS, Material Design, TS, Angular,
-            Firebase, Git, REST APIs, and Scrum. I’m keen to learn React and Vue
-            to further expand my skills. Keeping pace with rapid changes in web
-            development is essential for me.
+            {{ 'skills.description' | translate }}
           </span>
         </div>
         <div class="another-skill-container">
           <h2 class="span-with-Karla-100pc-700weight">
-            You need <span>another skill?</span>
+            {{ 'skills.need' | translate }} <span>{{ 'skills.another' | translate }}</span>
           </h2>
           <span class="span-with-Karla-100pc-400weight">
-            Feel free to contact me. I look forward to expanding on my previous
-            knowledge.</span
-          >
+            {{ 'skills.fell-free' | translate }}
+          </span>
         </div>
       </div>
       <div class="contact-button">
         <button
           (click)="scrollToContact('contact')"
-          class="span-with-Karla-80pc"
-        >
-          <span>Let's Talk</span>
+          class="span-with-Karla-80pc">
+          <span>{{ 'skills.talk' | translate }}</span>
         </button>
       </div>
     </div>
@@ -41,8 +36,8 @@
       >
         <div class="tooltip-content">
           <div class="tooltip-span">
-            <span class="span-with-Karla-100pc-400weight-lightGreen"
-              >I have a special interest in learning
+            <span class="span-with-Karla-100pc-400weight-lightGreen">
+              {{ 'skills.special' | translate }}
             </span>
           </div>
           <div class="wanted-skills-container">
