@@ -94,7 +94,7 @@
 
 
     >label {
-        width: 290px;
+        width: 375px;
         font-weight: 500;
         font-size: 24px;
         line-height: 120%;
@@ -189,7 +189,7 @@ input:focus {
     gap: 16px;
 
     >button {
-        width: 140px;
+        width: 148px;
         height: 48px;
         border-radius: 100px;
         border: 1px solid #FFFFFF80;
@@ -285,7 +285,7 @@ input:focus {
             line-height: 120%;
             letter-spacing: -3px;
             text-decoration: none;
-            padding: 5px 4px 5px 4px;
+            padding: 5px 4px 0px 4px;
 
             &:hover {
                 color: #FFFFFF;

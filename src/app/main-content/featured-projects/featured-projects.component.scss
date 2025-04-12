@@ -17,7 +17,7 @@
 }
 
 .headline-container {
-    width: 622px;
+    width: 708px;
     height: 122px;
     display: flex;
     flex-direction: column;
@@ -222,7 +222,6 @@
     align-items: center;
     gap: 4px;
 
-
     >span {
         font-size: 16px;
     }
@@ -413,5 +412,5 @@
 }
 
 .disabled{
-    cursor: not-allowed !important;
+    cursor: not-allowed !important; // delete when DaBubble uploaded is
 }

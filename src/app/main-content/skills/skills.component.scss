@@ -17,11 +17,13 @@
     display: flex;
     gap: 20px;
     padding: 0 0px 0px 96px;
-    display: flex;
     flex-direction: column;
 }
 
 .skills-descriptions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
     width: 520px;
     height: 503px;
     border: 1px solid $light_green;
@@ -36,11 +38,12 @@
         letter-spacing: -3px;
         color: $light_green;
         padding: 32px 32px 0 32px;
+        margin: 0;
     }
 }
 
 .skills-descriptions-content {
-    padding: 40px 32px 40px 32px;
+    padding: 0 32px 0 32px;
     display: flex;
     flex-direction: column;
     gap: 32px
@@ -53,12 +56,15 @@
 }
 
 .another-skill-container {
-    width: 331px;
     height: 83px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
     >h2 {
         color: #FFFFFF;
         line-height: 120%;
+        margin: 0;
 
         >span {
             color: $light_green;

@@ -2,11 +2,15 @@
   <main class="landing-content">
     <app-navbar></app-navbar>
     <div class="title-container">
-      <h2>{{ 'landing.branch' | translate }}</h2>
+      <h2>{{ "landing.branch" | translate }}</h2>
       <h1>Bastian Klawes</h1>
       <div class="title-buttons">
-        <button (click)="scrollTo('projects')"><span>{{ 'landing.work' | translate }}</span></button>
-        <button (click)="scrollTo('contact')"><span>{{ 'landing.me' | translate }}</span></button>
+        <button (click)="scrollTo('projects')">
+          <span>{{ "landing.work" | translate }}</span>
+        </button>
+        <button (click)="scrollTo('contact')">
+          <span>{{ "landing.me" | translate }}</span>
+        </button>
       </div>
     </div>
     <div class="lateral-container">
@@ -17,41 +21,41 @@
         <div class="left-seperator"></div>
       </div>
       <aside class="marquee-container">
-        <div class="adds-content">
+        <div class="adds-content animation-left">
           <p></p>
-          <span>{{ 'landing.remote' | translate }}</span>
+          <span>{{ "landing.remote" | translate }}</span>
           <p></p>
-          <span>{{ 'landing.branch' | translate }}</span>
+          <span>{{ "landing.branch" | translate }}</span>
           <p></p>
-          <span>{{ 'landing.location' | translate }}</span>
+          <span>{{ "landing.location" | translate }}</span>
           <p></p>
-          <span>{{ 'landing.ready' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.remote' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.branch' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.location' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.ready' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.remote' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.branch' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.location' | translate }}</span>
-          <p></p>
-          <span>{{ 'landing.ready' | translate }}</span>
+          <span>{{ "landing.ready" | translate }}</span>
+          <p aria-hidden="true"></p>
+          <span aria-hidden="true">{{ "landing.remote" | translate }}</span>
+          <p aria-hidden="true"></p>
+          <span aria-hidden="true">{{ "landing.branch" | translate }}</span>
+          <p aria-hidden="true"></p>
+          <span aria-hidden="true">{{ "landing.location" | translate }}</span>
+          <p aria-hidden="true"></p>
+          <span aria-hidden="true">{{ "landing.ready" | translate }}</span>
         </div>
       </aside>
       <div class="right-lateral">
         <a href="mailto:">bastianklawes&#64;gmail.com</a>
         <div class="links-imgs">
-          <a class="github-container" href="https://github.com/Nemesis502" target="_blank">
+          <a
+            class="github-container"
+            href="https://github.com/Nemesis502"
+            target="_blank"
+          >
             <div class="github-content"></div>
             <span></span>
           </a>
-          <a class="linkedin-container" href="https://www.linkedin.com/in/bastian-klawes-b516b0318/" target="_blank">
+          <a
+            class="linkedin-container"
+            href="https://www.linkedin.com/in/bastian-klawes-b516b0318/"
+            target="_blank"
+          >
             <div class="linkedin-content"></div>
             <span></span>
           </a>

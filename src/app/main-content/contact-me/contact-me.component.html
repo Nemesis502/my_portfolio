@@ -2,20 +2,24 @@
   <div>
     <div class="flex-column lets-work-container">
       <div class="flex-column intro-container">
-        <h3 class="span-with-Karla-100pc-400weight-lightGreen">Contact me</h3>
-        <h1 class="firaCode-with-700Weight-64Px">Let's work together</h1>
+        <h3 class="span-with-Karla-100pc-400weight-lightGreen">
+          {{ "contact.me" | translate }}
+        </h3>
+        <h1 class="firaCode-with-700Weight-64Px">
+          {{ "contact.work" | translate }}
+        </h1>
       </div>
       <div class="flex-column problem-container">
-        <h2 class="firaCode-with-700Weight-64Px">Got a problem to solve?</h2>
+        <h2 class="firaCode-with-700Weight-64Px">
+          {{ "contact.problem" | translate }}
+        </h2>
         <p class="span-with-Karla-100pc-400weight font-16-px">
-          If you're interested in collaborating, feel free to contact me and let
-          me know which role you envision. I’m eager to contribute my skills and
-          develop innovative solutions for your projects. With my dedication and
-          expertise, I will add real value to your initiatives.
+          {{ "contact.intrest" | translate }}
           <br /><br />
-          Need a Frontend developer?
-          <span class="span-with-Karla-100pc-400weight-lightGreen talk-content"
-            >Let’s talk!</span
+          {{ "contact.need" | translate }}
+          <span
+            class="span-with-Karla-100pc-400weight-lightGreen talk-content"
+            >{{ "contact.talk" | translate }}</span
           >
         </p>
       </div>
@@ -32,9 +36,9 @@
           [ngClass]="{ 'hovered-bottom-name': isInputHoveredEmail }"
         >
           <div class="flex-column input-container">
-            <label for="inputName" class="firaCode-with-700Weight-64Px"
-              >What's your name?</label
-            >
+            <label for="inputName" class="firaCode-with-700Weight-64Px">{{
+              "contact.name" | translate
+            }}</label>
             <input
               required
               #inputName="ngModel"
@@ -42,8 +46,8 @@
               [(ngModel)]="contactData.name"
               [placeholder]="
                 !inputName.valid && inputName.touched
-                  ? 'Oops! it seems your name is missing'
-                  : 'Your name goes here'
+                  ? ('contact.errorNamePlaceholder' | translate)
+                  : ('contact.namePlaceholder' | translate)
               "
               type="text"
               class="showsmooth"
@@ -57,9 +61,9 @@
           (mouseleave)="isInputHoveredEmail = false"
         >
           <div class="flex-column input-container">
-            <label for="inputEmail" class="firaCode-with-700Weight-64Px"
-              >What's your email?</label
-            >
+            <label for="inputEmail" class="firaCode-with-700Weight-64Px">{{
+              "contact.email" | translate
+            }}</label>
             <input
               required
               #intputEmail="ngModel"
@@ -68,8 +72,8 @@
               [(ngModel)]="contactData.email"
               [placeholder]="
                 !intputEmail.valid && intputEmail.touched
-                  ? 'Hoppla! your email is required'
-                  : 'youremail@email.com'
+                  ? ('contact.errorEmailPlaceholder' | translate)
+                  : ('contact.emailPlaceholder' | translate)
               "
               type="text"
             />
@@ -81,9 +85,9 @@
           (mouseleave)="isInputHoveredMessage = false"
         >
           <div class="flex-column input-container">
-            <label for="inputMessage" class="firaCode-with-700Weight-64Px"
-              >How can I help you?</label
-            >
+            <label for="inputMessage" class="firaCode-with-700Weight-64Px">{{
+              "contact.message" | translate
+            }}</label>
             <input
               required
               #inputMessage="ngModel"
@@ -92,8 +96,8 @@
               [(ngModel)]="contactData.message"
               [placeholder]="
                 !inputMessage.valid && inputMessage.touched
-                  ? 'What do you need to develop?'
-                  : 'Hello Bastian, I am interested in...'
+                  ? ('contact.errorMessagePlaceholder' | translate)
+                  : ('contact.messagePlaceholder' | translate)
               "
               type="text"
             />
@@ -138,24 +142,24 @@
                 [(ngModel)]="buttonChecked"
               />
               <p class="span-with-Karla-100pc-400weight">
-                I've read the
-                <a class="firaCode-with-700Weight-64Px" href="privacypolicy"
-                  >privacy policy</a
-                >
-                and agree to the processing of my data as outlined.
+                {{ "contact.read1" | translate }}
+                <a class="firaCode-with-700Weight-64Px" href="privacypolicy">{{
+                  "contact.policy" | translate
+                }}</a>
+                {{ "contact.read2" | translate }}
               </p>
             </div>
             <p *ngIf="checkboxField.invalid && checkboxField.touched">
-              <span class="span-with-Karla-80pc"
-                >Please accept the privacy policy.
-              </span>
+              <span class="span-with-Karla-80pc">{{
+                "contact.accept" | translate
+              }}</span>
             </p>
           </div>
           <button
             [ngClass]="{ 'ngForm-valid': checkboxField.valid }"
             class="span-with-Karla-100pc-400weight"
           >
-            <span>Say Hello ;)</span>
+            <span>{{ "contact.hello" | translate }}</span>
           </button>
         </div>
       </div>

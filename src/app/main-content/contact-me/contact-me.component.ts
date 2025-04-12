@@ -4,11 +4,12 @@ import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { PopUpMessageComponent } from "./pop-up-message/pop-up-message.component";
 import { timeout } from 'rxjs';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [FormsModule, CommonModule, PopUpMessageComponent],
+  imports: [FormsModule, CommonModule, PopUpMessageComponent, TranslatePipe],
   templateUrl: './contact-me.component.html',
   styleUrl: './contact-me.component.scss'
 })

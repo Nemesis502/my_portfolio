@@ -324,19 +324,8 @@
     align-items: center;
     flex-direction: row;
     gap: 56px;
-    position: absolute;
     left: 0px;
-    animation: leftband 8s infinite linear;
 
-    @keyframes leftband {
-        0% {
-            transform: translateX(0%);
-        }
-
-        100% {
-            transform: translateX(-100%);
-        }
-    }
 
     >span {
         color: $light_green;
@@ -346,14 +335,26 @@
         line-height: 120%;
         text-align: center;
         text-wrap: nowrap;
+        display: inline-block;
     }
 
     >p {
         margin: 0;
-        display: block;
         height: 6.5px;
         width: 6.5px;
         background-color: $light_green;
         border-radius: 59%;
+        display: inline-block;
+    }
+}
+
+
+.animation-left {
+    animation: leftband 10s infinite linear forwards;
+}
+
+@keyframes leftband {
+    to {
+        transform: translateX(-182%);
     }
 }

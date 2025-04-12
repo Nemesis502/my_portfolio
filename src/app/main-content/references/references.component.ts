@@ -1,18 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { loadZone } from 'zone.js/lib/zone';
 
 interface ReferencesComments {
-  name: string;
-  rang: string;
-  comments: string;
+  nameKey: string;
+  rangKey: string;
+  descriptionKey: string;
   id: number;
 }
 
 @Component({
   selector: 'app-references',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslatePipe],
   templateUrl: './references.component.html',
   styleUrl: './references.component.scss'
 })
@@ -28,87 +29,72 @@ export class ReferencesComponent {
 
   firstReferencesComments: ReferencesComments[] = [
     {
-      name: "W.Fröhlich",
-      rang: "Team Partner",
-      comments: `Our project benefited enormously 
-         from Bastian efficient way of
-         working.`,
-      id: 0
+      id: 0,
+      nameKey: "references.first.name.0",
+      rangKey: "references.first.rang.0",
+      descriptionKey: "references.first.description.0",
+
     },
     {
-      name: "R.Matthes",
-      rang: "Team Partner",
-      comments: ` Bastian has proven to be a reliable group partner. His technical
-            skills and proactive approach were crucial to the success of our
-            project.`,
-      id: 1
+      id: 1,
+      nameKey: "references.first.name.1",
+      rangKey: "references.first.rang.1",
+      descriptionKey: "references.first.description.1",
+
     },
     {
-      name: "D.Fuhrmann",
-      rang: "Team Partner",
-      comments: ` I had the good fortune of working with Lukas in a group project at
-            the Developer Akademie that involved a lot of effort. He always
-            stayed calm, cool, and focused, and made sure our team was set up
-            for success. He's super knowledgeable, easy to work with, and I'd
-            happily work with him again given the chance.`,
-      id: 2
+      id: 2,
+      nameKey: "references.first.name.2",
+      rangKey: "references.first.rang.2",
+      descriptionKey: "references.first.description.2",
+
     }
   ];
   secondReferencesComments: ReferencesComments[] = [
     {
-      name: "R.Matthes",
-      rang: "Team Partner",
-      comments: ` Bastian has proven to be a reliable group partner. His technical
-            skills and proactive approach were crucial to the success of our
-            project.`,
-      id: 0
+      id: 0,
+      nameKey: "references.first.name.1",
+      rangKey: "references.first.rang.1",
+      descriptionKey: "references.first.description.1",
+
     },
     {
-      name: "D.Fuhrmann",
-      rang: "Team Partner",
-      comments: ` I had the good fortune of working with Lukas in a group project at
-            the Developer Akademie that involved a lot of effort. He always
-            stayed calm, cool, and focused, and made sure our team was set up
-            for success. He's super knowledgeable, easy to work with, and I'd
-            happily work with him again given the chance.`,
-      id: 1
+      id: 1,
+      nameKey: "references.first.name.2",
+      rangKey: "references.first.rang.2",
+      descriptionKey: "references.first.description.2",
+
     },
     {
-      name: "W.Fröhlich",
-      rang: "Team Partner",
-      comments: `Our project benefited enormously 
-         from Bastian efficient way of
-         working.`,
-      id: 2
+      id: 2,
+      nameKey: "references.first.name.0",
+      rangKey: "references.first.rang.0",
+      descriptionKey: "references.first.description.0",
+
     },
 
   ];
   thirdReferencesComments: ReferencesComments[] = [
     {
-      name: "D.Fuhrmann",
-      rang: "Team Partner",
-      comments: ` I had the good fortune of working with Lukas in a group project at
-            the Developer Akademie that involved a lot of effort. He always
-            stayed calm, cool, and focused, and made sure our team was set up
-            for success. He's super knowledgeable, easy to work with, and I'd
-            happily work with him again given the chance.`,
-      id: 0
+      id: 0,
+      nameKey: "references.first.name.2",
+      rangKey: "references.first.rang.2",
+      descriptionKey: "references.first.description.2",
+
     },
     {
-      name: "W.Fröhlich",
-      rang: "Team Partner",
-      comments: `Our project benefited enormously 
-         from Bastian efficient way of
-         working.`,
-      id: 1
+      id: 1,
+      nameKey: "references.first.name.0",
+      rangKey: "references.first.rang.0",
+      descriptionKey: "references.first.description.0",
+
     },
     {
-      name: "R.Matthes",
-      rang: "Team Partner",
-      comments: ` Bastian has proven to be a reliable group partner. His technical
-            skills and proactive approach were crucial to the success of our
-            project.`,
-      id: 2
+      id: 2,
+      nameKey: "references.first.name.1",
+      rangKey: "references.first.rang.1",
+      descriptionKey: "references.first.description.1",
+
     },
   ];
 
