@@ -12,6 +12,7 @@ import { TranslatePipe, TranslateDirective, TranslateService } from "@ngx-transl
 })
 export class NavbarComponent {
   currentLanguage = "en"
+  defaultResponsiveLogo = true;
   @Output() chosenLanguage = new EventEmitter<string>();
 
   constructor(private translate: TranslateService) {

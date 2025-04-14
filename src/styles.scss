@@ -77,6 +77,19 @@ body {
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+app-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.hidden{
+  display: none;
 }
 
 /* fira-code-300 - latin */

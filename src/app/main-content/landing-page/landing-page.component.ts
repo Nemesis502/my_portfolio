@@ -8,7 +8,7 @@ import { TranslateDirective, TranslatePipe } from '@ngx-translate/core';
   standalone: true,
   imports: [NavbarComponent,TranslatePipe, TranslateDirective],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrls: ['./landing-page.component.scss', './landing-page.component-media-query.scss']
 })
 export class LandingPageComponent {
 

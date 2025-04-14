@@ -1,12 +1,10 @@
 @import "./../../../styles.scss";
 
 .about-me-container {
-    width: 1233px;
-    height: 708px;
+    max-width: 1440px;
+    width: 100%;
     display: flex;
-    gap: 96px;
-    margin-top: 144px;
-    padding: 0 96px 0 96px;
+    justify-content: center;
 }
 
 .about-me-img {
@@ -17,6 +15,7 @@
     background-size: cover;
     border-radius: 16px;
     position: relative;
+    margin-right: 96px;
 
     >img {
         position: absolute;
@@ -49,11 +48,11 @@
 
 .about-me-content {
     width: 568px;
-    height: 588px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: 20px;
-
+    margin: 98px 0 22px 0;
 
     >h2 {
         color: $light_green;
@@ -62,6 +61,7 @@
         font-size: 24px;
         line-height: 100%;
         letter-spacing: 0;
+        margin: 0;
     }
 }
 
@@ -100,13 +100,13 @@
     align-items: flex-start;
     flex-direction: row;
     gap: 24px;
-    
+
     >img {
         width: 22px;
         height: 26px;
     }
 
-    >span{
+    >span {
         transition: color 100ms ease-in;
     }
 

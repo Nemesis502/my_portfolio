@@ -3,7 +3,7 @@
 .landing-container {
     height: 100vh;
     max-width: 1440px;
-    width: 1440px;
+    width: 100%;
     background-image: linear-gradient(to top right, $medium_black 45%, $dark_green 100%);
 }
 
@@ -16,7 +16,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 218px 0 176px 0;
+    // padding: 218px 0 176px 0;
+    margin: 251px 0 37px 0;
 
     >h2,
     h1 {
@@ -26,14 +27,16 @@
 
     >h2 {
         font-weight: 400;
-        font-size: 40px;
+        font-size: 24px;
+        // font-size: 40px;
         line-height: 100%;
         letter-spacing: 0px;
         font-family: 'Fira Code';
     }
 
     >h1 {
-        font-size: 128px;
+        // font-size: 128px;
+        font-size: 62px;
         font-weight: 700;
         line-height: 100%;
         letter-spacing: -2px;
@@ -306,7 +309,7 @@
 .marquee-container {
     height: 62px;
     max-width: 1440px;
-    width: 1440px;
+    width: 100%;
     overflow-x: hidden;
     rotate: 357deg;
     display: flex;
