@@ -1,53 +1,64 @@
 <nav class="navbar-responsive-container">
   <div class="nav-responsive-content fontFira">
-    <div *ngIf="defaultResponsiveLogo"; else elseDiv class="logo-responsive-container">
-      <img src="./../../../../assets/img/Logo_default.png" alt="">
-      <ng-template #elseDiv>Content to render when condition is false.</ng-template>
+    <div class="logo-responsive-container" (click)="changeLogo()">
+      <div *ngIf="defaultResponsiveLogo" class="logo-content-default"></div>
+      <div *ngIf="!defaultResponsiveLogo" class="logo-content-dark"></div>
     </div>
-    <div class="menu-responsive-container">
+    <div class="menu-responsive-container" (click)="switchMenu()">
+      <div *ngIf="menuIsClose" class="menu-responsive-content-default"></div>
+      <div *ngIf="!menuIsClose" class="menu-responsive-content-click"></div>
     </div>
   </div>
 </nav>
-<section class="nav-links-container hidden">
-  <div class="internal-links">
-    <a href="#about-me">{{ 'navbar.me' | translate }}</a>
-    <span></span>
-  </div>
-  <div class="internal-links">
-    <a href="#skills">{{ 'navbar.skills' | translate }}</a>
-    <span></span>
-  </div>
-  <div class="internal-links">
-    <a href="#projects">{{ 'navbar.projects' | translate }}</a>
-    <span></span>
-  </div>
-  <div (click)="changeLanguage(currentLanguage)" class="button-container">
-    <button [ngClass]="{'highlight-button': currentLanguage == 'en'}">EN</button>
-    <button [ngClass]="{'highlight-button': currentLanguage == 'de'}">DE</button>
+<section (click)="switchMenu()" *ngIf="dialogVisible && !menuIsClose" class="nav-menu-container">
+  <div class="menu-content" (click)="$event.stopPropagation()">
+    <div class="internal-links-menu">
+      <a (click)="scrollToSection('about-me')" class="firaCode-with-700Weight-64Px" >{{ "navbar.me" | translate }}</a>
+      <span></span>
+    </div>
+    <div class="internal-links-menu">
+      <a (click)="scrollToSection('skills')" class="firaCode-with-700Weight-64Px">{{ "navbar.skills" | translate }}</a>
+      <span></span>
+    </div>
+    <div class="internal-links-menu">
+      <a (click)="scrollToSection('projects')" class="firaCode-with-700Weight-64Px">{{ "navbar.projects" | translate }}</a>
+      <span></span>
+    </div>
+    <div (click)="changeLanguage(currentLanguage)" class="button-container">
+      <button [ngClass]="{ 'highlight-button': currentLanguage == 'en' }">
+        EN
+      </button>
+      <button [ngClass]="{ 'highlight-button': currentLanguage == 'de' }">
+        DE
+      </button>
+    </div>
   </div>
 </section>
 
 <nav class="navbar-container hidden">
   <div class="nav-content fontFira">
     <div (click)="changeLanguage(currentLanguage)" class="button-container">
-      <button [ngClass]="{'highlight-button': currentLanguage == 'en'}">EN</button>
-      <button [ngClass]="{'highlight-button': currentLanguage == 'de'}">DE</button>
+      <button [ngClass]="{ 'highlight-button': currentLanguage == 'en' }">
+        EN
+      </button>
+      <button [ngClass]="{ 'highlight-button': currentLanguage == 'de' }">
+        DE
+      </button>
     </div>
     <section class="nav-links-container">
       <div class="internal-links">
-        <a href="#about-me">{{ 'navbar.me' | translate }}</a>
+        <a href="#about-me">{{ "navbar.me" | translate }}</a>
         <span></span>
       </div>
       <div class="internal-links">
-        <a href="#skills">{{ 'navbar.skills' | translate }}</a>
+        <a href="#skills">{{ "navbar.skills" | translate }}</a>
         <span></span>
       </div>
       <div class="internal-links">
-        <a href="#projects">{{ 'navbar.projects' | translate }}</a>
+        <a href="#projects">{{ "navbar.projects" | translate }}</a>
         <span></span>
       </div>
     </section>
   </div>
-  <div class="logo-container">
-  </div>
+  <div class="logo-container"></div>
 </nav>
