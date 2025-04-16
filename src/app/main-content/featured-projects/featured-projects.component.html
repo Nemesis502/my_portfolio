@@ -174,6 +174,25 @@
             </div>
           </a>
         </div>
+        <div
+          (click)="nextProject(selectedProject.id)"
+          class="next-project-container-responsive">
+          <span class="span-with-Karla-100pc-400weight">
+            {{ "featured.next" | translate }}
+          </span>
+          <div class="arrow-outward-container">
+            <img
+              class="low-default"
+              src="./../../../assets/img/arrows_left_default.png"
+              alt=""
+            />
+            <img
+              class="high-hover"
+              src="./../../../assets/img/arrows_left_right.png"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
       <div class="preview-project">
         <div class="dialog-close-container">
@@ -197,11 +216,11 @@
         />
         <div
           (click)="nextProject(selectedProject.id)"
-          class="next-project-container"
+          class="next-project-container-desktop hidden"
         >
           <span class="span-with-Karla-100pc-400weight">
             {{ "featured.next" | translate }}
-            </span>
+          </span>
           <div class="arrow-outward-container">
             <img
               class="low-default"

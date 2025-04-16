@@ -1,0 +1,69 @@
+@import "./../../../styles.scss";
+
+.next-project-container-desktop {
+    // width: 520px;
+    display: none;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    // margin-top: 48px;
+
+    >span {
+        color: $light_green;
+    }
+
+    .low-default {
+        opacity: 1;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    .high-hover {
+        opacity: 0;
+        transition: opacity 150ms ease-in-out;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        >span {
+            transition: color 10ms ease-out;
+            color: #FFFFFF;
+        }
+    }
+
+    &:hover .arrow-outward-container .low-default {
+        animation: fadeOut 50ms ease-in forwards;
+    }
+
+    &:hover .arrow-outward-container .high-hover {
+        animation: fadeIn 50ms ease-in forwards;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

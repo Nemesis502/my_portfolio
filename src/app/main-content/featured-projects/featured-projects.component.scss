@@ -6,29 +6,45 @@
 }
 
 .featured-projects-section {
-    width: 1440px;
-    max-width: 1440px;
-    height: 581px;
-    margin-bottom: 144px;
+    margin-bottom: 100px;
 }
 
 .featured-projects-container {
-    padding: 0 0 0 96px;
+    // padding: 0 0 0 96px;
+    width: 280px;
 }
 
 .headline-container {
-    width: 708px;
-    height: 122px;
+    // width: 708px;
+    // height: 122px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px; // only for mobile
+    // gap: 20px; 
 
+    >h1,
+    >h2 {
+        margin: 0;
+    }
+
+    >h1 {
+        font-size: 56px;
+    }
+
+    >h2 {
+        font-size: 18px;
+    }
 }
 
 .projects-descriptions {
-    padding: 41px 0 41px 0;
-    height: 44px;
-    width: 456px;
+    margin: 32px 0 40px 0;
+
+    // padding: 41px 0 41px 0;
+    // height: 44px;
+    // width: 456px;
+    >span {
+        font-size: 16px; // only for mobile
+    }
 }
 
 .featured-projects-content {
@@ -38,20 +54,23 @@
 }
 
 .featured-projects-divs {
-    width: 880px;
-    height: 327px;
+    width: 280px;
+    // height: 327px;
     border-width: 1px 0px 1px 0px;
     border-style: solid;
     border-color: $light_green;
 }
 
 .single-project {
-    height: 109px;
-    width: 880px;
+    // height: 109px;
+    // width: 880px;
     display: flex;
-    align-items: center;
+    align-items: flex-start; // only for mobile
+    // align-items: center;
+    flex-direction: column; // only for mobile
     justify-content: space-between;
     position: relative;
+    gap: 10px;
 
     &:hover {
         cursor: pointer;
@@ -63,10 +82,12 @@
     }
 
     >h3 {
-        padding: 0 0 0 32px;
+        padding: 32px 0 0 0; // only for mobile                 
+        // padding: 0 0 0 32px;
         margin: 0;
         line-height: 120%;
         font-size: 24px;
+        font-family: 'Fira Code';
         color: #FFFFFF;
         display: flex;
         flex-direction: row;
@@ -78,7 +99,9 @@
     }
 
     >span {
-        padding: 0 32px 0 0;
+        font-size: 16px;
+        padding: 0 0 32px 0; // only for mobile
+        // padding: 0 32px 0 0;
     }
 
     @keyframes backcolor {
@@ -158,11 +181,13 @@
 .featured-projects-dialog {
     display: flex;
     align-items: center;
-    flex-direction: row;
+    // flex-direction: row;
+    flex-direction: column-reverse;
     justify-content: space-between;
-    gap: 88px;
-    width: 1248px;
-    height: 656px;
+    gap: 32px; // only for mobile
+    // gap: 88px;
+    width: 280px;
+    // height: 656px;
     border-radius: 30px;
     border: $light_green, solid, 1px;
     background: linear-gradient(55.22deg, #1C1C1C 36.26%, #08463B 93.28%);
@@ -170,25 +195,30 @@
 }
 
 .left-details-container {
-    width: 480px;
-    height: 560px;
+    // width: 480px;
+    width: 100%;
+    // height: 560px;
     gap: 40px;
-    padding: 0 0 0 80px;
+    // padding: 0 0 0 80px;
     justify-content: center;
 }
 
 .title {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 8px; // only for mobile
+    // gap: 24px;
+    padding: 0 12px 0 12px; // only for mobile
 
     >h1 {
-        font-size: 128px;
+        font-size: 72px; // only for mobile
+        // font-size: 128px;
         letter-spacing: -2px;
         margin: 0;
     }
 
     >h2 {
+        font-size: 56px;
         line-height: 80%;
         color: #FFFFFF;
         margin: 0;
@@ -201,6 +231,7 @@
 
 .intro {
     gap: 20px;
+    padding: 0 12px 0 12px;
 
     >h3 {
         margin: 0;
@@ -213,8 +244,10 @@
 .technologies-container {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 16px;
-    width: 480px;
+    padding: 0 12px 0 12px; // only for mobile
+    // width: 480px;
 }
 
 .technologies-description {
@@ -232,22 +265,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 80px 0 0;
-    height: 600px;
-    width: 520px;
+    gap: 31px;
+    // padding: 0 80px 0 0;
+    // height: 600px;
+    // width: 520px;
+    width: 100%;
 
     >img {
-        height: 370px;
-        width: 520px;
+        height: 270px; // only for mobile
+        width: 216px; // only for mobile
+        // height: 370px;
+        // width: 520px;
         border-radius: 30px;
     }
 }
 
 .dialog-close-container {
-    width: 520px;
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 39px;
+    margin: 16px 16px 0 0;
+    // margin-bottom: 39px;
 
     .close-content {
         position: relative;
@@ -284,6 +322,7 @@
     display: flex;
     flex-direction: row;
     gap: 32px;
+    padding: 0 12px 0 12px;
 }
 
 .link-buttons {
@@ -297,7 +336,7 @@
     border-radius: 100px;
     transition: border-color 300ms ease-out;
     text-decoration: none;
-    
+
     >div {
         display: flex;
         flex-direction: row;
@@ -343,13 +382,14 @@
     }
 }
 
-.next-project-container {
-    width: 520px;
+.next-project-container-responsive {
+    // width: 520px;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: flex-end;
-    margin-top: 48px;
+    // margin-top: 48px;
+    padding: 0 16px 30px 0;
 
     >span {
         color: $light_green;
@@ -411,6 +451,10 @@
     }
 }
 
-.disabled{
+.hidden{
+    display: none;
+}
+
+.disabled {
     cursor: not-allowed !important; // delete when DaBubble uploaded is
 }

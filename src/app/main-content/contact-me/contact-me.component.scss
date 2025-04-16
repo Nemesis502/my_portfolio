@@ -6,8 +6,9 @@
 }
 
 .contact-me-section {
-    width: 1248px;
-    height: 541px;
+    // width: 1248px;
+    // height: 541px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     gap: 64px;
@@ -15,15 +16,16 @@
 
     >div {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        // flex-direction: row; // only for mobile
         justify-content: space-between;
     }
 }
 
 .lets-work-container {
     gap: 40px;
-    width: 568px;
-    height: 337px;
+    // width: 568px;
+    // height: 337px;
 }
 
 .intro-container {
@@ -42,8 +44,8 @@
 }
 
 .problem-container {
-    width: 568px;
-    height: 121px;
+    // width: 568px;
+    // height: 121px;
     gap: 16px;
     border-radius: 30px;
     backdrop-filter: blur(4px);
@@ -70,7 +72,7 @@
 }
 
 .contact-formular-container {
-    width: 616px;
+    // width: 616px;
     height: 550px;
     gap: 40px;
 }
@@ -88,13 +90,12 @@
 }
 
 .input-container {
-    width: 352px;
+    // width: 352px;
     height: 67px;
     gap: 16px;
 
-
     >label {
-        width: 375px;
+        // width: 375px;
         font-weight: 500;
         font-size: 24px;
         line-height: 120%;
@@ -137,9 +138,9 @@ input.ng-invalid.ng-touched::placeholder {
 }
 
 .name-form {
-    width: 584px;
+    // width: 584px;
     gap: 10px;
-    padding: 32px 0 32px 32px;
+    // padding: 32px 0 32px 32px;
     border-bottom: 1px solid #3DCFB680;
     transition: color 300ms ease-out, border-color 300ms ease-out;
 
@@ -178,7 +179,7 @@ input:focus {
 .policy-and-suibmit-container {
     display: flex;
     justify-content: center;
-    width: 616px;
+    // width: 616px;
     gap: 16px;
 }
 
@@ -364,7 +365,7 @@ input:focus {
 }
 
 .fadeout {
-    animation: fadeOut 500ms ease-in forwards ;
+    animation: fadeOut 500ms ease-in forwards;
 }
 
 @keyframes fadeIn {

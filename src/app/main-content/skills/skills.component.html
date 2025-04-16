@@ -31,7 +31,7 @@
     @for (skill of skillSet; track skill.name) {
     <div class="single-skill">
       <div
-        *ngIf="skill.name === 'GrowthMindset'"
+        *ngIf="skill.name === 'Growth Mindset'"
         class="visibility tooltip-div"
       >
         <div class="tooltip-content">
@@ -52,7 +52,7 @@
           </div>
         </div>
       </div>
-      <img src="./../../../assets/img/{{ skill.name }}.png" alt="" />
+      <img src="./../../../assets/img/{{ skill.imgName }}.png" alt="" />
       <span class="span-with-Karla-80pc">{{ skill.name }}</span>
     </div>
     }

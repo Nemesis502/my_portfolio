@@ -21,14 +21,15 @@ interface Project {
     CommonModule, TranslatePipe
   ],
   templateUrl: './featured-projects.component.html',
-  styleUrl: './featured-projects.component.scss'
+  styleUrls: ['./featured-projects.component.scss', './featured-projects.component-media-query.scss']
 })
 export class FeaturedProjectsComponent {
   selectedProject: Project | null = null;
   dialogVisible = false;
 
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2) {
+  }
 
   projects: Project[] = [
     {
@@ -91,7 +92,7 @@ export class FeaturedProjectsComponent {
 
   nextProject(selectId: number) {
     selectId++;
-    if (selectId > 3) {
+    if (selectId > 2) {
       selectId = 0
     } else {
       this.selectedProject = this.projects.find(project => project.id === selectId) || null;

@@ -27,37 +27,48 @@ export class SkillsComponent {
 
   skillSet = [
     {
+      imgName: "HTML",
       name: "HTML",
     },
     {
+      imgName: "CSS",
       name: "CSS",
     },
     {
+      imgName: "JavaScript",
       name: "JavaScript",
     },
     {
+      imgName: "Material_Design",
       name: "Material Design",
     },
     {
+      imgName: "TypeScript",
       name: "TypeScript",
     },
     {
+      imgName: "Angular",
       name: "Angular",
     },
     {
+      imgName: "Firebase",
       name: "Firebase",
     },
     {
+      imgName: "Git",
       name: "Git",
     },
     {
+      imgName: "Rest-Api",
       name: "Rest-Api",
     },
     {
+      imgName: "Scrum",
       name: "Scrum",
     },
     {
-      name: "GrowthMindset",
+      imgName: "Growth_Mindset",
+      name: "Growth Mindset",
     }
   ]
 

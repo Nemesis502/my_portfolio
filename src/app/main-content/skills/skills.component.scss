@@ -1,30 +1,36 @@
 @import "./../../../styles.scss";
 
 .skills-container {
-    width: 1440px;
     max-width: 1440px;
-    height: 695px;
     background: radial-gradient(22.43% 43.85% at 1.22% 52.45%, rgba(8, 70, 59, 0.3) 0%, #1C1C1C 100%);
     display: flex;
-    flex-direction: row;
-    gap: 96px;
+    // flex-direction: row;
+    flex-direction: column; // only for mobile
+    align-items: center; // only for mobile
+    // gap: 96px;
+    gap: 40px;
+    margin-bottom: 100px; // only for mobile
 }
 
 .skill-set-container {
-    width: 520px;
-    height: 551px;
+    width: 280px;
     display: flex;
-    gap: 20px;
-    padding: 0 0px 0px 96px;
+    gap: 15px; // only for mobile
+    // gap: 20px;
+    // padding: 0 0px 0px 96px;
     flex-direction: column;
+
+    >h2 {
+        font-size: 18px;
+        margin: 0;
+    }
 }
 
 .skills-descriptions-container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    width: 520px;
-    height: 503px;
+    gap: 32px; // only for mobile
+    // gap: 40px;
     border: 1px solid $light_green;
     border-radius: 30px;
     background-color: #3DCFB61A;
@@ -32,11 +38,14 @@
     >h1 {
         font-family: 'Fira Code';
         font-weight: 700;
-        font-size: 64px;
-        line-height: 100%;
+        font-size: 44px;
+        line-height: 80%;
+        // font-size: 64px;
+        // line-height: 100%;
         letter-spacing: -3px;
         color: $light_green;
-        padding: 32px 32px 0 32px;
+        padding: 24px 32px 0 32px;
+        // padding: 32px 32px 0 32px;
         margin: 0;
     }
 }
@@ -45,36 +54,42 @@
     padding: 0 32px 0 32px;
     display: flex;
     flex-direction: column;
-    gap: 32px
+    gap: 24px; // only for mobile
+    // gap: 32px
 }
 
 .skills-descriptions {
     >span {
+        font-size: 16px;
         color: #FFFFFF;
     }
 }
 
 .another-skill-container {
-    height: 83px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    // gap: 16px;
 
     >h2 {
         color: #FFFFFF;
         line-height: 120%;
         margin: 0;
+        font-size: 20px;
 
         >span {
             color: $light_green;
+            font-size: 20px;
         }
     }
 
-
+    >span{
+        font-size: 16px;
+    }
 }
 
 .contact-button {
-    padding: 0 0 32px 32px;
+    padding: 0 0 24px 32px;
 
     >button {
         font-family: "Karla";
@@ -130,10 +145,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 72px;
-    width: 632px;
-    height: 428px;
-    padding: 48px 96px 0 0;
+    gap: 16px;
+    width: 280px; // only for mobile
+    // gap: 72px;
+    // width: 632px;
+    // height: 428px;
+    // padding: 48px 96px 0 0;
     position: relative;
 }
 
@@ -141,9 +158,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
     gap: 8px;
-    height: 116px;
-    width: 104px;
+    height: 110px;
+    width: 81px;
+    // height: 116px;
+    // width: 104px;
 
     >img {
         width: 64px;
@@ -173,11 +193,14 @@
     }
 
     >span {
+        font-family: 'Fira Code';
         color: #FFFFFF;
-        letter-spacing: 0;
         text-align: center;
+        font-size: 16px;
     }
 }
+
+
 
 .visibility {
     opacity: 0;
@@ -205,8 +228,8 @@
 .tooltip-div {
     opacity: 0;
     position: absolute;
-    top: 297px;
-    left: 340px;
+    top: -127px;
+    left: -17px;
     width: 188px;
     height: 129px;
     background-color: #FFFFFF;
