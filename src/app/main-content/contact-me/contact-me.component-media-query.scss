@@ -1,0 +1,12 @@
+@import "./../../../styles.scss";
+
+.ngForm-valid-resposive {
+    transition: color 300ms ease-out, border-color 300ms ease-out;
+    border-color: $light_green !important;
+
+    >span {
+        display: inline-block;
+        color: $light_green;
+        animation: slideTextSkill 2500ms linear forwards infinite;
+    }
+}

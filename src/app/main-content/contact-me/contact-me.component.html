@@ -156,7 +156,8 @@
             </p>
           </div>
           <button
-            [ngClass]="{ 'ngForm-valid': checkboxField.valid }"
+            [ngClass]="{ 'ngForm-valid': checkboxField.valid && !isTouchDevice }"
+            [ngClass]="{ 'ngForm-valid-resposive': checkboxField.valid && isTouchDevice }"
             class="span-with-Karla-100pc-400weight"
           >
             <span>{{ "contact.hello" | translate }}</span>

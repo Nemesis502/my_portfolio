@@ -4,7 +4,7 @@
     height: 100vh;
     max-width: 1440px;
     width: 100%;
-    background-image: linear-gradient(to top right, $medium_black 45%, $dark_green 100%);
+    overflow-x: hidden;
 }
 
 .landing-content {

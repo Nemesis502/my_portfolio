@@ -11,7 +11,7 @@
     width: 280px;
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    align-items: center;
     margin-bottom: 144px;
 
     >div {
@@ -19,6 +19,7 @@
         flex-direction: column;
         // flex-direction: row; // only for mobile
         justify-content: space-between;
+        gap: 64px;
     }
 }
 
@@ -35,6 +36,10 @@
         font-weight: 500;
         font-size: 24px;
         line-height: 100%;
+    }
+
+    >h1 {
+        font-size: 50px;
     }
 
     >h1,
@@ -91,13 +96,15 @@
 
 .input-container {
     // width: 352px;
-    height: 67px;
+    // height: 67px;
     gap: 16px;
+    padding: 32px 16px 32px 16px;
 
     >label {
         // width: 375px;
         font-weight: 500;
-        font-size: 24px;
+        // font-size: 24px;
+        font-size: 20px;
         line-height: 120%;
         letter-spacing: 0;
         margin: 0;
@@ -159,7 +166,8 @@ input.ng-invalid.ng-touched::placeholder {
 ::placeholder {
     font-family: 'Karla';
     font-weight: 400;
-    font-size: 18px;
+    // font-size: 18px;
+    font-size: 16px;
     line-height: 120%;
     letter-spacing: 0;
     color: #FFFFFFCC;
@@ -223,7 +231,6 @@ input:focus {
         }
 
     }
-
 }
 
 @keyframes slideTextSkill {
@@ -286,7 +293,7 @@ input:focus {
             line-height: 120%;
             letter-spacing: -3px;
             text-decoration: none;
-            padding: 5px 4px 0px 4px;
+            padding: 0px 4px 0px 4px;
 
             &:hover {
                 color: #FFFFFF;
