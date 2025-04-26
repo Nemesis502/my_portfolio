@@ -5,22 +5,19 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column; // only for mobile
-    align-items: center; // only for mobile
-    margin-bottom: 100px; // only for mobile
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
 .about-me-img {
     background-image: url('./../../../assets/img/me-portfolio.jpg');
     width: 300px;
     height: 300px;
-    // width: 568px;
-    // height: 568px;
     background-position: center;
     background-size: cover;
     border-radius: 16px;
     position: relative;
-    // margin-right: 96px;
 
     >img {
         width: 300px;
@@ -36,10 +33,19 @@
     }
 }
 
+.backgroundimg-animation {
+    animation: backgroundimg 250ms ease-in forwards;
+}
+
 @keyframes backgroundimg {
     0% {
         left: 0;
         top: 0;
+    }
+
+    50% {
+        left: -3, 5px;
+        top: -7, 5px;
     }
 
     100% {
@@ -55,20 +61,17 @@
 
 .about-me-content {
     width: 300px;
-    // width: 568px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 20px;
     margin: 40px 0 0px 0;
-    // margin: 98px 0 22px 0;
 
     >h2 {
         color: $light_green;
         font-family: 'Karla';
         font-weight: 500;
         font-size: 18px;
-        // font-size: 24px;
         line-height: 100%;
         letter-spacing: 0;
         margin: 0;
@@ -88,14 +91,13 @@
         line-height: 80%;
         letter-spacing: -3px;
         padding: 27px 32px 0 32px;
-        // padding: 32px 64px 0 32px;
+
         margin: 0;
     }
 }
 
 .me-content {
     padding: 32px 32px 27px 32px;
-    // padding: 40px 32px 32px 32px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -134,5 +136,49 @@
             color: #FFFFFF;
         }
 
+    }
+}
+
+@media only screen and (min-width: 925px) {
+    .about-me-container {
+        flex-direction: row;
+        align-items: normal;
+        gap: 96px;
+        margin-bottom: 144px
+    }
+
+    .about-me-img {
+        width: 368px;
+        height: 368px;
+    }
+
+    .about-me-content {
+        width: 430px;
+        margin: 98px 0 22px 0;
+
+        >h2 {
+            font-size: 24px;
+        }
+    }
+
+    .about-me-div {
+        >h1 {
+            padding: 32px 64px 0 32px;
+        }
+    }
+
+    .me-content {
+        padding: 40px 32px 32px 32px;
+    }
+}
+
+@media only screen and (min-width: 1258px) {
+    .about-me-img {
+        width: 568px;
+        height: 568px;
+    }
+
+    .about-me-content {
+        width: 568px;
     }
 }

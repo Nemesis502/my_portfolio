@@ -37,12 +37,12 @@ export class NavbarComponent {
     this.defaultResponsiveLogo = !this.defaultResponsiveLogo;
   }
 
-  switchMenu(){
+  switchMenu() {
     this.menuIsClose = !this.menuIsClose;
     this.dialogVisible = !this.dialogVisible;
   }
-  
-  scrollToSection(id: string):void {
+
+  scrollToSection(id: string): void {
     this.viewportScroller.scrollToAnchor(id);
     this.menuIsClose = !this.menuIsClose;
     this.dialogVisible = !this.dialogVisible;

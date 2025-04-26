@@ -2,7 +2,6 @@
   <div class="title-container">
     <h3 class="firaCode-with-700Weight-64Px">
       {{ "references.title" | translate }}
-      
     </h3>
   </div>
   <div class="fade-shadow-container"></div>
@@ -20,47 +19,49 @@
         class="references-comment"
       >
         <div class="references">
+          <img *ngIf="references.id === 1" src="./../../../assets/img/quotes.png" alt=""/>
           <span class="span-with-Karla-100pc-400weight">
             {{ references.descriptionKey | translate }}
           </span>
           <div class="references-name">
             <div class="blank"></div>
             <span class="span-with-Karla-100pc-400weight">
-              {{ references.nameKey | translate }} - {{ references.rangKey | translate }}
+              {{ references.nameKey | translate }} -
+              {{ references.rangKey | translate }}
             </span>
           </div>
         </div>
       </div>
     </div>
-    <div class="navigator-container">
-      <div (click)="nextReferences('left')" class="left-arrow-container">
-        <img
-          class="default-arrows"
-          src="./../../../assets/img/Left_arrow.png"
-          alt=""
-        />
-        <img
-          class="hover-arrows"
-          src="./../../../assets/img/Left_hover.png"
-          alt=""
-        />
-      </div>
-      <p
-        *ngFor="let dot of [0, 1, 2]; let i = index"
-        [ngClass]="{ 'not-selected': i !== activeReferenceIndex }"
-      ></p>
-      <div (click)="nextReferences('right')" class="right-arrow-container">
-        <img
-          class="default-arrows"
-          src="./../../../assets/img/Right_arrow.png"
-          alt=""
-        />
-        <img
-          class="hover-arrows"
-          src="./../../../assets/img/Right_hover.png"
-          alt=""
-        />
-      </div>
+  </div>
+  <div class="navigator-container">
+    <div (click)="nextReferences('left')" class="left-arrow-container">
+      <img
+        class="default-arrows"
+        src="./../../../assets/img/Left_arrow.png"
+        alt=""
+      />
+      <img
+        class="hover-arrows"
+        src="./../../../assets/img/Left_hover.png"
+        alt=""
+      />
+    </div>
+    <p
+      *ngFor="let dot of [0, 1, 2]; let i = index"
+      [ngClass]="{ 'not-selected': i !== activeReferenceIndex }"
+    ></p>
+    <div (click)="nextReferences('right')" class="right-arrow-container">
+      <img
+        class="default-arrows"
+        src="./../../../assets/img/Right_arrow.png"
+        alt=""
+      />
+      <img
+        class="hover-arrows"
+        src="./../../../assets/img/Right_hover.png"
+        alt=""
+      />
     </div>
   </div>
 </section>

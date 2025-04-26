@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { loadZone } from 'zone.js/lib/zone';
+
 
 interface ReferencesComments {
   nameKey: string;
@@ -17,15 +17,23 @@ interface ReferencesComments {
   templateUrl: './references.component.html',
   styleUrl: './references.component.scss'
 })
-export class ReferencesComponent {
+export class ReferencesComponent implements OnInit {
   totalReferences: number = 3;
   activeReferenceIndex: number = 0;
   direction: string = "";
   animate: boolean = false;
+  isTouchDevice = false;
 
 
   constructor() {
   }
+
+  ngOnInit() {
+    this.isTouchDevice =
+      'ontouchstart' in window ||
+      navigator.maxTouchPoints > 0 ||
+      (navigator as any).msMaxTouchPoints > 0;
+  };
 
   firstReferencesComments: ReferencesComments[] = [
     {
@@ -110,18 +118,25 @@ export class ReferencesComponent {
 
   nextReferences(direction: string) {
     this.direction = direction;
-    this.animate = true;
-
-    setTimeout(() => {
-      if (direction === 'left') {
-        this.activeReferenceIndex =
-          (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
-      } else if (direction === 'right') {
-        this.activeReferenceIndex =
-          (this.activeReferenceIndex + 1) % this.totalReferences;
-      }
-      this.animate = false;
-    }, 500);
+    // this.animate = true;
+    if (direction === 'left') {
+      this.activeReferenceIndex =
+        (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
+    } else if (direction === 'right') {
+      this.activeReferenceIndex =
+        (this.activeReferenceIndex + 1) % this.totalReferences;
+    }
+    // this.animate = false;
+    // setTimeout(() => {
+    //   if (direction === 'left') {
+    //     this.activeReferenceIndex =
+    //       (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
+    //   } else if (direction === 'right') {
+    //     this.activeReferenceIndex =
+    //       (this.activeReferenceIndex + 1) % this.totalReferences;
+    //   }
+    //   this.animate = false;
+    // }, 500);
   }
 }
 

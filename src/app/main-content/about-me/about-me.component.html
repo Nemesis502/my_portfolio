@@ -1,34 +1,40 @@
 <section class="about-me-container">
-  <div class="about-me-img"(mouseleave)="staticAnimation()">
-    <img #animImg src="./../../../assets/img/Capa_me.png" [ngClass]="{'backgroundimg-final': animationPersisted}" alt="">
+  <div #aboutContainer class="about-me-img" (mouseleave)="staticAnimation()">
+    <img
+      #animImg
+      src="./../../../assets/img/Capa_me.png"
+      [ngClass]="{ 'backgroundimg-final': animationstatic }"
+      [ngClass]="{ 'backgroundimg-animation': animationPersisted && isTouchDevice }"
+      alt=""
+    />
   </div>
   <div class="about-me-content">
-    <h2>{{ 'about.I-me' | translate }}</h2>
+    <h2>{{ "about.I-me" | translate }}</h2>
     <div class="about-me-div">
-      <h1>{{ 'about.me' | translate }}</h1>
+      <h1>{{ "about.me" | translate }}</h1>
       <div class="me-content">
         <div class="me-span">
           <span class="span-with-Karla-100pc-400weight">
-            {{ 'about.intro' | translate }}
+            {{ "about.intro" | translate }}
           </span>
         </div>
         <div class="personality-container">
           <div class="personality-content">
             <img src="./../../../assets/img/location_on.png" alt="" />
             <span class="span-with-Karla-80pc">
-              {{ 'about.locate' | translate }}
+              {{ "about.locate" | translate }}
             </span>
           </div>
           <div class="personality-content">
             <img src="./../../../assets/img/cognition.png" alt="" />
             <span class="span-with-Karla-80pc">
-              {{ 'about.mindset' | translate }}
+              {{ "about.mindset" | translate }}
             </span>
           </div>
           <div class="personality-content">
             <img src="./../../../assets/img/new_releases.png" alt="" />
             <span class="span-with-Karla-80pc">
-              {{ 'about.ambitious' | translate }}
+              {{ "about.ambitious" | translate }}
             </span>
           </div>
         </div>
