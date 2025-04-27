@@ -149,7 +149,12 @@
 
     .about-me-img {
         width: 368px;
-        height: 368px;
+        height: 490px;
+
+        >img {
+            width: 368px;
+            height: 490px;
+        }
     }
 
     .about-me-content {
@@ -176,6 +181,11 @@
     .about-me-img {
         width: 568px;
         height: 568px;
+
+        >img {
+            width: 568px;
+            height: 568px;
+        }
     }
 
     .about-me-content {
