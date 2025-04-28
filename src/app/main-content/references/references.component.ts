@@ -15,7 +15,7 @@ interface ReferencesComments {
   standalone: true,
   imports: [CommonModule, TranslatePipe],
   templateUrl: './references.component.html',
-  styleUrl: './references.component.scss'
+  styleUrls: ['./references.component.scss', './references.component-media-query.scss']
 })
 export class ReferencesComponent implements OnInit {
   totalReferences: number = 3;
@@ -23,7 +23,6 @@ export class ReferencesComponent implements OnInit {
   direction: string = "";
   animate: boolean = false;
   isTouchDevice = false;
-
 
   constructor() {
   }

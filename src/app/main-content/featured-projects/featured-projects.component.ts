@@ -21,7 +21,7 @@ interface Project {
     CommonModule, TranslatePipe
   ],
   templateUrl: './featured-projects.component.html',
-  styleUrls: ['./featured-projects.component.scss', './featured-projects.component-media-query.scss']
+  styleUrls: ['./featured-projects.component.scss', './featured-projects-single-details.component.scss', './featured-projects.component-media-query.scss']
 })
 export class FeaturedProjectsComponent {
   selectedProject: Project | null = null;
