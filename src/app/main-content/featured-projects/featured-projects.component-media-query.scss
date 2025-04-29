@@ -2,11 +2,14 @@
 
 @media only screen and (min-width: 925px) {
     .featured-projects-section {
-        width: -webkit-fill-available;
-        margin: 0 96px 100px 96px;
+        width: 100%;
+        margin: 0 0 100px 0;
+        display: flex;
+        justify-content: flex-start;
     }
 
     .featured-projects-container {
+        // margin: 0 0 0 96px;
         width: 580px;
     }
 
@@ -29,7 +32,7 @@
     }
 
     .projects-descriptions {
-        width: 456px;
+        // width: 456px;
 
         >span {
             font-size: 18px;
@@ -37,7 +40,7 @@
     }
 
     .headline-container {
-        width: max-content;
+        // width: max-content;
         gap: 20px;
     }
 
@@ -145,7 +148,7 @@
     }
 }
 
-@media only screen and (min-width: 1258px) {
+@media only screen and (min-width: 1270px) {
     .featured-projects-container {
         width: 750px;
     }
