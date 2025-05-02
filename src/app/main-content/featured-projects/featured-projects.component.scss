@@ -66,10 +66,9 @@
     &:hover {
         cursor: pointer;
         animation: backcolor 150ms ease-in forwards;
-    }
-
-    &:hover .preview-divs {
-        animation: opacityshow 150ms ease-in forwards;
+        .preview-divs {
+            animation: opacityshow 150ms ease-in forwards;
+        }
     }
 
     >h3 {
@@ -106,6 +105,10 @@
     }
 }
 
+.single-project:hover h3>img {
+    animation: opacityshow 150ms ease-in forwards;
+}
+
 .soon-title {
     color: #a29a9a !important;
 }
@@ -117,10 +120,6 @@
 
 .border-bottom {
     border-bottom: 1px solid $light_green;
-}
-
-.single-project:hover h3>img {
-    animation: opacityshow 150ms ease-in forwards;
 }
 
 .special-span {
