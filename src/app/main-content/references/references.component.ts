@@ -116,8 +116,15 @@ export class ReferencesComponent implements OnInit {
   }
 
   nextReferences(direction: string) {
+    if (this.isTouchDevice) {
+      this.mobileAnimation(direction)
+    } else {
+      this.desktopAnimation(direction)
+    }
+  }
+
+  mobileAnimation(direction: string) {
     this.direction = direction;
-    // this.animate = true;
     if (direction === 'left') {
       this.activeReferenceIndex =
         (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
@@ -125,17 +132,20 @@ export class ReferencesComponent implements OnInit {
       this.activeReferenceIndex =
         (this.activeReferenceIndex + 1) % this.totalReferences;
     }
-    // this.animate = false;
-    // setTimeout(() => {
-    //   if (direction === 'left') {
-    //     this.activeReferenceIndex =
-    //       (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
-    //   } else if (direction === 'right') {
-    //     this.activeReferenceIndex =
-    //       (this.activeReferenceIndex + 1) % this.totalReferences;
-    //   }
-    //   this.animate = false;
-    // }, 500);
+  }
+
+  desktopAnimation(direction: string) {
+    this.direction = direction;
+    this.animate = true;
+    setTimeout(() => {
+      if (direction === 'left') {
+        this.activeReferenceIndex =
+          (this.activeReferenceIndex - 1 + this.totalReferences) % this.totalReferences;
+      } else if (direction === 'right') {
+        this.activeReferenceIndex =
+          (this.activeReferenceIndex + 1) % this.totalReferences;
+      }
+      this.animate = false;
+    }, 500);
   }
 }
-

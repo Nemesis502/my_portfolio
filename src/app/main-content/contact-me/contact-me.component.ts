@@ -56,11 +56,12 @@ export class ContactMeComponent implements OnInit {
   }
 
   checkButtonPolicy() {
-    if (this.buttonChecked == false) {
-      this.buttonChecked = true
-    } else {
-      this.buttonChecked = false
-    }
+    // if (this.buttonChecked == false) {
+    //   this.buttonChecked = true
+    // } else {
+    //   this.buttonChecked = false
+    // }
+    this.buttonChecked = !this.buttonChecked;
   }
 
   checkFormular(ngForm: NgForm) {

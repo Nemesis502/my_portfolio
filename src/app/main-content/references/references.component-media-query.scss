@@ -14,11 +14,12 @@
     }
 
     .fade-shadow-container {
-        height: 362px;
+        height: 274px;
     }
 
     .references-container {
-        height: 362px;
+        height: 274px;
+        margin-bottom: 48px;
     }
 
     .references-content {
@@ -40,6 +41,7 @@
 
     .references-name {
         width: 552px;
+
         >span {
             width: 250px;
             font-size: 18px;
@@ -114,5 +116,71 @@
 
     100% {
         right: -697px;
+    }
+}
+
+@keyframes penultimate-right {
+    0% {
+        right: 0px;
+
+    }
+
+    100% {
+        right: -1395px;
+
+    }
+}
+
+@keyframes highlight-left {
+    0% {
+        right: 0px;
+    }
+
+    50% {
+        right: -348px;
+    }
+
+    100% {
+        right: -697px;
+    }
+}
+
+@keyframes highlight-right {
+    0% {
+        left: 0px;
+    }
+
+    50% {
+        left: -348px;
+    }
+
+    100% {
+        left: -697px;
+    }
+}
+
+@keyframes next-left {
+    0% {
+        left: 0px;
+
+    }
+
+    100% {
+        left: -1395px;
+
+    }
+}
+
+@keyframes next-right {
+    0% {
+        left: 0px;
+    }
+
+    50% {
+        left: -348px;
+    }
+
+    100% {
+        left: -697px;
     }
 }

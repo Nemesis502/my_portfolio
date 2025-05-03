@@ -55,6 +55,10 @@
     border-color: $light_green;
 }
 
+.single-project-container{
+    position: relative;
+}
+
 .single-project {
     display: flex;
     align-items: flex-start;
@@ -66,9 +70,6 @@
     &:hover {
         cursor: pointer;
         animation: backcolor 150ms ease-in forwards;
-        .preview-divs {
-            animation: opacityshow 150ms ease-in forwards;
-        }
     }
 
     >h3 {
@@ -103,6 +104,10 @@
             opacity: 1;
         }
     }
+}
+
+.preview-divs-animation {
+    animation: opacityshow 150ms ease-in forwards;
 }
 
 .single-project:hover h3>img {
@@ -148,13 +153,13 @@
 }
 
 .preview-img {
-    width: 295px;
+    width: 195px;
     height: 192px;
     border-radius: 16px;
 }
 
 .background-capa {
-    width: 292px;
+    width: 195px;
     height: 192px;
     position: absolute;
     top: 18px;

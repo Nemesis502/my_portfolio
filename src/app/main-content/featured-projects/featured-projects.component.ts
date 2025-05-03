@@ -26,6 +26,8 @@ interface Project {
 export class FeaturedProjectsComponent {
   selectedProject: Project | null = null;
   dialogVisible = false;
+  animation = false;
+  projectNumber!: number;
 
 
   constructor(private renderer: Renderer2) {
@@ -73,6 +75,15 @@ export class FeaturedProjectsComponent {
       linkLive: "",
     }
   ];
+
+  showPreviewProjects(projectNumber: number) {
+    if (projectNumber == 4) {
+      return
+    } else {
+      this.animation = !this.animation;
+      this.projectNumber = projectNumber;
+    }
+  }
 
   showProjects(selectId: number) {
     if (selectId == 4) {

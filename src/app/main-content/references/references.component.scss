@@ -130,8 +130,6 @@
         display: flex;
         align-content: center;
         flex-wrap: wrap;
-        opacity: 0;
-        animation: fadeIn 500ms ease-in forwards;
     }
 
     >img {
@@ -150,7 +148,6 @@
 
 
 .references-name {
-    
     height: 22px;
     display: flex;
     flex-direction: row;
@@ -160,9 +157,12 @@
 
     >span {
         font-size: 12px;
-        opacity: 0;
-        animation: fadeIn 500ms ease-in forwards;
     }
+}
+
+.span-animation {
+    opacity: 0;
+    animation: fadeIn 500ms ease-in forwards;
 }
 
 .blank {
@@ -226,69 +226,3 @@
         right: -697px;
     }
 }
-
-// @keyframes penultimate-right {
-//     0% {
-//         right: 0px;
-
-//     }
-
-//     100% {
-//         right: -1395px;
-
-//     }
-// }
-
-// @keyframes highlight-left {
-//     0% {
-//         right: 0px;
-//     }
-
-//     50% {
-//         right: -348px;
-//     }
-
-//     100% {
-//         right: -697px;
-//     }
-// }
-
-// @keyframes highlight-right {
-//     0% {
-//         left: 0px;
-//     }
-
-//     50% {
-//         left: -348px;
-//     }
-
-//     100% {
-//         left: -697px;
-//     }
-// }
-
-// @keyframes next-left {
-//     0% {
-//         left: 0px;
-
-//     }
-
-//     100% {
-//         left: -1395px;
-
-//     }
-// }
-
-// @keyframes next-right {
-//     0% {
-//         left: 0px;
-//     }
-
-//     50% {
-//         left: -348px;
-//     }
-
-//     100% {
-//         left: -697px;
-//     }
-// }

@@ -19,13 +19,23 @@
         class="references-comment"
       >
         <div class="references">
-          <img *ngIf="references.id === 1" src="./../../../assets/img/quotes.png" alt=""/>
-          <span class="span-with-Karla-100pc-400weight">
+          <img
+            *ngIf="references.id === 1"
+            src="./../../../assets/img/quotes.png"
+            alt=""
+          />
+          <span
+            [ngClass]="{ 'span-animation': isTouchDevice }"
+            class="span-with-Karla-100pc-400weight"
+          >
             {{ references.descriptionKey | translate }}
           </span>
           <div class="references-name">
             <div class="blank"></div>
-            <span class="span-with-Karla-100pc-400weight">
+            <span
+              [ngClass]="{ 'span-animation': isTouchDevice }"
+              class="span-with-Karla-100pc-400weight"
+            >
               {{ references.nameKey | translate }} -
               {{ references.rangKey | translate }}
             </span>

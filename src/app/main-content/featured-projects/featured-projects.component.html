@@ -13,19 +13,29 @@
     </div>
     <div class="featured-projects-content">
       <div class="featured-projects-divs">
-        <div class="single-project border-bottom" (click)="showProjects(1)">
-          <h3 class="span-with-Karla-100pc-700weight">
-            Join
-            <img src="./../../../assets/img/arrow_outward_white.png" alt="" />
-          </h3>
-          <span class="span-with-Karla-100pc-400weight"
-            >HMTL <span class="special-span">|</span> CSS
-            <span class="special-span">|</span>
-            JavaScript
-            <span class="special-span">|</span>
-            Firebase
-          </span>
-          <div class="preview-divs top">
+        <div class="single-project-container border-bottom">
+          <div (mouseenter)="showPreviewProjects(1)"
+              (mouseleave)="showPreviewProjects(1)"
+             (click)="showProjects(1)"
+            class="single-project">
+            <h3 class="span-with-Karla-100pc-700weight">
+              Join
+              <img src="./../../../assets/img/arrow_outward_white.png" alt="" />
+            </h3>
+            <span class="span-with-Karla-100pc-400weight"
+              >HMTL <span class="special-span">|</span> CSS
+              <span class="special-span">|</span>
+              JavaScript
+              <span class="special-span">|</span>
+              Firebase
+            </span>
+          </div>
+          <div
+            [ngClass]="{
+              'preview-divs-animation': animation && projectNumber == 1
+            }"
+            class="preview-divs top"
+          >
             <img
               class="preview-img"
               src="./../../../assets/img/Join.png"
@@ -39,43 +49,61 @@
           </div>
         </div>
 
-        <div class="single-project border-bottom" (click)="showProjects(2)">
-          <h3 class="span-with-Karla-100pc-700weight">
-            EL Pollo Loco
-            <img src="./../../../assets/img/arrow_outward_white.png" alt="" />
-          </h3>
-          <span class="span-with-Karla-100pc-400weight"
-            >HMTL <span class="special-span">|</span> CSS
-            <span class="special-span">|</span>
-            JavaScript
-          </span>
-          <div class="preview-divs">
+        <div class="single-project-container border-bottom">
+          <div (mouseenter)="showPreviewProjects(2)"
+              (mouseleave)="showPreviewProjects(2)"
+             (click)="showProjects(2)"
+            class="single-project">
+            <h3 class="span-with-Karla-100pc-700weight">
+              EL Pollo Loco
+              <img src="./../../../assets/img/arrow_outward_white.png" alt="" />
+            </h3>
+            <span class="span-with-Karla-100pc-400weight"
+              >HMTL <span class="special-span">|</span> CSS
+              <span class="special-span">|</span>
+              JavaScript
+            </span>
+          </div>
+          <div
+            [ngClass]="{
+              'preview-divs-animation': animation && projectNumber == 2
+            }" class="preview-divs top">
             <img
               class="preview-img"
               src="./../../../assets/img/EL_Pollo_Loco.png"
-              alt=""
-            />
+              alt=""/>
             <img
               class="background-capa"
               src="./../../../assets/img/Capa_1.png"
-              alt=""
-            />
+              alt=""/>
           </div>
         </div>
 
-        <div class="single-project disabled" (click)="showProjects(4)">
-          <h3 class="span-with-Karla-100pc-700weight soon-title">
-            DA Bubble<span class="soon">{{ "featured.soon" | translate }}</span>
-            <img src="./../../../assets/img/arrow_outward_white.png" alt="" />
-          </h3>
-          <span class="span-with-Karla-100pc-400weight"
-            >Angular
-            <span class="special-span">|</span>
-            Firebase
-            <span class="special-span">|</span>
-            TypeScript
-          </span>
-          <div class="preview-divs bottom">
+        <div class="single-project-container">
+          <div
+            (mouseenter)="showPreviewProjects(4)"
+            (mouseleave)="showPreviewProjects(4)"
+            (click)="showProjects(4)"
+            class="single-project disabled"
+          >
+            <h3 class="span-with-Karla-100pc-700weight soon-title">
+              DA Bubble<span class="soon">{{
+                "featured.soon" | translate
+              }}</span>
+              <img class="hidden" src="./../../../assets/img/arrow_outward_white.png" alt="" />
+            </h3>
+            <span class="span-with-Karla-100pc-400weight"
+              >Angular
+              <span class="special-span">|</span>
+              Firebase
+              <span class="special-span">|</span>
+              TypeScript
+            </span>
+          </div>
+          <div
+            [ngClass]="{
+              'preview-divs-animation': animation && projectNumber == 4
+            }" class="preview-divs bottom">
             <img
               class="preview-img"
               src="./../../../assets/img/DABubble.png"
@@ -176,7 +204,8 @@
         </div>
         <div
           (click)="nextProject(selectedProject.id)"
-          class="next-project-container-responsive">
+          class="next-project-container-responsive"
+        >
           <span class="span-with-Karla-100pc-400weight">
             {{ "featured.next" | translate }}
           </span>
