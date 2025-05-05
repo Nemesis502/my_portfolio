@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output, Renderer2 } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { PopUpMessageComponent } from "./pop-up-message/pop-up-message.component";
-import { timeout } from 'rxjs';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
@@ -22,6 +21,8 @@ export class ContactMeComponent implements OnInit {
   animate = false;
   isTouchDevice = false;
   http = inject(HttpClient);
+
+  constructor(private renderer: Renderer2) { }
 
   contactData = {
     name: "",
@@ -47,20 +48,24 @@ export class ContactMeComponent implements OnInit {
       (navigator as any).msMaxTouchPoints > 0;
   };
 
+  setOverflow(IsFormularSended: boolean) {
+    if (IsFormularSended) {
+      this.renderer.addClass(document.body, 'overflow_hidden');
+    } else {
+      this.renderer.removeClass(document.body, 'overflow_hidden');
+    }
+  }
+
   logCloseDialog(status: boolean) {
     this.animate = true;
     setTimeout(() => {
       this.sendFormular = status
+      this.setOverflow(this.sendFormular)
       this.animate = false;
     }, 500);
   }
 
   checkButtonPolicy() {
-    // if (this.buttonChecked == false) {
-    //   this.buttonChecked = true
-    // } else {
-    //   this.buttonChecked = false
-    // }
     this.buttonChecked = !this.buttonChecked;
   }
 
@@ -80,7 +85,7 @@ export class ContactMeComponent implements OnInit {
             error: (error) => {
               console.error(error);
             },
-            complete: () => this.sendFormular = true,
+            complete: () => { this.sendFormular = true; this.setOverflow(this.sendFormular) },
           });
       } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
         ngForm.resetForm();

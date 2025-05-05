@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, EventEmitter, Output, output } from '@angular/core';
+import { Component, EventEmitter, Output, output, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe, TranslateDirective, TranslateService } from "@ngx-translate/core";
 
@@ -23,11 +23,14 @@ export class NavbarComponent {
   menuIsClose = true;
   dialogVisible = false;
 
-  constructor(private translate: TranslateService, private viewportScroller: ViewportScroller) {
+  constructor(private translate: TranslateService,
+    private viewportScroller: ViewportScroller,
+    private renderer: Renderer2) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
+
   changeLanguage(language: string) {
     this.currentLanguage = language === 'en' ? 'de' : 'en';
     this.translate.use(this.currentLanguage);
@@ -40,6 +43,15 @@ export class NavbarComponent {
   switchMenu() {
     this.menuIsClose = !this.menuIsClose;
     this.dialogVisible = !this.dialogVisible;
+    this.setOverflow()
+  }
+
+  setOverflow() {
+    if (!this.menuIsClose) {
+      this.renderer.addClass(document.body, 'overflow_hidden');
+    } else {
+      this.renderer.removeClass(document.body, 'overflow_hidden');
+    }
   }
 
   scrollToSection(id: string): void {
