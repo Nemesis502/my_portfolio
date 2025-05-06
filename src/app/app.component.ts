@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/components/footer/footer.component';
-import { MainContentComponent } from './main-content/main-content.component';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
+import {HttpClientModule } from '@angular/common/http';
 
 
 
@@ -14,8 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [
     CommonModule, 
-    RouterOutlet, 
-    MainContentComponent, 
+    RouterOutlet,
     FooterComponent,
     HttpClientModule],
   templateUrl: './app.component.html',

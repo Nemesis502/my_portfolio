@@ -1,8 +1,11 @@
 @import "./../../styles.scss";
 
 .privacypolicy-section {
+    padding: 16px 16px 0 16px;
     max-width: 1440px;
     margin-bottom: 144px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .privacypolicy-container {
@@ -22,7 +25,7 @@
     >h1 {
         font-family: 'Fira Code';
         font-weight: 700;
-        font-size: 64px;
+        font-size: 25px;
         line-height: 100%;
         letter-spacing: -3px;
         color: $light_green;
@@ -33,7 +36,9 @@
 .container-2,
 .container-3,
 .container-4 {
+    width: 100%;
     padding: 0 40px 0 40px;
+    box-sizing: border-box;
 
     >h2,
     >h3 {
@@ -41,23 +46,25 @@
         color: $light_green;
         font-family: 'Karla';
         font-weight: 700;
-        font-size: 38px;
+        font-size: 25px;
         line-height: 100%;
         letter-spacing: 0;
+        overflow-wrap: break-word;
     }
 
     >h4 {
         color: $light_green;
         font-family: 'Karla';
         font-weight: 500;
-        font-size: 24px;
+        font-size: 16px;
         line-height: 100%;
-        letter-spacing: 0%;
+        letter-spacing: 0;
 
     }
 
     >p {
         color: #FFFFFF;
+        overflow-wrap: break-word;
     }
 
     >ul {
@@ -83,7 +90,7 @@
 .source-content {
     display: flex;
     flex-direction: column;
-    font-size: 38px;
+    font-size: 21px;
 
     >a {
         color: $light_green;
@@ -91,9 +98,7 @@
     }
 
     &:hover {
-
         color: $light_green;
-
 
         >a {
             color: #FFFFFF;
@@ -107,37 +112,32 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    margin-right: 190px;
-    padding: 0 0 32px 32px;
-
+    padding: 0px 60px 0px 32px;
+    box-sizing: border-box;
 }
 
 .back-button {
     font-family: "Karla";
     background-color: transparent;
-    border: 1px solid #FFFFFF;
+    border: 1px solid $light_green;
     border-radius: 100px;
-    padding: 13px 24px 13px 24px;
-    transition: color 300ms ease-out, border-color 300ms ease-out;
+    padding: 10px 24px 10px 24px;
+    transition: border-color 300ms ease-out;
     overflow: hidden;
 
     >span {
-        color: #FFFFFF;
+        color: $light_green;
         display: inline-block;
+        animation: slideText 2500ms linear forwards infinite;
+        font-size: 14px;
     }
 
     &:hover {
         cursor: pointer;
-        border-color: $light_green;
-
-        >span {
-            color: $light_green;
-            animation: slideTextSkill 2500ms linear forwards infinite;
-        }
     }
 }
 
-@keyframes slideTextSkill {
+@keyframes slideText {
     0% {
         transform: translateX(0);
     }
@@ -158,5 +158,59 @@
 
     100% {
         transform: translateX(0);
+    }
+}
+
+
+@media only screen and (min-width: 925px) {
+    .title-container {
+        >h1 {
+            font-size: 64px;
+        }
+    }
+
+    .container-1,
+    .container-2,
+    .container-3,
+    .container-4 {
+
+        >h2,
+        >h3 {
+            font-size: 38px;
+        }
+
+        >h4 {
+            font-size: 24px;
+        }
+
+    }
+
+    .source-content {
+        display: flex;
+        flex-direction: column;
+        font-size: 38px;
+    }
+
+    .back-button {
+        border: 1px solid #FFFFFF;
+        transition: color 300ms ease-out, border-color 300ms ease-out;
+        padding: 13px 24px 13px 24px;
+
+        >span {
+            display: inline-block;
+            animation: none;
+            color: #FFFFFF;
+            font-size: 18px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border-color: $light_green;
+
+            >span {
+                color: $light_green;
+                animation: slideText 2500ms linear forwards infinite !important;
+            }
+        }
     }
 }

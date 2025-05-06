@@ -1,8 +1,10 @@
 @import "./../../styles.scss";
 
 .imprint-section {
-    padding: 0 96px 0 96px;
+    padding: 0 16px 0 16px;
     max-width: 1440px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .imprint-container {
@@ -21,26 +23,26 @@
 
 .imprint-content {
     >h1 {
-        font-size: 60px
+        font-size: 30px
     }
 
     >p {
-        font-size: 38px;
+        font-size: 19px;
     }
 }
 
 .contact-content {
     >h2 {
-        font-size: 60px;
+        font-size: 30px;
     }
 
     >p {
-        font-size: 38px;
+        font-size: 19px;
     }
 }
 
 .source-content {
-    font-size: 38px;
+    font-size: 19px;
 
     >a {
         color: $light_green;
@@ -48,9 +50,7 @@
     }
 
     &:hover {
-
         color: $light_green;
-
 
         >a {
             color: #FFFFFF;
@@ -64,37 +64,32 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
-    margin-right: 190px;
-    padding: 0 0 32px 32px;
-
+    padding: 0px 60px 0px 32px;
+    box-sizing: border-box;
 }
 
 .back-button {
     font-family: "Karla";
     background-color: transparent;
-    border: 1px solid #FFFFFF;
+    border: 1px solid $light_green;
     border-radius: 100px;
-    padding: 13px 24px 13px 24px;
-    transition: color 300ms ease-out, border-color 300ms ease-out;
+    padding: 10px 24px 10px 24px;
+    transition: border-color 300ms ease-out;
     overflow: hidden;
 
     >span {
-        color: #FFFFFF;
+        color: $light_green;
         display: inline-block;
+        animation: slideText 2500ms linear forwards infinite;
+        font-size: 14px;
     }
 
     &:hover {
         cursor: pointer;
-        border-color: $light_green;
-
-        >span {
-            color: $light_green;
-            animation: slideTextSkill 2500ms linear forwards infinite;
-        }
     }
 }
 
-@keyframes slideTextSkill {
+@keyframes slideText {
     0% {
         transform: translateX(0);
     }
@@ -115,5 +110,58 @@
 
     100% {
         transform: translateX(0);
+    }
+}
+
+@media only screen and (min-width: 925px) {
+    .imprint-section {
+        padding: 0 96px 0 96px;
+    }
+
+    .imprint-content {
+        >h1 {
+            font-size: 60px
+        }
+
+        >p {
+            font-size: 38px;
+        }
+    }
+
+    .contact-content {
+        >h2 {
+            font-size: 60px;
+        }
+
+        >p {
+            font-size: 38px;
+        }
+    }
+
+    .source-content {
+        font-size: 38px;
+    }
+
+    .back-button {
+        border: 1px solid #FFFFFF;
+        transition: color 300ms ease-out, border-color 300ms ease-out;
+        padding: 13px 24px 13px 24px;
+
+        >span {
+            display: inline-block;
+            animation: none;
+            color: #FFFFFF;
+            font-size: 18px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border-color: $light_green;
+
+            >span {
+                color: $light_green;
+                animation: slideText 2500ms linear forwards infinite !important;
+            }
+        }
     }
 }

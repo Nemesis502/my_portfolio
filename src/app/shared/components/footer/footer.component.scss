@@ -1,12 +1,12 @@
 @import "./../../../../styles.scss";
 
-.footer-section,
+.footer-section-mobile,
 .footer-section-desktop {
     justify-content: center;
     flex-direction: row;
 }
 
-.footer-section {
+.footer-section-mobile {
     display: flex;
     margin: 0 16px 25px 16px;
 }
@@ -16,14 +16,12 @@
 }
 
 .footer-container {
-    // width: 1248px;
-    width: 280px;
-    // height: 150px;
+    width: 100%;
+    max-width: 1248px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 32px;
-    // margin-bottom: 64px;
 }
 
 .footer-container-mobile {
@@ -155,5 +153,20 @@
         >span {
             opacity: 1;
         }
+    }
+}
+
+@media only screen and (min-width: 925px) {
+    .footer-section-mobile {
+        margin: 0 0 0 0;
+    }
+
+    .footer-container-mobile {
+        display: none;
+    }
+
+    .footer-section-desktop {
+        display: flex;
+        margin: 0 16px 64px 16px;
     }
 }
