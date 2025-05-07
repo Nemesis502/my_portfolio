@@ -28,10 +28,8 @@ export class ReferencesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isTouchDevice =
-      'ontouchstart' in window ||
-      navigator.maxTouchPoints > 0 ||
-      (navigator as any).msMaxTouchPoints > 0;
+    this.isTouchDevice = window.matchMedia('(pointer: coarse) and (hover: none)').matches;
+    console.log(this.isTouchDevice);
   };
 
   firstReferencesComments: ReferencesComments[] = [
