@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-privacypolicy',
@@ -8,5 +9,4 @@ import { Component } from '@angular/core';
   styleUrl: './privacypolicy.component.scss'
 })
 export class PrivacypolicyComponent {
-
 }

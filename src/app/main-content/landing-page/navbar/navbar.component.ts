@@ -18,7 +18,7 @@ interface Options {
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
-  currentLanguage = "en"
+  currentLanguage = ""
   defaultResponsiveLogo = true;
   menuIsClose = true;
   dialogVisible = false;
@@ -29,10 +29,23 @@ export class NavbarComponent {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
+    this.checkCurrentLanguage();
+  }
+
+  checkCurrentLanguage() {
+    let loadedLanguage = localStorage.getItem("Language");
+    this.currentLanguage = loadedLanguage || "en";
   }
 
   changeLanguage(language: string) {
+    console.log(language);
+
     this.currentLanguage = language === 'en' ? 'de' : 'en';
+    console.log(this.currentLanguage);
+
+    localStorage.setItem("Language", this.currentLanguage);
+    console.log(this.currentLanguage);
+    
     this.translate.use(this.currentLanguage);
   }
 

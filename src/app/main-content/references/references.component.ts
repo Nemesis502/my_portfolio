@@ -29,7 +29,6 @@ export class ReferencesComponent implements OnInit {
 
   ngOnInit() {
     this.isTouchDevice = window.matchMedia('(pointer: coarse) and (hover: none)').matches;
-    console.log(this.isTouchDevice);
   };
 
   firstReferencesComments: ReferencesComments[] = [

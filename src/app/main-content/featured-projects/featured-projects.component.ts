@@ -93,7 +93,6 @@ export class FeaturedProjectsComponent {
       this.dialogVisible = true;
       this.renderer.setStyle(document.body, 'overflow', 'hidden');
     }
-
   }
 
   closeProjects() {

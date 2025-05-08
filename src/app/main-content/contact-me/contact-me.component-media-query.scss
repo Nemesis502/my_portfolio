@@ -32,4 +32,10 @@
         width: 100%;
         max-width: 616px;
     }
+
+    .intro-container {
+        >h1 {
+            font-size: 56px;
+        }
+    }
 }

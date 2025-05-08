@@ -117,12 +117,21 @@
     @keyframes penultimate-right {
         0% {
             right: 0px;
+            opacity: 0;
+        }
 
+        50% {
+            right: -697px;
+            opacity: 0;
+        }
+
+        90% {
+            opacity: 0.5;
         }
 
         100% {
             right: -1395px;
-
+            opacity: 1;
         }
     }
 
@@ -157,12 +166,21 @@
     @keyframes next-left {
         0% {
             left: 0px;
+            opacity: 0;
+        }
 
+        50% {
+            left: -697px;
+            opacity: 0;
+        }
+
+        90% {
+            opacity: 0.5;
         }
 
         100% {
             left: -1395px;
-
+            opacity: 1;
         }
     }
 
@@ -177,6 +195,7 @@
 
         100% {
             left: -697px;
+
         }
     }
 }

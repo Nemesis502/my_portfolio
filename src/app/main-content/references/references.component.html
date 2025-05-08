@@ -9,22 +9,24 @@
     <div class="references-content">
       <div
         *ngFor="let references of displayedReferencesComments"
-        [ngClass]="{
-          'penultimate-comment': references.id === 0,
-          'highlight-comment': references.id === 1,
-          'next-comment': references.id === 2,
-          'direction-left': animate && direction === 'left',
-          'direction-right': animate && direction === 'right'
-        }"
         class="references-comment"
       >
-        <div class="references">
-          <img
-            class="quotes-img"
-            *ngIf="references.id === 1"
-            src="./../../../assets/img/quotes.png"
-            alt=""
-          />
+        <img
+          class="quotes-img"
+          *ngIf="references.id === 1"
+          src="./../../../assets/img/quotes.png"
+          alt=""
+        />
+        <div
+          class="references"
+          [ngClass]="{
+            'penultimate-comment': references.id === 0,
+            'highlight-comment': references.id === 1,
+            'next-comment': references.id === 2,
+            'direction-left': animate && direction === 'left',
+            'direction-right': animate && direction === 'right'
+          }"
+        >
           <span
             [ngClass]="{ 'span-animation': isTouchDevice }"
             class="span-with-Karla-100pc-400weight"

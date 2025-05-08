@@ -115,6 +115,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 
     >span {
         font-size: 16px;
@@ -124,14 +125,6 @@
         align-content: center;
         flex-wrap: wrap;
     }
-
-    // >img {
-    //     position: absolute;
-    //     top: -16px;
-    //     left: 0px;
-    //     width: 66px;
-    //     height: 48px;
-    // }
 }
 
 .references-not-focus {

@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AboutMeComponent } from "./about-me/about-me.component";
 import { SkillsComponent } from "./skills/skills.component";
@@ -16,14 +16,4 @@ import { CommonModule } from '@angular/common';
   styleUrl: './main-content.component.scss'
 })
 export class MainContentComponent {
-  lang = "";
-  constructor(public translate: TranslateService) {
-    this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
-  }
-
-  changeCurrentLanguage(lang: string): void {
-    this.translate.use(lang);
-  }
 }

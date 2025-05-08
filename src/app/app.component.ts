@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -12,7 +12,7 @@ import {HttpClientModule } from '@angular/common/http';
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, 
+    CommonModule,
     RouterOutlet,
     FooterComponent,
     HttpClientModule],
@@ -21,16 +21,18 @@ import {HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'portfolio';
-  lang = "";
+  language = "";
 
   constructor(public translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
+    this.checkCurrentLanguage();
   }
-  
-  changeCurrentLanguage(lang: string): void {
-    console.log(lang);
-    this.translate.use(lang);
+
+  checkCurrentLanguage() {
+    let loadedLanguage = localStorage.getItem("Language");
+    this.language = loadedLanguage || "en";
+    this.translate.use(this.language);
   }
 }

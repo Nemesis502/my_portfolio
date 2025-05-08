@@ -11,7 +11,6 @@
 }
 
 .featured-projects-container {
-    // padding: 0 0 0 96px;
     width: 280px;
 }
 
@@ -27,6 +26,7 @@
 
     >h1 {
         font-size: 56px;
+        overflow-wrap: break-word;
     }
 
     >h2 {
@@ -210,5 +210,5 @@
 }
 
 .disabled {
-    cursor: not-allowed !important; // delete when DaBubble uploaded is
+    cursor: not-allowed !important;
 }
