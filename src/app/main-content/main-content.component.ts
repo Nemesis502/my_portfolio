@@ -5,7 +5,6 @@ import { SkillsComponent } from "./skills/skills.component";
 import { FeaturedProjectsComponent } from "./featured-projects/featured-projects.component";
 import { ReferencesComponent } from "./references/references.component";
 import { ContactMeComponent } from "./contact-me/contact-me.component";
-import { TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
