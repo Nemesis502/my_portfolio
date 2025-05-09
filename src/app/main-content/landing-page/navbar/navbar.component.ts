@@ -38,14 +38,8 @@ export class NavbarComponent {
   }
 
   changeLanguage(language: string) {
-    console.log(language);
-
     this.currentLanguage = language === 'en' ? 'de' : 'en';
-    console.log(this.currentLanguage);
-
     localStorage.setItem("Language", this.currentLanguage);
-    console.log(this.currentLanguage);
-
     this.translate.use(this.currentLanguage);
   }
 

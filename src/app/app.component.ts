@@ -28,7 +28,6 @@ export class AppComponent {
     this.language = this.checkCurrentLanguage();
     this.translate.setDefaultLang(this.language);
     this.translate.use(this.language);
-    console.log(this.language);
   }
 
   checkCurrentLanguage(): string {
