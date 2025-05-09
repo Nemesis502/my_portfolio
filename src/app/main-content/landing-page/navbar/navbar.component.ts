@@ -27,9 +27,9 @@ export class NavbarComponent {
     private viewportScroller: ViewportScroller,
     private renderer: Renderer2) {
     this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
     this.checkCurrentLanguage();
+    this.translate.setDefaultLang(this.currentLanguage);
+    this.translate.use(this.currentLanguage);
   }
 
   checkCurrentLanguage() {
@@ -45,7 +45,7 @@ export class NavbarComponent {
 
     localStorage.setItem("Language", this.currentLanguage);
     console.log(this.currentLanguage);
-    
+
     this.translate.use(this.currentLanguage);
   }
 

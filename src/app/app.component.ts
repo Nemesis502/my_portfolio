@@ -25,14 +25,15 @@ export class AppComponent {
 
   constructor(public translate: TranslateService) {
     this.translate.addLangs(['de', 'en']);
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
-    this.checkCurrentLanguage();
+    this.language = this.checkCurrentLanguage();
+    this.translate.setDefaultLang(this.language);
+    this.translate.use(this.language);
+    console.log(this.language);
   }
 
-  checkCurrentLanguage() {
+  checkCurrentLanguage(): string {
     let loadedLanguage = localStorage.getItem("Language");
     this.language = loadedLanguage || "en";
-    this.translate.use(this.language);
+    return this.language;
   }
 }
