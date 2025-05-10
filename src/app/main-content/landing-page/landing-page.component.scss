@@ -74,17 +74,13 @@
     }
 
     50% {
-        transform: translateX(-130%);
+        transform: translateX(-85px);
         visibility: hidden;
     }
 
     51% {
-        transform: translateX(160%);
+        transform: translateX(85px);
         visibility: hidden;
-    }
-
-    60% {
-        transform: translateX(130%);
     }
 
     100% {
@@ -379,15 +375,6 @@
         text-wrap: nowrap;
         display: inline-block;
     }
-
-    >p {
-        margin: 0;
-        height: 6.5px;
-        width: 6.5px;
-        background-color: $light_green;
-        border-radius: 59%;
-        display: inline-block;
-    }
 }
 
 .animation-left {
@@ -395,7 +382,12 @@
 }
 
 @keyframes leftband {
-    to {
-        transform: translateX(-182%);
+    from {
+        transform: translateX(0);
     }
+
+    to {
+        transform: translateX(-1637px);
+    }
+
 }

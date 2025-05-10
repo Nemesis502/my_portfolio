@@ -143,9 +143,11 @@
               />
               <p class="span-with-Karla-100pc-400weight">
                 {{ "contact.read1" | translate }}
-                <a class="firaCode-with-700Weight-64Px" href="privacypolicy">{{
-                  "contact.policy" | translate
-                }}</a>
+                <a
+                  class="firaCode-with-700Weight-64Px"
+                  routerLink="/privacypolicy"
+                  >{{ "contact.policy" | translate }}</a
+                >
                 {{ "contact.read2" | translate }}
               </p>
             </div>
@@ -156,8 +158,12 @@
             </p>
           </div>
           <button
-            [ngClass]="{ 'ngForm-valid': checkboxField.valid && !isTouchDevice }"
-            [ngClass]="{ 'ngForm-valid-resposive': checkboxField.valid && isTouchDevice }"
+            [ngClass]="{
+              'ngForm-valid': checkboxField.valid && !isTouchDevice
+            }"
+            [ngClass]="{
+              'ngForm-valid-resposive': checkboxField.valid && isTouchDevice
+            }"
             class="span-with-Karla-100pc-400weight"
           >
             <span>{{ "contact.hello" | translate }}</span>

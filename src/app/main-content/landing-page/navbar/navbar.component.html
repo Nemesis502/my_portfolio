@@ -10,18 +10,34 @@
     </div>
   </div>
 </nav>
-<section (click)="switchMenu()" *ngIf="dialogVisible && !menuIsClose" class="nav-menu-container">
+<section
+  (click)="switchMenu()"
+  *ngIf="dialogVisible && !menuIsClose"
+  class="nav-menu-container"
+>
   <div class="menu-content" (click)="$event.stopPropagation()">
     <div class="internal-links-menu">
-      <a (click)="scrollToSection('about-me')" class="firaCode-with-700Weight-64Px" >{{ "navbar.me" | translate }}</a>
+      <a
+        (click)="scrollToSection('about-me')"
+        class="firaCode-with-700Weight-64Px"
+        >{{ "navbar.me" | translate }}</a
+      >
       <span></span>
     </div>
     <div class="internal-links-menu">
-      <a (click)="scrollToSection('skills')" class="firaCode-with-700Weight-64Px">{{ "navbar.skills" | translate }}</a>
+      <a
+        (click)="scrollToSection('skills')"
+        class="firaCode-with-700Weight-64Px"
+        >{{ "navbar.skills" | translate }}</a
+      >
       <span></span>
     </div>
     <div class="internal-links-menu">
-      <a (click)="scrollToSection('projects')" class="firaCode-with-700Weight-64Px">{{ "navbar.projects" | translate }}</a>
+      <a
+        (click)="scrollToSection('projects')"
+        class="firaCode-with-700Weight-64Px"
+        >{{ "navbar.projects" | translate }}</a
+      >
       <span></span>
     </div>
     <div (click)="changeLanguage(currentLanguage)" class="button-container">
@@ -47,15 +63,15 @@
     </div>
     <section class="nav-links-container">
       <div class="internal-links">
-        <a href="#about-me">{{ "navbar.me" | translate }}</a>
+        <a routerLink="#about-me">{{ "navbar.me" | translate }}</a>
         <span></span>
       </div>
       <div class="internal-links">
-        <a href="#skills">{{ "navbar.skills" | translate }}</a>
+        <a routerLink="#skills">{{ "navbar.skills" | translate }}</a>
         <span></span>
       </div>
       <div class="internal-links">
-        <a href="#projects">{{ "navbar.projects" | translate }}</a>
+        <a routerLink="#projects">{{ "navbar.projects" | translate }}</a>
         <span></span>
       </div>
     </section>

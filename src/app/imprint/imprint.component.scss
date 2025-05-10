@@ -1,11 +1,14 @@
 @import "./../../styles.scss";
 
 .imprint-section {
-    padding: 16px 16px 0 16px;
-    margin-bottom: 144px;
+    padding: 0 16px 0 16px;
     max-width: 1440px;
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 100px 0 100px 0;
 }
 
 .imprint-container {
@@ -96,17 +99,13 @@
     }
 
     50% {
-        transform: translateX(-160%);
+        transform: translateX(-85px);
         visibility: hidden;
     }
 
     51% {
-        transform: translateX(160%);
+        transform: translateX(85px);
         visibility: hidden;
-    }
-
-    60% {
-        transform: translateX(130%);
     }
 
     100% {

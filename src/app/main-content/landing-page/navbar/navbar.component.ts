@@ -1,6 +1,7 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from "@ngx-translate/core";
 
 /**
@@ -38,7 +39,7 @@ interface Options {
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [FormsModule, CommonModule, TranslatePipe],
+  imports: [FormsModule, CommonModule, TranslatePipe, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })

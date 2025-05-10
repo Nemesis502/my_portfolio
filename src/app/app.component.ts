@@ -4,9 +4,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
-
-
-
+import { NavbarComponent } from "./main-content/landing-page/navbar/navbar.component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterOutlet,
     FooterComponent,
-    HttpClientModule],
+    HttpClientModule,
+    NavbarComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

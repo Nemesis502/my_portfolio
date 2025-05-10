@@ -4,11 +4,12 @@ import { Component, EventEmitter, inject, OnInit, Output, Renderer2 } from '@ang
 import { FormsModule, NgForm } from '@angular/forms';
 import { PopUpMessageComponent } from "./pop-up-message/pop-up-message.component";
 import { TranslatePipe } from '@ngx-translate/core';
+import { RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-contact-me',
   standalone: true,
-  imports: [FormsModule, CommonModule, PopUpMessageComponent, TranslatePipe],
+  imports: [FormsModule, CommonModule, PopUpMessageComponent, TranslatePipe, RouterLink],
   templateUrl: './contact-me.component.html',
   styleUrls: ['./contact-me.component.scss', './contact-me.component-media-query.scss']
 })
