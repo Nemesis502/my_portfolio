@@ -1,8 +1,9 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslatePipe, TranslateService } from "@ngx-translate/core";
+
 
 /**
  * Configuration options for scrolling to an anchor.
@@ -39,7 +40,7 @@ interface Options {
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [FormsModule, CommonModule, TranslatePipe, RouterLink],
+  imports: [FormsModule, CommonModule, TranslatePipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -96,7 +97,8 @@ export class NavbarComponent {
   constructor(
     private translate: TranslateService,
     private viewportScroller: ViewportScroller,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private router: Router
   ) {
     this.translate.addLangs(['de', 'en']);
     this.checkCurrentLanguage();
@@ -177,9 +179,13 @@ export class NavbarComponent {
    * @memberof NavbarComponent
    */
   scrollToSection(id: string): void {
-    this.viewportScroller.scrollToAnchor(id);
+    this.goTo(id);
     this.menuIsClose = !this.menuIsClose;
     this.dialogVisible = !this.dialogVisible;
     this.renderer.removeClass(document.body, 'overflow_hidden');
+  }
+
+  goTo(id: string) {
+    this.router.navigate(['/']).then(() => this.viewportScroller.scrollToAnchor(id));
   }
 }
