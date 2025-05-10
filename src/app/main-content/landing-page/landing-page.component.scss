@@ -1,7 +1,6 @@
 @import "./../../../styles.scss";
 
 .landing-container {
-    height: 100vh;
     min-height: max-content;
     max-width: 1440px;
     width: 100%;
@@ -44,7 +43,7 @@
 
 .title-buttons {
     display: flex;
-    gap: 48px;
+    gap: 24px;
     height: 35px;
 
     >button {

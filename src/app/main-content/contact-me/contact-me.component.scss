@@ -124,6 +124,10 @@ input.ng-invalid.ng-touched::placeholder {
     letter-spacing: 0;
 }
 
+input.ng-invalid {
+    color: #EC7B7BCC !important;
+}
+
 @keyframes showerror {
     0% {
         opacity: 0;

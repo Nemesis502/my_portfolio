@@ -19,5 +19,12 @@ app-contact-me {
 }
 
 app-landing-page {
+    width: 100vw;
     background-image: linear-gradient(to top right, #1C1C1C 45%, #08463B 100%);
+}
+
+@media only screen and (min-width: 925px) {
+    app-landing-page {
+        margin-bottom: 144px;
+    }
 }

@@ -1,7 +1,7 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TranslatePipe,TranslateService } from "@ngx-translate/core";
+import { TranslatePipe, TranslateService } from "@ngx-translate/core";
 
 /**
  * Configuration options for scrolling to an anchor.
@@ -179,5 +179,6 @@ export class NavbarComponent {
     this.viewportScroller.scrollToAnchor(id);
     this.menuIsClose = !this.menuIsClose;
     this.dialogVisible = !this.dialogVisible;
+    this.renderer.removeClass(document.body, 'overflow_hidden');
   }
 }
