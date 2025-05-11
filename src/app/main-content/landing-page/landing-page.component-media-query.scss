@@ -53,10 +53,6 @@
         padding: 0 96px 0 96px;
     }
 
-    // .right-lateral {
-    //     height: 480px;
-    // }
-
     .right-seperator {
         height: 186px;
     }
@@ -78,17 +74,17 @@
     }
 
     50% {
-        transform: translateX(-130%);
+        transform: translateX(-130px);
         visibility: hidden;
     }
 
     51% {
-        transform: translateX(160%);
+        transform: translateX(160px);
         visibility: hidden;
     }
 
     60% {
-        transform: translateX(130%);
+        transform: translateX(130px);
     }
 
     100% {

@@ -93,14 +93,25 @@ app-main-content {
   width: 100%;
 }
 
+app-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 app-imprint,
 app-privacypolicy {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: linear-gradient(to top right, #1C1C1C 45%, #08463B 100%);
 }
 
 app-imprint {
   height: 100%;
+  width: 100%;
+
 }
 
 .overflow_hidden {
