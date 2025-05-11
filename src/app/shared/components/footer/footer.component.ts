@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
-import { NavbarComponent } from "../../../main-content/landing-page/navbar/navbar.component";
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [TranslatePipe, RouterLink, NavbarComponent],
+  imports: [TranslatePipe, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
