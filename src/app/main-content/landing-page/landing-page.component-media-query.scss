@@ -56,6 +56,26 @@
     .right-seperator {
         height: 186px;
     }
+
+    @keyframes slideText {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(-200px);
+            visibility: hidden;
+        }
+
+        51% {
+            transform: translateX(200px);
+            visibility: hidden;
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -65,29 +85,5 @@
 
     .mail-content {
         display: none;
-    }
-}
-
-@keyframes slideText {
-    0% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(-130px);
-        visibility: hidden;
-    }
-
-    51% {
-        transform: translateX(160px);
-        visibility: hidden;
-    }
-
-    60% {
-        transform: translateX(130px);
-    }
-
-    100% {
-        transform: translateX(0);
     }
 }
