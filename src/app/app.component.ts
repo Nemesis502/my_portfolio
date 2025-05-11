@@ -4,8 +4,6 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { TranslateService } from '@ngx-translate/core';
 import { HttpClientModule } from '@angular/common/http';
-import { NavbarComponent } from "./main-content/landing-page/navbar/navbar.component";
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -14,8 +12,7 @@ import { NavbarComponent } from "./main-content/landing-page/navbar/navbar.compo
     RouterOutlet,
     FooterComponent,
     HttpClientModule,
-    NavbarComponent
-],
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -57,6 +54,7 @@ export class AppComponent {
     this.translate.setDefaultLang(this.language);
     this.translate.use(this.language);
   }
+  
 
   /**
    * Reads the 'Language' key from localStorage to determine the

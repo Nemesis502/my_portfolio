@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "aos/dist/aos.css";
 
 $dark_green: #08463B;
 $medium_black: #1C1C1C;
@@ -69,13 +70,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: rgba(28, 28, 28, 1);
-}
-
-@media only screen and (min-width: 925px) {
-  body {
-    overflow-x: hidden;
-  }
-
+  overflow-x: hidden;
 }
 
 .flex-colum-body {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, } from '@angular/core';
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ViewportScroller } from '@angular/common';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -26,15 +26,6 @@ export class LandingPageComponent {
    * @param {ViewportScroller} viewportScroller - Angular service used to scroll to anchor elements.
    */
   constructor(private viewportScroller: ViewportScroller) { }
-
-  @ViewChild('marquee', { static: true }) marquee!: ElementRef<HTMLElement>;
-
-  ngAfterViewInit() {
-    const w = this.marquee.nativeElement.offsetWidth;
-    this.marquee.nativeElement.style.setProperty('--marquee-width', `${w}px`);
-  }
-
-
   /**
    * Scrolls smoothly to the element identified by the given anchor.
    *

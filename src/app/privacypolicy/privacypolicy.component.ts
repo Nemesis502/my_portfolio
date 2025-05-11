@@ -12,4 +12,7 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './privacypolicy.component.scss'
 })
 export class PrivacypolicyComponent {
+  ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

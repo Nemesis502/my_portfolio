@@ -4,7 +4,7 @@ import { Component, EventEmitter, inject, OnInit, Output, Renderer2 } from '@ang
 import { FormsModule, NgForm } from '@angular/forms';
 import { PopUpMessageComponent } from "./pop-up-message/pop-up-message.component";
 import { TranslatePipe } from '@ngx-translate/core';
-import { RouterLink} from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact-me',
