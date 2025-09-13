@@ -162,8 +162,8 @@ export class FeaturedProjectsComponent {
         tech2: "Firebase",
         tech3: "TypeScript"
       },
-      linkGitHub: "//",
-      linkLive: "",
+      linkGitHub: "https://github.com/Nemesis502/da_bubble_410",
+      linkLive: "https://da-bubble-project.bastianklawes.de/",
     }
   ];
 

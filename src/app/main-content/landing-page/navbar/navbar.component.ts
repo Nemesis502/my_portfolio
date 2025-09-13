@@ -115,7 +115,7 @@ export class NavbarComponent {
    */
   checkCurrentLanguage(): void {
     const stored = localStorage.getItem("Language");
-    this.currentLanguage = stored || "en";
+    this.currentLanguage = stored || "de";
   }
 
   /**

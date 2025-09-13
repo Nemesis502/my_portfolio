@@ -114,15 +114,6 @@
     animation: opacityshow 150ms ease-in forwards;
 }
 
-.soon-title {
-    color: #a29a9a !important;
-}
-
-.soon {
-    padding-left: 10px;
-    color: #a29a9a;
-}
-
 .border-bottom {
     border-bottom: 1px solid $light_green;
 }
@@ -207,8 +198,4 @@
     100% {
         opacity: 1;
     }
-}
-
-.disabled {
-    cursor: not-allowed !important;
 }

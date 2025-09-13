@@ -65,7 +65,7 @@ export class AppComponent {
    */
   checkCurrentLanguage(): string {
     const stored = localStorage.getItem("Language");
-    this.language = stored || "en";
+    this.language = stored || "de";
     return this.language;
   }
 }
