@@ -6,6 +6,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (http: HttpClient) =>
   new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,6 +31,6 @@ export const appConfig: ApplicationConfig = {
       });
     },
     multi: true
-  }
+  }, provideAnimationsAsync()
   ],
 };

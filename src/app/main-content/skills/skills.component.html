@@ -1,28 +1,32 @@
 <section data-aos="fade-left" class="skills-container">
   <div class="skill-set-container">
-    <h2 class="span-with-Karla-100pc-700weight">{{ 'skills.technologies' | translate }}</h2>
+    <h2 class="span-with-Karla-100pc-700weight">
+      {{ "skills.technologies" | translate }}
+    </h2>
     <div class="skills-descriptions-container">
-      <h1>{{ 'skills.set' | translate }}</h1>
+      <h1>{{ "skills.set" | translate }}</h1>
       <div class="skills-descriptions-content">
         <div class="skills-descriptions">
           <span class="span-with-Karla-80pc">
-            {{ 'skills.description' | translate }}
+            {{ "skills.description" | translate }}
           </span>
         </div>
         <div class="another-skill-container">
           <h2 class="span-with-Karla-100pc-700weight">
-            {{ 'skills.need' | translate }} <span>{{ 'skills.another' | translate }}</span>
+            {{ "skills.need" | translate }}
+            <span>{{ "skills.another" | translate }}</span>
           </h2>
           <span class="span-with-Karla-100pc-400weight">
-            {{ 'skills.fell-free' | translate }}
+            {{ "skills.fell-free" | translate }}
           </span>
         </div>
       </div>
       <div class="contact-button">
         <button
           (click)="scrollToContact('contact')"
-          class="span-with-Karla-80pc">
-          <span>{{ 'skills.talk' | translate }}</span>
+          class="span-with-Karla-80pc"
+        >
+          <span>{{ "skills.talk" | translate }}</span>
         </button>
       </div>
     </div>
@@ -32,11 +36,12 @@
     <div class="single-skill">
       <div
         *ngIf="skill.name === 'Growth Mindset'"
-        class="visibility tooltip-div">
+        class="visibility tooltip-div"
+      >
         <div class="tooltip-content">
           <div class="tooltip-span">
             <span class="span-with-Karla-100pc-400weight-lightGreen">
-              {{ 'skills.special' | translate }}
+              {{ "skills.special" | translate }}
             </span>
           </div>
           <div class="wanted-skills-container">
@@ -47,6 +52,22 @@
             <div class="wanted-skills-content">
               <img src="./../../../assets/img/Vuejs_with_color.png" alt="" />
               <span class="span-with-Karla-100pc-700weight">Vue Js</span>
+            </div>
+            <div class="wanted-skills-content">
+              <img src="./../../../assets/img/PHP.png" alt="" />
+              <span class="span-with-Karla-100pc-700weight">PHP</span>
+            </div>
+            <div class="wanted-skills-content">
+              <img src="./../../../assets/img/Python.png" alt="" />
+              <span class="span-with-Karla-100pc-700weight">Python</span>
+            </div>
+            <div class="wanted-skills-content">
+              <img src="./../../../assets/img/Django.png" alt="" />
+              <span class="span-with-Karla-100pc-700weight">Django</span>
+            </div>
+            <div class="wanted-skills-content">
+              <img src="./../../../assets/img/SQL.png" alt="" />
+              <span class="span-with-Karla-100pc-700weight">SQL</span>
             </div>
           </div>
         </div>
