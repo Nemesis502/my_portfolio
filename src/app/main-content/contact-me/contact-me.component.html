@@ -108,7 +108,7 @@
         <div class="policy-and-suibmit-content">
           <div class="checkbox-container">
             <div class="checkbox-imgs checkbox-default">
-              <div *ngIf="!buttonChecked" class="default-container">
+              <button *ngIf="!buttonChecked" class="default-container">
                 <img
                   class="default"
                   src="./../../../assets/img/Checkbox_default.png"
@@ -120,8 +120,8 @@
                   src="./../../../assets/img/Checkbox_default_hover.png"
                   alt=""
                 />
-              </div>
-              <div *ngIf="buttonChecked" class="check-container">
+              </button>
+              <button *ngIf="buttonChecked" class="check-container">
                 <img
                   class="hidden-checked"
                   src="./../../../assets/img/Checkbox_checked.png"
@@ -133,7 +133,7 @@
                   src="./../../../assets/img/Checkbox_checked_hover.png"
                   alt=""
                 />
-              </div>
+              </button>
               <input
                 required
                 type="checkbox"
