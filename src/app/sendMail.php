@@ -1,37 +1,49 @@
 <?php
 
-switch ($_SERVER['REQUEST_METHOD']) {
-    case ("OPTIONS"): //Allow preflighting to take place.
-        header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: POST");
-        header("Access-Control-Allow-Headers: content-type");
-        exit;
-        case("POST"): //Send the email;
-            header("Access-Control-Allow-Origin: *");
-            // Payload is not send to $_POST Variable,
-            // is send to php:input as a text
-            $json = file_get_contents('php://input');
-            //parse the Payload from text format to Object
-            $params = json_decode($json);
-    
-            $email = $params->email;
-            $name = $params->name;
-            $message = $params->message;
-    
-            $recipient = 'kontakt@bastianklawes.de';  
-            $subject = "Contact From <$email>";
-            $message = "From: " . $name . "<br>" . "Message: " . $message . "<br>" . "Email: " .  $email ;
-    
-            $headers   = array();
-            $headers[] = 'MIME-Version: 1.0';
-            $headers[] = 'Content-type: text/html; charset=utf-8';
+header('Content-Type: text/plain; charset=utf-8');
 
-            // Additional headers
-            $headers[] = "From: noreply@bastianklawes.de";
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Allow: POST');
+    http_response_code(405);
+    exit('Method not allowed');
+}
 
-            mail($recipient, $subject, $message, implode("\r\n", $headers));
-            break;
-        default: //Reject any non POST or OPTIONS requests.
-            header("Allow: POST", true, 405);
-            exit;
-    } 
+$payload = json_decode(file_get_contents('php://input'), true);
+
+if (!is_array($payload)) {
+    http_response_code(400);
+    exit('Invalid request body');
+}
+
+$name = trim((string) ($payload['name'] ?? ''));
+$email = trim((string) ($payload['email'] ?? ''));
+$message = trim((string) ($payload['message'] ?? ''));
+
+if (
+    $name === '' ||
+    strlen($name) > 120 ||
+    !filter_var($email, FILTER_VALIDATE_EMAIL) ||
+    strlen($email) > 254 ||
+    strlen($message) < 4 ||
+    strlen($message) > 5000
+) {
+    http_response_code(422);
+    exit('Invalid form data');
+}
+
+$recipient = 'kontakt@bastianklawes.de';
+$subject = 'Neue Kontaktanfrage über bastianklawes.de';
+$body = "Name: {$name}\nE-Mail: {$email}\n\nNachricht:\n{$message}";
+$headers = [
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=utf-8',
+    'From: noreply@bastianklawes.de',
+    "Reply-To: {$email}",
+];
+
+if (!mail($recipient, $subject, $body, implode("\r\n", $headers))) {
+    http_response_code(500);
+    exit('Message could not be sent');
+}
+
+http_response_code(204);

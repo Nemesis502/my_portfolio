@@ -27,6 +27,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
+              "src/.htaccess",
+              {
+                "glob": "sendMail.php",
+                "input": "src/app",
+                "output": "/"
+              },
               "src/assets"
             ],
             "styles": [
