@@ -10,6 +10,8 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  currentYear = new Date().getFullYear();
+
   backToBegin() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

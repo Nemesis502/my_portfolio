@@ -103,17 +103,17 @@ export class ContactMeComponent implements OnInit {
   /**
    * Configuration for the HTTP POST request.
    *
-   * @type {{ endPoint: string; body: (payload: any) => string; options: { headers: { 'Content-Type': string; responseType: string } } }}
+   * @type {{ endPoint: string; body: (payload: any) => string; options: { headers: { 'Content-Type': string }; responseType: 'text' } }}
    * @memberof ContactMeComponent
    */
   post = {
-    endPoint: 'https://bastianklawes.de/sendMail.php',
+    endPoint: '/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
+        'Content-Type': 'application/json',
       },
+      responseType: 'text' as const,
     },
   };
 
